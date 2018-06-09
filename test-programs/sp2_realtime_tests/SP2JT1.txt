@@ -1,0 +1,61 @@
+JT1	KICKO	FC:100;
+	EXT	LR:BILL;
+	ENT 	LR:CHAU;
+	NUM	FC:100;				A	LC = 100x64	00000064
+	NUM	FC:200;				A	LC = 101x65	000000C8
+	NUM	FC:300;				A	LC = 102x66	0000012C
+	AEXS	FC:3000;								; invalid, alternate execution outside program range		REPLACE:	AEXS	LR:START;	Execution start in header should be 103 (0x67)
+DR	EQU	FC:1;
+DR1	EQUE	EX:-1+3-1;
+NW	EQU	FC:3;
+NW1	EQUE	EX:+20000-19995;
+START  		MOVD	 DR:DR,EX:*-3; 		R	LC = 103x67	00400064
+St@$)ts3  	MOVDN	 DR:2,EX:*-4; 		R	LC = 104x68	04800064
+2inv@l1d        MOVD	 DX::4,FL:10000; 	A	LC = 105x69	00202064	; invalid label, literal value too large to fit in 13 bits, extra colon between keyword and operand		REPLACE: inv@l1d        MOVD	 DX:4,FL:100;
+		MOVD	 DM:FILL,FR:4,DX:4; 	R	LC = 106x6A	032000EC
+skip	SKIPS	FC:4000;			A	LC = 107x6B			; invalid, cannot skip this far		REPLACE: 	SKIPS	FC:0;
+NEW#	EQU	FC:*+DR+DR+91;
+	NEWLC	LR:BILL;			A	LC = 200xC8			; invalid, label for newlc must be previously equated		REPLACE: 	NEWLC	LR:NEW#;	New LC is 200
+	CLRX	DX:1;				A	LC = 200xC8	48000000	; invalid, instruction does not take a keyword		REPLACE: 	CLRX;
+	CLR	DX:5;				A	LC = 201xC9	40280000
+	CLR	DX:DR;				A	LC = 202xCA	40080000
+	IADD	DM:BILL,FR:1;			E	LC = 203xCB	22400000
+	IAA	EX:*-300,FR:1;			R	LC = 204xCC	2A4000AE	; invalid, memory value outside program range		REPLACE: 	IAA	EX:*-30,FR:1;
+	ISRG	DR:5,FM:ADD,NW:NW;		R	LC = 205xCD	2D4180ED
+	IDIV	DR:4,FM:105,FX:2;		R	LC = 206xCE	39100069	; all the same binary
+	IDIV	FM:105,FX:2,DR:4;		R	LC = 207xCF	39100069	; all the same binary
+	IDIV	FX:2,DR:4,FM:105;		R	LC = 208xD0	39100069	; all the same binary
+	PWR	DR:DR,FC:20;			A	LC = 209xD1	3C402014
+	ISHR	DX:4,FC:32;			A	LC = 210xD2	60202020
+	ISHL	Dx:7,Fc:0;			A	LC = 211xD3	64382000
+lower	ISRA	fc:20,dr:0;			A	LC = 212xD4	68002014
+	rol	fc:16,dr:8;			A	LC = 213xD5	70302001	; invalid register		REPLACE: 	rol	fc:16,dr:6;
+	aNd	DR:4,FM:110;			R	LC = 214xD6	7900006E
+	or      FM:110,DR:4;			R	LC = 215xD7	7D00006E
+	NOP;					A	LC = 216xD8	F4000000
+	TREQ	FR:DR,DM:TROY;			R	LC = 217xD9	904000E4
+	TRLT	FR:1,DM:TROY;			R	LC = 218xDA	944000E4
+	TRGT	FR:2,DM:*+0;			R	LC = 219xDB	444000DB
+	TR	DM:JOSH;			R	LC = 220xDC	4C0000E2
+	SKT	DR:5;				A	LC = 221xDD	9D400000
+	IWSR	FM:ADD,NW:2;			R	LC = 222xDE	A00100ED
+	IRKB	DM:101,DX:1,NW:3;		R	LC = 223xDF	A4098065
+	CWSR	EX:*+7,NW:1;			R	LC = 224xE0	A80080E7
+	PST	DR:5,FL:-300;			A	LC = 225xE1	C9403EDA
+JOSH	POP	DX:5;				A	LC = 226xE2	C4240000
+	POP	DM:FILL;			R	LC = 227xE3	C40000EC
+TROY	PSH	FL:-100;			A	LC = 228xE4	C0003F9C
+	PSH	FM:BILL;			E	LC = 229xE5	C0000000
+	DMP	FC:4;				A	LC = 230xE6	F8000001	; may or may not error depending on implementation
+	HALT	FC:4095;			A	LC = 231xE7	FC000FFF	
+	CHAR	ST:'';				A	LC = 232xE8	20202020
+	CHAR	ST:' ';				A	LC = 233xE9	20202020
+	CHAR	ST:';;';			A	LC = 234xEA	3B3B2020
+	CHAR	ST:'12345';			A	LC = 235xEB	31323334	; invalid, too many characters		REPLACE: 	CHAR	ST:'1234';
+FILL	NUM	FC:0;				A	LC = 236xEC	00000000
+ADD	ADRC	EX:*+*+5;			A	LC = 237xED	00000005	; invalid, cannot have more than one star	REPLACE: ADD	ADRC	EX:5;
+	ADRC	EX:*+2BILL-1000;		C	LC = 238xEE	FFFFFD06	; invalid, 2BILL not a valid label		REPLACE: 	ADRC	EX:*+BILL-1000;
+	ADRC	EX:*+St@$)ts3-START+BILL;	C	LC = 239xEF	000000F0
+; note, the ENT label CHAU is never defined						; ADD: CHAU	NUM	FC:0;
+; total module length = 239 - 100 + 1 = 140x8C
+	END	LR:JT2;									; invalid, does not match program name		REMOVE, THEN REPLACE: 	END	LR:JT1;

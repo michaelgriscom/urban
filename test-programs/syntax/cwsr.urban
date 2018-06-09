@@ -1,0 +1,24 @@
+CWSRTEST KICKO FC:0;
+ONE EQU FC:1;
+THREE EQU FC:2;
+    CWSR DM:0,NW:1;
+    CWSR DM:0,DX:1,NW:15;
+    CWSR DM:4095,DX:7,NW:1;
+    CWSR DM:ONE,NW:5;
+    CWSR DM:1000,NW:THREE;
+    CWSR; ** Missing operands **
+    CWSR DM:0; ** Missing NW **
+    CWSR NW:1; ** Missing DM **
+    CWSR DX:0,NW:1; ** Missing DM **
+    CWSR DM:-1,NW:1; ** DM out of range **
+    CWSR DM:4096,NW:1; ** DM out of range **
+    CWSR DM:0,DX:0,NW:1; ** DX out of range **
+    CWSR DM:0,DX:8,NW:1; ** DX out of range **
+    CWSR DM:0,NW:0; ** NW out of range **
+    CWSR DM:0,NW:16; ** NW out of range **
+    CWSR DR:0,NW:1; ** Illegal operand **
+    CWSR LR:0,NW:9; ** Illegal operand **
+    CWSR FC:0,NW:4; ** Illegal operand **
+    CWSR DM:1=,NW:5; ** Illegal character '=' in operand value **
+    CWSR DM:0,%%:8; ** Illegal character '%' in operand keyword **
+    END LR:CWSRTEST;

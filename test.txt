@@ -1,0 +1,8 @@
+ZAK     kicko fc:12; 
+	char ST:'    ';
+Earth    num   fc:128;           C  00000080  A
+Saturn   num   fc:100;           D  00000064  A
+	ENT LR:A;
+	MOVD  DR:-1,FM:13;  13  0040000D  R
+	ADRC EX:*+Earth-2+A;
+	END LR:ZAK;

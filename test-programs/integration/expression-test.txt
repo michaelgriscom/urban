@@ -1,0 +1,40 @@
+EXTEST 	KICKO FC:100;
+        MOVD DR:0,FL:0;     Should create an A text record with a value of 0.
+EQ0     EQU EX:*;           EQ0 should be 101.  
+        MOVD DR:1,FL:0;     Should create an A text record with a value of 0.
+        MOVD DR:2,FL:0;     Should create an A text record with a value of 0.
+EQ1     EQUE FM:*+10;       EQ1 should be 113. 
+        MOVD DR:0,FL:EQ0;   Should create an R text record with a value of 101.
+        MOVD DR:1,FL:EQ1;   Should create an R text record with a value of 113.
+        MOVD DM:200,FR:1;   Should create an R text record with a value of 200.
+        IADD DR:0,FM:200;   Should create an R text record with a value of 200.
+        MOVD DM:201,FR:0;   Should create an R text record with a value of 201.
+EQ2     EQUE FC:214;        EQ2 should be 214.
+EQ3     EQUE FC:100;        EQ3 should be 100.
+PI      EQU  EX:EQ2+EQ3;    PI  should be 314.
+EQ4     EQUE EX:1-2+3-4+5-6+7-8+9+PI-EQ2-EQ3;  EQ4 now holds 1.
+        EXT  LR:EXT1;       Should create a linking record.
+        EXT  LR:EXT2;       Should create a linking record.
+NUM0    NUM  FC:PI;         NUM0 should be 107, and the memory at 107 should contain 314.
+ADRC0   ADRC EX:EXT1+EXT2;  ADRC0 should be equal to the sum of EXT1 and EXT2's values.  Text record should be C with a value of 0 and one modification record containing two modifications.
+ADRC1   ADRC EX:EXT1+EQ0-1; ADRC1 should be EXT1 + 100.  Text record should be a C with a value of -1 and two modification records each containing one modification.
+ADRC2   ADRC EX:EXT1+100;   ADRC2 should be EXT1 + 100.  Text record should be an E with a value of 100 and one modification record containing one modification.
+ADRC3   ADRC EX:EQ2+100;    ADRC3 should be 314.  While not necessary, we're making this a C with a value of 100 and one modification record containing one modification.
+ADRC4   ADRC EX:EQ2+EQ3;    ADRC4 should be 314.  Text record should be a C with a value of 0 and one modification record containing two modifications.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Incorrect equates below:        
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+EQ5     EQU  LR:EXTEST;     LR is no longer allowed
+EQ6     EQU  FC:2147483648; Constant out of bounds (must be -2^31 : 2^31 - 1)
+EQ7     EQU  FM:4097;       Memory reference out of bounds
+EQ8     EQUE EX:4095+2;     Expression out of bounds
+EQ9     EQU  FM:*+1+1;      FM cannot have multiple values added/subtracted
+EQ10    EQUE EX:1+*;        Star must appear first in the expression
+EQ11    EQUE EX:*+*;        Star cannot appear twice
+EQ12    EQUE EX:EXTEST;     Local labels cannot appear in expressions
+EQ13    EQUE EX:EXT1;       External labels cannot appear in EQUE expressions
+
+
+	    END	LR:EXTEST;

@@ -1,0 +1,4 @@
+LOC	OBJ CODE	A/R/E/C	STMT	SOURCE STATEMENT
+0000	--------	A	1	test kicko fc:0;
+03E8	--------	A	2	err  kicko fc:1000;  ** Extra KICKO directive **
+03E8	--------	A	3	    end lr:err; ** Wrong label referenced **

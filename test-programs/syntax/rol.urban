@@ -1,0 +1,13 @@
+ROLTEST KICKO FC:0;
+ONE EQU FC:1;
+    ROL FC:0;
+    ROL FC:ONE;
+    ROL FC:10;
+    ROL FC:31;
+    ROL; ** Missing operand **
+    ROL FT:0; ** Missing FC **
+    ROL FC:-1; ** FC out of range **
+    ROL FC:32; ** FC out of range **
+    ROL FC:@; ** Illegal character '@' in operand value **
+    ROL F^:10; ** Illegal character '^' in operand keyword **
+    END LR:ROLTEST;

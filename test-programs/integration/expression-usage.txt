@@ -1,0 +1,61 @@
+EXUSE 	KICKO FC:100;
+
+EQ0     EQU  EX:*;          EQ0 should be 100.  
+EQ1     EQUE FM:*+13;       EQ1 should be 113. 
+EQ2     EQUE FC:214;        EQ2 should be 214.
+PI      EQU  EX:EQ0+EQ2;    PI  should be 314.
+EQ3     EQUE EX:1-2+3-4+6;  EQ4 should be 4.
+EQ4     EQU  EX:EQ1+EQ3;    EQ5 should be 117.
+EQ143   EQU  EX:EQ4+26;     EQ143 should be 143.
+EQ148   EQUE FC:148;        EQ148 should be 148.
+EQ00    EQU  EX:EQ0-EQ0;    EQ00 should be 0.
+EQ11    EQU  EX:1;          EQ11 should be 1.
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Correct usage below:
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+NUM0    NUM  FC:PI;         NUM0 should be 100, and the memory at 100 should contain 314.
+LC2     NEWLC FC:EQ1;       LC should now be 113.
+        SKIPS FC:EQ3;       LC should now be 117.
+        AEXS FC:EQ4;        Execution will start at 117.
+
+        CLRA;               Registers zero through seven now hold 0.
+        MOVD  DR:0,FC:EQ0;  Register zero now holds 100.
+        MOVDN DR:1,FC:EQ3;  Register one now holds -4.
+        IADD  DR:0,FC:EQ2;  Register zero now holds 314.
+        IMAD  DR:1,FC:EQ3;  Register one now holds -12.
+        ISRG  DR:1,FC:NUM0,NW:1;    Register one now holds 314.
+        ISUB  DR:1,FC:PI;   Register one now holds 0.
+        IMUL  DR:0,FC:EQ0;  Register zero now holds 31400.
+        IDIV  DR:0,FC:EQ3;  Register zero now holds 7850.
+        MOVD  DR:0,FC:EQ3;  Register zero now holds 4.
+        PWR   DR:0,FC:EQ3;  Register zero now holds 256.
+        ISHR  DR:0,FC:EQ3;  Register zero now holds 8.
+        ISHL  DR:0,FC:EQ3;  Register zero now holds 256.
+        MOVDN DR:1,FC:EQ0;  Register one now holds -100.    (0xFFFFFFE4)
+        ISRA  DR:1,FC:EQ3;  Register one now holds -2.      (0xFFFFFFFE)
+        ISLA  DR:1,FC:EQ3;  Register one now holds -17.     (0xFFFFFFEF)
+        ROL   DR:1,FC:EQ3;  Register one now holds -513.    (0xFFFFFEFF)
+        ROR   DR:1,FC:EQ3;  Register one now holds -17.     (0xFFFFFFEF)
+        AND   DR:0,FC:EQ0;  Register zero now holds 1.
+        OR    DR:1,FC:EQ0;  Register one now holds 1.
+        TREQ  FR:0,FC:EQ3;  LC does not change.
+        TRLT  FR:0,FC:EQ3;  LC does not change.
+        TRGT  FR:0,FC:EQ3;  LC is now 142.
+        TR    FC:EQ143;     LC is now 144. (143 + 1)
+        TRDR  FC:2,FC:EQ3;  Register two now holds -1, LC should be 145.
+        TRLK  DR:3,FC:EQ00; Register two now holds 146, LC should now be 146.
+        RET   FC:EQ148;     LC is now 148.
+        IWSR  FC:NUM0,NW:1; Writes '0x13A' to the screen.
+        IRKB  FC:EQ1,NW:1;  Reads an integer from the keyboard into memory location 113.
+        CWSR  FC:NUM0,NW:1; Writes 'd' to the screen.
+        CRKB  FC:EQ1,NW:1;  Reads a character from the keyboard into memory location 113 and overwrites the integer stored there.
+        PSH   FC:EQ3;       Stack now contains 4.
+        PSH   FC:EQ3;       Stack now contains 4, 4.
+        POP   FC:EQ1;       Overwrites the character at memory location 113 with the value 4.
+        PST   DR:2,FC:EQ3;  Register two now holds 0.
+        DMP   FC:EQ11;      Performs a level 1 memory dump.
+        HLT   FC:PI;        Halts and displays 314 to the screen.
+
+        END   LR:EXUSE;

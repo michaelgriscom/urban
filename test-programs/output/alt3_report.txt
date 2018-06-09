@@ -1,0 +1,11 @@
+LOC	OBJ CODE	A/R/E/C	STMT	SOURCE STATEMENT
+0000	--------	A	1	ALT3 KICKO FC:0;
+0000	00400005	R	2	     MOVD DR:1,FM:AB; place AB in register 1
+0001	20400006	R	3	     IADD DR:1,FM:CD; add (AB+CD)
+0002	00400007	R	4	     MOVD FR:1,DM:RES; store AB+CD into RES
+0003	A0008007	R	5	     IWSR FM:RES,NW:1; output RES
+0004	FC000000	A	6	     HLT FC:0; halt program display code 0
+0005	0000000A	A	7	AB   num FC:10; define data element
+0006	0000006F	A	8	CD   num FC:111; define data element
+0007	00000000	A	9	RES  num FC:0; define data element
+0008	--------	R	10	     END LR:ALT3; end of program

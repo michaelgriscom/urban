@@ -1,0 +1,8 @@
+LOC	OBJ CODE	A/R/E/C	STMT	SOURCE STATEMENT
+0000	--------	A	1	CLRXTEST KICKO FC:0;
+0000	48000000	A	2	FOO CLRX;
+0001	F4000000	A	3	    CLRX FC:0; ** Illegal operand **
+0002	F4000000	A	4	    CLRX DR:0; ** Illegal operand **
+0003	F4000000	A	5	    CLRX LR:FOO; ** Illegal operand **
+0004	F4000000	A	6	    CLRX FM:FOO; ** Illegal operand **
+0005	--------	R	7	    END LR:CLRXTEST;

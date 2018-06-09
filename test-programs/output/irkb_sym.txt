@@ -1,0 +1,4 @@
+Label	LC	Usage	String
+IRKBTEST	0	PRGM_NAME	
+ONE	0	EQU	1
+THREE	0	EQU	2

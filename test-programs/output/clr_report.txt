@@ -1,0 +1,14 @@
+LOC	OBJ CODE	A/R/E/C	STMT	SOURCE STATEMENT
+0000	--------	A	1	CLRTEST KICKO FC:0;
+0000	40400000	A	2	    CLR DR:1;
+0001	41C00000	A	3	    CLR DR:7;
+0002	40080000	A	4	    CLR DX:1;
+0003	F4000000	A	5	    CLR; ** Missing operand **
+0004	40000000	A	6	    CLR DR:0; ** Specs say this isn't allowed - should it be? **
+0005	--------	A	7	    CLR DR:-1; ** Illegal register address **
+0006	--------	A	8	    CLR DR:8; ** Illegal register address **
+0007	--------	A	9	    CLR DX:0; ** Illegal index address **
+0008	--------	A	10	    CLR DX:8; ** Illegal index address **
+0009	F4000000	A	11	    CLR DM:0; ** Illegal destination **
+000A	F4000000	A	12	    CLR FR:0; ** Illegal operand **
+000B	--------	R	13	    END LR:CLRTEST;

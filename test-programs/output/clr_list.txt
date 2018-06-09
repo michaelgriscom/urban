@@ -1,0 +1,78 @@
+CLRTEST KICKO FC:0;
+Line number: 0001	LC: 0	Label: CLRTEST
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: ------
+
+    CLR DR:1;
+Line number: 0002	LC: 0	Label: ------
+Instruction/Directive: CLR	Binary Equivalent: 010000
+Operand 1: DR:1		Binary Equivalent: 010000
+
+    CLR DR:7;
+Line number: 0003	LC: 1	Label: ------
+Instruction/Directive: CLR	Binary Equivalent: 010000
+Operand 1: DR:7		Binary Equivalent: 010000
+
+    CLR DX:1;
+Line number: 0004	LC: 2	Label: ------
+Instruction/Directive: CLR	Binary Equivalent: 010000
+Operand 1: DX:1		Binary Equivalent: 010000
+
+    CLR; ** Missing operand **
+Line number: 0005	LC: 3	Label: ------
+Instruction/Directive: CLR	Binary Equivalent: 010000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    CLR DR:0; ** Specs say this isn't allowed - should it be? **
+Line number: 0006	LC: 4	Label: ------
+Instruction/Directive: CLR	Binary Equivalent: 010000
+Operand 1: DR:0		Binary Equivalent: 010000
+
+    CLR DR:-1; ** Illegal register address **
+Line number: 0007	LC: 5	Label: ------
+Instruction/Directive: CLR	Binary Equivalent: 010000
+Operand 1: DR:-1		Binary Equivalent: 010000
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    CLR DR:8; ** Illegal register address **
+Line number: 0008	LC: 6	Label: ------
+Instruction/Directive: CLR	Binary Equivalent: 010000
+Operand 1: DR:8		Binary Equivalent: 010000
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    CLR DX:0; ** Illegal index address **
+Line number: 0009	LC: 7	Label: ------
+Instruction/Directive: CLR	Binary Equivalent: 010000
+Operand 1: DX:0		Binary Equivalent: 010000
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    CLR DX:8; ** Illegal index address **
+Line number: 0010	LC: 8	Label: ------
+Instruction/Directive: CLR	Binary Equivalent: 010000
+Operand 1: DX:8		Binary Equivalent: 010000
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    CLR DM:0; ** Illegal destination **
+Line number: 0011	LC: 9	Label: ------
+Instruction/Directive: CLR	Binary Equivalent: 010000
+Operand 1: DM:0		Binary Equivalent: 010000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    CLR FR:0; ** Illegal operand **
+Line number: 0012	LC: A	Label: ------
+Instruction/Directive: CLR	Binary Equivalent: 010000
+Operand 1: FR:0		Binary Equivalent: 010000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    END LR:CLRTEST;
+Line number: 0013	LC: B	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:CLRTEST		Binary Equivalent: ------
+

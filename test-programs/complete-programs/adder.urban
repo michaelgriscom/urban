@@ -1,0 +1,44 @@
+adder kicko fc:0;
+;Read in an arbitrary number of numbers, then print their sum.
+
+;Keep the partial sum in r0
+     movd dr:0,lt:0;
+
+;Print a prompt
+loop cwsr fm:pr,nw:7;
+
+;Input a number
+     irkb dm:in,nw:1;
+
+;Stop if it's zero
+     movd dr:1,fm:in;
+     treq fr:1,dm:end;
+
+;Not zero - add in the input to the running sum
+     iadd dr:0,fm:in;
+
+     tr dm:loop;
+
+;End of program - print the output, then quit
+end  cwsr fm:pr2,nw:3;
+     movd dm:in,fr:0;
+     iwsr fm:in,nw:1;
+     hlt fc:0;
+
+in   num fc:0;
+
+; 'Enter a number (0 to quit)'
+pr   char st:'Ente';
+     char st:'r a ';
+     char st:'numb';
+     char st:'er (';
+     char st:'0 to';
+     char st:' qui';
+     char st:'t)  ';
+
+; 'the sum is:'     
+pr2  char st:'The ';
+     char st:'sum ';
+     char st:'is  ';
+
+     end lr:adder;

@@ -1,0 +1,4 @@
+Label	LC	Usage	String
+CWSRTEST	0	PRGM_NAME	
+ONE	0	EQU	1
+THREE	0	EQU	2

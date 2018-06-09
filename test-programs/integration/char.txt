@@ -1,0 +1,8 @@
+CHARTEST 	KICKO FC:100;
+        CHAR st:''; HEX= 20202020
+ 	CHAR st:'''; HEX= 27202020
+	char st:'"'; hex = 22202020
+	char st:'ok'''; hex = 6F6B2727
+	char st:'oke'''; too many chars
+	CHAR st:'12345'; too many chars
+	    END	LR:EXTEST;

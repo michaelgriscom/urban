@@ -1,0 +1,6 @@
+ALT11  kicko fc:350       ;15E   ;pro Length should be zero
+r2     EQU   fc:255       ;15E 
+r3     equ   fc:0         ;15E 
+       ENT   lr:r2        ;15E 
+       Ext   lr:ex1       ;15E 
+       end   lr:ALT11;

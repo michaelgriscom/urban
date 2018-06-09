@@ -1,0 +1,57 @@
+HLTTEST KICKO FC:0;
+Line number: 0001	LC: 0	Label: HLTTEST
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: ------
+
+    HLT FC:0;
+Line number: 0002	LC: 0	Label: ------
+Instruction/Directive: HLT	Binary Equivalent: 111111
+Operand 1: FC:0		Binary Equivalent: 111111
+
+    HLT FC:-1;
+Line number: 0003	LC: 1	Label: ------
+Instruction/Directive: HLT	Binary Equivalent: 111111
+Operand 1: FC:-1		Binary Equivalent: 111111
+
+    HLT FC:4095;
+Line number: 0004	LC: 2	Label: ------
+Instruction/Directive: HLT	Binary Equivalent: 111111
+Operand 1: FC:4095		Binary Equivalent: 111111
+
+    HLT FC:-4096;
+Line number: 0005	LC: 3	Label: ------
+Instruction/Directive: HLT	Binary Equivalent: 111111
+Operand 1: FC:-4096		Binary Equivalent: 111111
+
+    HLT; ** Missing operand **
+Line number: 0006	LC: 4	Label: ------
+Instruction/Directive: HLT	Binary Equivalent: 111111
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    HLT FT:0; ** Missing FC **
+Line number: 0007	LC: 5	Label: ------
+Instruction/Directive: HLT	Binary Equivalent: 111111
+Operand 1: FT:0		Binary Equivalent: 111111
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    HLT FC:-4097; ** FC out of range **
+Line number: 0008	LC: 6	Label: ------
+Instruction/Directive: HLT	Binary Equivalent: 111111
+Operand 1: FC:-4097		Binary Equivalent: 111111
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    HLT FC:4096; ** FC out of range **
+Line number: 0009	LC: 7	Label: ------
+Instruction/Directive: HLT	Binary Equivalent: 111111
+Operand 1: FC:4096		Binary Equivalent: 111111
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    END LR:HLTTEST;
+Line number: 0010	LC: 8	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:HLTTEST		Binary Equivalent: ------
+

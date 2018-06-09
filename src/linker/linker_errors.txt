@@ -1,0 +1,51 @@
+100 Too many record fields
+101 Inconsistent program name within header record
+102 Header Record has incorrect number of records
+103 End record has incorrect number of total records
+104 End record has incorrect number of linking records
+105 End record has incorrect number of text records
+106 End record has incorrect number of modification records
+107 More than 4 modifications for one text record (nonstandard functionality)
+108 Module did not have an End Record
+109 Modification Records exceeds expected amount
+201 Invalid label 
+202 Invalid memory address format 
+203 Memory address out of range
+204 Invalid module length
+205 Invalid execution start address
+206 Record contains incorrect program name
+207 End record contains incorrect program name 
+208 Error in text field: Bad format (expected hex string)
+209 Error in text field: Out of range (expected eight hex digits)
+210 Error in relocation field: Illegal flag (expected A, R, E, or C)
+211 Error in modification count field: Out of range (expected 0..4; any nonnegative is allowed)
+212 Error in modification count field: Bad format (expected (one digit) hex string)
+213 Execution Address is out of range
+214 Memory Address already in use
+215 End Record appears without header record
+216 Invalid Record Type
+217 Total # of records is not valid hex
+218 # of Linking records is not valid hex
+219 # of Text records is not valid hex
+220 # of Modification records is not valid hex	
+221 Invalid Relocation Type
+222 Previous Header was not ended with an End Record
+223 Record does not contain enough fields
+224 Program goes out of memory range
+225	Header Module Length is not valid hex
+226 Header Module Length is out of range
+227 Execution Address is not valid hex
+228 Error in modification sign: Expected "+" or "-"
+229 Error in modification symbol: Illegal symbol name
+230 Error in modification symbol: Undefined symbol
+231 Error in number of modifications: Bad format (expected one hex digit)
+232 Error in number of modifications: Out of range (expected 1..4)
+233 Error in address field: Bad format (expected hex string)
+234 Error in address field: Out of range (expected 0..4095)
+235 Error in text record: Wrong number of fields (expected 6)
+236 Error in modification record: Wrong number of fields (expected 4+2*m, m=1,2,3, or 4)
+237 Error in address field: Out of module range
+238 Relocated address is out of range (0..4095)
+239	Error in modification record: No text record at the memory location
+240	Header record was invalid: Could not parse following records
+300 Missing header record

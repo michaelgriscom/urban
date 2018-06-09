@@ -1,0 +1,10 @@
+HLTTEST KICKO FC:0;
+    HLT FC:0;
+    HLT FC:-1;
+    HLT FC:4095;
+    HLT FC:-4096;
+    HLT; ** Missing operand **
+    HLT FT:0; ** Missing FC **
+    HLT FC:-4097; ** FC out of range **
+    HLT FC:4096; ** FC out of range **
+    END LR:HLTTEST;

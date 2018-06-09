@@ -1,0 +1,19 @@
+H:MultipleHeaders:000000:0200:5010:2011300,06,06,07:1000:URBAN-ASM:MultipleHeaders
+  Error 213: Execution Address is out of range
+
+E:0000:0000:0000:0000:MultipleHeaders
+  Error 215: End Record appears without header record
+
+H:AnotherHeader:000000:0100:5010:2011300,06,06,07:1000:URBAN-ASM:AnotherHeader
+  Error 213: Execution Address is out of range
+
+E:0000:0000:0000:0000:AnotherHeader
+  Error 215: End Record appears without header record
+
+H:CheckTotalExecutionSize:000000:0200:5010:2011300,06,06,07:1000:URBAN-ASM:MultipleHeaders
+  Error 101: Inconsistent program name within header record
+  Error 213: Execution Address is out of range
+
+E:0000:0000:0000:0000:CheckTotalExecutionSize
+  Error 215: End Record appears without header record
+

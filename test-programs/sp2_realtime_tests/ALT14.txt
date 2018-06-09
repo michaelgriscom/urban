@@ -1,0 +1,7 @@
+ALT14   kicko  fc:0         ;0  can we fill the last word of memory
+p1      newlc  fc:0         ;0
+p2      newlc  fc:0         ;0
+p3      newlc  fc:0         ;0
+P3end   newlc  fc:4095      ;FFF
+        HLT    fc:2        ;FFF
+        end    lr:ALT14;

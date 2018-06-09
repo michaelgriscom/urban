@@ -1,0 +1,5 @@
+ALT20 kicko  fc:4095;          :FFF
+      iADD  DR:1,FM:*+10;      :FFF  -----008 R
+      iSUB  DR:1,FM:*-1;       :100    -----FFF R
+      HLT   fc:100;            :101    FC000064 A  
+      end   lr:ALT20;  

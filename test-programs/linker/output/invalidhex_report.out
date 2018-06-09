@@ -1,0 +1,37 @@
+H:InvalidHex:000000:0100:0010:2011300,06,06,07:1000:URBAN-ASM:InvalidHex
+L:VAR1:notHex:InvalidHex
+  Error 202: Invalid memory address format 
+
+T:notHex:00000000:C:1:InvalidHex
+  Error 233: Error in address field: Bad format (expected hex string)
+
+M:000000:1:+:VAR1:InvalidHex
+  Error 230: Error in modification symbol: Undefined symbol
+  Error 239: Error in modification record: No text record at the memory location
+
+T:notHex:00000000:C:1:InvalidHex
+  Error 233: Error in address field: Bad format (expected hex string)
+
+M:notHex:1:+:VAR1:InvalidHex
+  Error 233: Error in address field: Bad format (expected hex string)
+  Error 230: Error in modification symbol: Undefined symbol
+
+T:000002:notHex8d:C:1:InvalidHex
+  Error 208: Error in text field: Bad format (expected hex string)
+
+M:000002:1:+:VAR1:InvalidHex
+  Error 230: Error in modification symbol: Undefined symbol
+
+T:000003:notHex8d:C:1:InvalidHex
+  Error 208: Error in text field: Bad format (expected hex string)
+
+M:notHex:1:+:VAR1:InvalidHex
+  Error 233: Error in address field: Bad format (expected hex string)
+  Error 230: Error in modification symbol: Undefined symbol
+
+E:0000:0000:0000:0000:InvalidHex
+  Error 106: End record has incorrect number of modification records
+  Error 104: End record has incorrect number of linking records
+  Error 103: End record has incorrect number of total records
+  Error 105: End record has incorrect number of text records
+

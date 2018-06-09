@@ -1,0 +1,3 @@
+ALT16 kicko  fc:4095;  :0,FFF    FILL LAST WORD ON PAGE 0
+      num  fc:2000;    :0,FFF  000007D0  A
+      end  lr:ALT16;  : program length is 1

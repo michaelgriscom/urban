@@ -1,0 +1,16 @@
+mid      kicko fc:12; 
+Earth    num   fc:128;           C  00000080  A
+Saturn   num   fc:100;           D  00000064  A
+Pluto    char  st:'DOG';         E  444F4720  A
+         EXT   lr:mars;          F  n/a  n/a
+Venus    AEXS  FM:*;             F  n/a  n/a
+FIVE     EQU   fc:5;             F  n/a  n/a
+         MOVD  DR:4,FM:Earth;       F  0300000C  R
+         IADD  DR:4,FM:FIVE;    10  21000005  R
+         imul  DR:4,FL:10;      11  3500200A  A
+         iDIV  DR:2,FM:mars;    12  38800000  E
+         MOVD  DR:1,FM:Saturn;  13  0040000D  R
+         IWSR  FM:Saturn,NW:1;  14  A000800D  R
+         Hlt   FC:0;            15  FC000000  A
+	 ADRC EX:mars-Pluto+Venus+mars-mars;
+         END   LR:mid;

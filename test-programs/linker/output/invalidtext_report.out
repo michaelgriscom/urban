@@ -1,0 +1,68 @@
+H:InvalidText:000000:0100:599010:2011300,06,06,07:1000:URBAN-ASM:InvalidText
+  Error 213: Execution Address is out of range
+
+L:var:000010:InvalidText
+  Error 240: Header record was invalid: Could not parse following records
+
+T:000000:Q0000080:C:1:InvalidText
+  Error 206: Record contains incorrect program name
+  Error 208: Error in text field: Bad format (expected hex string)
+  Error 240: Header record was invalid: Could not parse following records
+
+M:000000:1:+:var:InvalidText
+  Error 206: Record contains incorrect program name
+  Error 230: Error in modification symbol: Undefined symbol
+
+T:000001:FF0000080:C:1:InvalidText
+  Error 240: Header record was invalid: Could not parse following records
+  Error 206: Record contains incorrect program name
+  Error 209: Error in text field: Out of range (expected eight hex digits)
+
+M:000001:1:+:var:InvalidText
+  Error 206: Record contains incorrect program name
+  Error 230: Error in modification symbol: Undefined symbol
+
+T:Q00002:00000080:C:1:InvalidText
+  Error 233: Error in address field: Bad format (expected hex string)
+  Error 240: Header record was invalid: Could not parse following records
+  Error 206: Record contains incorrect program name
+
+M:000002:1:+:var:InvalidText
+  Error 206: Record contains incorrect program name
+  Error 230: Error in modification symbol: Undefined symbol
+  Error 239: Error in modification record: No text record at the memory location
+
+T:000003:00000080:Q:1:InvalidText
+  Error 206: Record contains incorrect program name
+  Error 210: Error in relocation field: Illegal flag (expected A, R, E, or C)
+  Error 240: Header record was invalid: Could not parse following records
+
+M:000003:1:+:var:InvalidText
+  Error 206: Record contains incorrect program name
+  Error 230: Error in modification symbol: Undefined symbol
+
+T:000004:00000100:C:qq:InvalidText
+  Error 240: Header record was invalid: Could not parse following records
+  Error 212: Error in modification count field: Bad format (expected (one digit) hex string)
+  Error 206: Record contains incorrect program name
+
+M:000004:1:+:var:InvalidText
+  Error 206: Record contains incorrect program name
+  Error 230: Error in modification symbol: Undefined symbol
+
+T:000004:00002000:A:0:InvalidText
+  Error 206: Record contains incorrect program name
+  Error 240: Header record was invalid: Could not parse following records
+
+T:InvalidText
+  Error 212: Error in modification count field: Bad format (expected (one digit) hex string)
+  Error 233: Error in address field: Bad format (expected hex string)
+  Error 206: Record contains incorrect program name
+  Error 235: Error in text record: Wrong number of fields (expected 6)
+  Error 210: Error in relocation field: Illegal flag (expected A, R, E, or C)
+  Error 208: Error in text field: Bad format (expected hex string)
+  Error 240: Header record was invalid: Could not parse following records
+
+E:000F:0001:0007:0005:InvalidText
+  Error 215: End Record appears without header record
+

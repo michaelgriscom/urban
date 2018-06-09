@@ -1,0 +1,23 @@
+TRDRTEST KICKO FC:0;
+FIVE EQU FC:5;
+    TRDR FR:0,DM:0;
+    TRDR FR:7,DM:4095;
+    TRDR FX:1,DM:0;
+    TRDR FX:7,DM:4095;
+    TRDR FR:FIVE,DM:2000;
+    TRDR FX:3,DM:FIVE;
+    TRDR; ** Missing operands **
+    TRDR DM:0; ** Missing FR **
+    TRDR FR:0; ** Missing DM **
+    TRDR FX:1; ** Missing DM **
+    TRDR FR:-1,DM:0; ** Illegal register address **
+    TRDR FR:8,DM:0; ** Illegal register address **
+    TRDR FX:0,DM:0; ** Illegal index address **
+    TRDR FX:8,DM:0; ** Illegal index address **
+    TRDR FR:0,DM:-1; ** Illegal memory address **
+    TRDR FR:0,DM:4096; ** Illegal memory address **
+    TRDR FR:0,DM:0,LR:TRDRTEST; ** Extra operand **
+    TRDR FR:&,DM:7; ** Illegal character '&' in operand value **
+    TRDR FR:2,DM:); ** Illegal character ')' in operand value **
+    TRDR /T:0,DM:0; ** Illegal character '/' in operand keyword **
+    END LR:TRDRTEST;

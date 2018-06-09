@@ -1,0 +1,6 @@
+ENTTEST	KICKO FC:100;
+LBL1	NUM FC:0;
+        ENT LR:LBL1; should get L record
+LBL2 	NUM FC:5; should not get L record
+LBL3	EXT LR:LBL4; should not get L record
+	END	LR:ENTTEST;

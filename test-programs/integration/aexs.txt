@@ -1,0 +1,6 @@
+AEXS	KICKO FC:100;
+TEST    NUM FC:-1;
+	AEXS FC:-1; error: out of range
+	AEXS FC: 12; ok
+	AEXS FC:2; error: can't have multiple AEXS
+	END	LR:AEXS;

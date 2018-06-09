@@ -1,0 +1,59 @@
+H:Filler:0000:0010:0000:2012001,22,00,00:0001:URBAN-ASM:Filler
+T:0000:00000000:A:0:Filler
+T:0001:00000000:A:0:Filler
+T:0002:00000000:A:0:Filler
+T:0003:00000000:A:0:Filler
+T:0004:00000000:A:0:Filler
+T:0005:00000000:A:0:Filler
+T:0006:00000000:A:0:Filler
+T:0007:00000000:A:0:Filler
+T:0008:00000000:A:0:Filler
+T:0009:00000000:A:0:Filler
+T:000A:00000000:A:0:Filler
+T:000B:00000000:A:0:Filler
+T:000C:00000000:A:0:Filler
+T:000D:00000000:A:0:Filler
+T:000E:00000000:A:0:Filler
+T:000F:00000000:A:0:Filler
+E:0012:0000:0010:0000:Filler
+H:External:0000:0004:0000:2012001,00,00,00:0001:URBAN-ASM:External
+T:0000:00000000:A:0:External
+T:0001:00000000:A:0:External
+T:0002:00000000:A:0:External
+T:0003:00000000:A:0:External
+L:Label1:0001:External
+L:Label2:0003:External
+L:LabelX:0004:External
+  Error 203: Memory address out of range
+
+L:LabelY:000$:External
+  Error 202: Invalid memory address format 
+
+E:000A:0004:0004:0000:External
+H:Client:0010:0008:0010:2012001,00,00,00:001:URBAN-ASM:Client
+T:0010:00000000:C:2:Client
+M:0010:2:+:Label1:+:Label2:Client
+T:0011:00000000:C:4:Client
+M:0011:4:+:Label1:+:Label1:+:Label1:+:Label1:Client
+T:0012:00000FFF:C:1:Client
+M:0012:1:-:Label1:Client
+T:0013:00000000:C:4:Client
+M:0013:4:+:Label1:-:Label1:+:Label2:-:Label2:Client
+T:0014:00000000:C:3:Client
+M:0014:1:+:Foobar:-:Label1:-:Label2:Client
+  Error 230: Error in modification symbol: Undefined symbol
+  Error 236: Error in modification record: Wrong number of fields (expected 4+2*m, m=1,2,3, or 4)
+
+T:0015:00000000:C:1:Client
+M:0015:1:^:Label1:Client
+  Error 228: Error in modification sign: Expected "+" or "-"
+
+T:0016:00000000:C:1:Client
+M:0016:&:+:Label1:Client
+  Error 232: Error in number of modifications: Out of range (expected 1..4)
+
+T:0017:00000000:C:1:Client
+M:0017:2:+:Label2:Client
+  Error 236: Error in modification record: Wrong number of fields (expected 4+2*m, m=1,2,3, or 4)
+
+E:0012:0000:0008:0008:Client

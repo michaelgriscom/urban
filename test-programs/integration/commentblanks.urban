@@ -1,0 +1,7 @@
+SCBLNK KICKO FC:20;
+
+; the previous line is blank (specifically with no whitespace) 
+	
+; on the contrary the previous line contains whitespace
+	; should complain that there is no operation
+	END SCBLNK

@@ -1,0 +1,14 @@
+LOC	OBJ CODE	A/R/E/C	STMT	SOURCE STATEMENT
+0000	--------	A	1	ROLTEST KICKO FC:0;
+0000	--------	A	2	ONE EQU FC:1;
+0000	F4000000	A	3	    ROL FC:0;
+0001	F4000000	A	4	    ROL FC:ONE;
+0002	F4000000	A	5	    ROL FC:10;
+0003	F4000000	A	6	    ROL FC:31;
+0004	F4000000	A	7	    ROL; ** Missing operand **
+0005	F4000000	A	8	    ROL FT:0; ** Missing FC **
+0006	F4000000	A	9	    ROL FC:-1; ** FC out of range **
+0007	F4000000	A	10	    ROL FC:32; ** FC out of range **
+0008	F4000000	A	11	    ROL FC:@; ** Illegal character '@' in operand value **
+0009	F4000000	A	12	    ROL F^:10; ** Illegal character '^' in operand keyword **
+000A	--------	R	13	    END LR:ROLTEST;

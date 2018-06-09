@@ -1,0 +1,12 @@
+ALT10  kicko fc:256            ;0,100
+       ext  lr:subprocedure    ;N/A
+       ent  lr:prm1            ;N/A
+       char st:'aab'           ;0,100    61616220 A
+       iadd dr:3,fm:prm1       ;0,101    -----104 R
+       rol  dr:3,fc:3         ;0,102    -------3 A
+       HLT  fc:2               ;0,103    FC000002 A
+prm1   num  fc:2147483647      ;0,104    7FFFFFFF A
+prm2   num  fc:-2147483648     ;0,105    80000000 A
+       ADrC ex:*+2             ;0,106    00000108 R
+       iadd  dr:1,fm:subprocedure ;0,107    -----000 M
+       end   lr:ALT10;

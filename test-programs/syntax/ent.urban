@@ -1,0 +1,32 @@
+ENTTEST KICKO FC:0;
+; Currently only tests keywords
+
+        ENT LR:MUD1;
+        ENT LR:MUD2,LR:MUD3,LR:MUD4,LR:MUD5;
+        ENT LR:MUD6,LR:MUD7,LR:MUD8,LR:MUD9,LR:MUD10;   ** Only allowed to have up to 5 LR's **
+        ENT DM:1;   ** DM invalid keyword argument **
+        ENT DR:1;   ** DR invalid keyword argument **
+        ENT DX:1;   ** DX invalid keyword argument **
+        ENT EX:1;   ** EX invalid keyword argument **
+        ENT FC:1;   ** FC invalid keyword argument **
+        ENT FL:1;   ** FL invalid keyword argument **
+        ENT FM:1;   ** FM invalid keyword argument **
+        ENT FR:1;   ** FR invalid keyword argument **
+        ENT FS:1;   ** FS invalid keyword argument **
+        ENT FX:1;   ** FX invalid keyword argument **
+        ENT NW:1;   ** NW invalid keyword argument **
+        ENT ST:'1'; ** ST invalid keyword argument **
+
+; Define all the entry variables
+MUD1    AND FR:0,DM:0;
+MUD2    AND FR:0,DM:0;
+MUD3    AND FR:0,DM:0;
+MUD4    AND FR:0,DM:0;
+MUD5    AND FR:0,DM:0;
+MUD6    AND FR:0,DM:0;
+MUD7    AND FR:0,DM:0;
+MUD8    AND FR:0,DM:0;
+MUD9    AND FR:0,DM:0;
+MUD10   AND FR:0,DM:0;
+
+        END LR:ENTTEST;

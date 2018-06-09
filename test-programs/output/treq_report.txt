@@ -1,0 +1,24 @@
+LOC	OBJ CODE	A/R/E/C	STMT	SOURCE STATEMENT
+0000	--------	A	1	TREQTEST KICKO FC:0;
+0000	--------	A	2	FIVE EQU FC:5;
+0000	80000000	R	3	    TREQ FR:0,DM:0;
+0001	81C00FFF	R	4	    TREQ FR:7,DM:4095;
+0002	F4000000	A	5	    TREQ FX:1,DM:0;
+0003	F4000000	A	6	    TREQ FX:7,DM:4095;
+0004	814007D0	R	7	    TREQ FR:FIVE,DM:2000;
+0005	F4000000	A	8	    TREQ FX:3,DM:FIVE;
+0006	F4000000	A	9	    TREQ; ** Missing operands **
+0007	F4000000	A	10	    TREQ DM:0; ** Missing FR **
+0008	F4000000	A	11	    TREQ FR:0; ** Missing DM **
+0009	F4000000	A	12	    TREQ FX:1; ** Missing DM **
+000A	--------	R	13	    TREQ FR:-1,DM:0; ** Illegal register address **
+000B	--------	R	14	    TREQ FR:8,DM:0; ** Illegal register address **
+000C	F4000000	A	15	    TREQ FX:0,DM:0; ** Illegal index address **
+000D	F4000000	A	16	    TREQ FX:8,DM:0; ** Illegal index address **
+000E	--------	R	17	    TREQ FR:0,DM:-1; ** Illegal memory address **
+000F	--------	R	18	    TREQ FR:0,DM:4096; ** Illegal memory address **
+0010	F4000000	A	19	    TREQ FR:0,DM:0,LR:TREQTEST; ** Extra operand **
+0011	F4000000	A	20	    TREQ FR:&,DM:7; ** Illegal character '&' in operand value **
+0012	F4000000	R	21	    TREQ FR:2,DM:); ** Illegal character ')' in operand value **
+0013	F4000000	A	22	    TREQ /T:0,DM:0; ** Illegal character '/' in operand keyword **
+0014	--------	R	23	    END LR:TREQTEST;

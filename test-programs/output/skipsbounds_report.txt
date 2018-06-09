@@ -1,0 +1,6 @@
+LOC	OBJ CODE	A/R/E/C	STMT	SOURCE STATEMENT
+0000	--------	A	1	BNDCHK KICKO FC:0;
+0014	--------	A	2		newlc FC:20; no errors
+0014	--------	A	3		SKIPS FC:4090; although 4090 is within memory, check that 20 + 4090 is in memory
+100E	--------	A	4		MOVD DR:0,FM:-1;
+100F	--------	A	5		END LR:BNDCHK;

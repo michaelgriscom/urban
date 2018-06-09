@@ -1,0 +1,13 @@
+PWRTEST KICKO FC:0;
+ONE EQU FC:1;
+    PWR FC:0;
+    PWR FC:ONE;
+    PWR FC:10;
+    PWR FC:31;
+    PWR; ** Missing operand **
+    PWR FT:0; ** Missing FC **
+    PWR FC:-1; ** FC out of range **
+    PWR FC:32; ** FC out of range **
+    PWR FC:@; ** Illegal character '@' in operand value **
+    PWR F^:10; ** Illegal character '^' in operand keyword **
+    END LR:PWRTEST;

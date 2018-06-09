@@ -1,0 +1,27 @@
+ALT12   kicko  fc:120                  ;0,78
+        sKipS  fc:100                  ;0,78
+myDec   num    fc:10                   ;0,A0
+myHex   NUM    fc:33                   ;0,A1
+myOct   CHAR   ST:' 77'                ;0,A2
+        add    DR:,EX:*+10             ;0,A3  S-field should be A3+A
+        sub    dr:1,ex:*-2             ;0,A4  S-field should be A4-2
+XX      equ    fc:1                    ;0,A5 
+yy      equ    fc:2                    ;0,A5 
+        movd   dr:1,fM:result          ;0,A5 
+        movd    fr:XX,dm:result        ;0,A6  Equivalent to MOVD 1,RESULT
+        movd    fr:XX,dm:result,dx:XX  ;0,A7  Equivalent to MOVD 1,RESULT(1)
+        movd    dr:1,dm:result,dx:XX   ;0,A8  Equivalent to MOVD 1,RESULT(1)
+        movd    dr:1,ex:*+yy           ;0,A9  Equivalent to MOVD 1,*+2
+        movd    fm:1,ex:*-yy           ;0,AA  maybe an error
+zz      newlc   fc:172                 ;0,AC 
+aa      EQU     fc:500                 ;0,AC 
+AA      newlc   fc:aa        ;          2,1F4
+        Ent    lr:myVar
+        tr     fm:*+2                  ;2,1F4  -----1F6 R
+        NOP                            ;2,1F5
+        ishL    dr:1,srg:XX            ;2,1F6  -------1 A   
+;0,comment
+        HLT  2                         ;2,1F7  FC000002 A
+;0,consts and temps
+result  num      fc:0                  ;2,1F8
+        end   lr:ALT12;

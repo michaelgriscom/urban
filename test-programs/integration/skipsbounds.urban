@@ -1,0 +1,5 @@
+BNDCHK KICKO FC:0;
+	newlc FC:20; no errors
+	SKIPS FC:4090; although 4090 is within memory, check that 20 + 4090 is in memory
+	MOVD DR:0,FM:-1;
+	END LR:BNDCHK;

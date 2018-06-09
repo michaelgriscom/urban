@@ -1,0 +1,8 @@
+ALT15  kicko  fc:0      ;0
+X1     newlc  fc:100    ;64
+X2     newlc  fc:1000   ;3E8
+       newlc  fc:1001   ;3E9
+X3     newlc  fc:4095   ;FFF
+; should produce just an H and E object file record
+; PGM LENGTH SHOULD BE 4096 1000 IN HEX
+        END LR:ALT15;

@@ -1,0 +1,6 @@
+H:BNDCHK:0000:100F:0000:2012136,23,26,54:0019:URBAN-ASM:BNDCHK
+  Error 226: Header Module Length is out of range
+
+E:0002:0000:0000:0000:BNDCHK
+  Error 215: End Record appears without header record
+

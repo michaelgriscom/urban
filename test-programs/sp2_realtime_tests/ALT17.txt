@@ -1,0 +1,2 @@
+ALT17 kicko  fc:2000;  :0,7d0 OBJECT FILE H AND E RECORDS ONLY
+      end  lr:ALT17;

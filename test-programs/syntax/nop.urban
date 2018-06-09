@@ -1,0 +1,7 @@
+NOPTEST KICKO FC:0;
+FOO NOP;
+    NOP FC:0; ** Illegal operand **
+    NOP DR:0; ** Illegal operand **
+    NOP LR:FOO; ** Illegal operand **
+    NOP FM:FOO; ** Illegal operand **
+    END LR:NOPTEST;

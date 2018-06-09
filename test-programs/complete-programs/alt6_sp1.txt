@@ -1,0 +1,13 @@
+LT6 KICKO FC:0;
+      ext   external#;
+      MOVD  DR:9,FL:999999999999999;        
+      ISUB  DR:1,FM:external#;  
+      MOVD  FR:1,,,,,DM:RES;
+xxx   ISHR  DR:2,FC:10;
+      ISHR  DR:2,FC:50;
+      IDIV  DXX:4,FM:+000;
+      IDIV  dr:8,FL:-20;
+      ImuL  DR:2,FL:+20;       
+      HLT   FC:200;             
+RES   num   FC:0;              
+      END   LR:AlT6;

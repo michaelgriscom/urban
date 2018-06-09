@@ -1,0 +1,32 @@
+ALT13   kicko fc:120                   ;78
+        sKipS fc:100                   ;78  A
+myDec   num  FC:10                     ;DC 0000000A A
+myHex   NUM  FC:33                     ;DD 00000033 A
+myOct   CHAR  ST:' 77'                 ;DE
+        iadd  dr:1,fm:myDec            ;DF
+        isub  dr:1,lt:007              ;E0
+        MOVD  FR:1,DM:result           ;E1
+        Ent   lr:myVar                 ;E2
+        TR    DM:*+2                   ;E3 JUMP
+        NOP                            ;E4
+        ISHR  DR:1,SRG:0               ;E5 a nop
+        MOVD  DR:2,fm:result           ;E6
+newVar  NUM  fc:4                      ;E7 00000004 A
+        MOVD  DR:2,FM:newVar           ;E8
+        imul  ;NO OPERAND              ;E9
+        movd  FR:2,DM:resultTwo        ;EA
+myEqu   EQU  ex:resutlTwo+result+10    ;EB SHOULD BE AN ERROR  then a NOP
+        ADRC ex:resutlTwo+result+10    ;EC SHOULD WORK
+;comment
+        HLT  fc:2                      ;ED  FC000002 A
+;consts and temps
+str1       CHAR      ST:'Thi'          ;EE This is my test program
+           CHAR      ST:'s i'          ;EF 
+           CHAR      ST:'s m'          ;F0 
+           CHAR      ST:'y t'          ;F1
+           CHAR      ST:'est'          ;F2
+           CHAR      ST:' pgm'         ;F3
+myVar      NUM       FC:42             ;F4
+result     num       FC:0              ;F5
+resultTwo  num       FC:0              ;F6
+           end   lr:ALT13;

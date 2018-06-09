@@ -1,0 +1,54 @@
+ALT3 KICKO FC:0;
+Line number: 0001	LC: 0	Label: ALT3
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: ------
+
+     MOVD DR:1,FM:AB; place AB in register 1
+Line number: 0002	LC: 0	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:1		Binary Equivalent: 001
+Operand 2: FM:AB		Binary Equivalent: ------
+
+     IADD DR:1,FM:CD; add (AB+CD)
+Line number: 0003	LC: 1	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DR:1		Binary Equivalent: 001
+Operand 2: FM:CD		Binary Equivalent: ------
+
+     MOVD FR:1,DM:RES; store AB+CD into RES
+Line number: 0004	LC: 2	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: FR:1		Binary Equivalent: 001
+Operand 2: DM:RES		Binary Equivalent: ------
+
+     IWSR FM:RES,NW:1; output RES
+Line number: 0005	LC: 3	Label: ------
+Instruction/Directive: IWSR	Binary Equivalent: 101000
+Operand 1: FM:RES		Binary Equivalent: ------
+Operand 2: NW:1		Binary Equivalent: 0001
+
+     HLT FC:0; halt program display code 0
+Line number: 0006	LC: 4	Label: ------
+Instruction/Directive: HLT	Binary Equivalent: 111111
+Operand 1: FC:0		Binary Equivalent: 0000000000000
+
+AB   num FC:10; define data element
+Line number: 0007	LC: 5	Label: AB
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:10		Binary Equivalent: 00000000000000000000000000001010
+
+CD   num FC:111; define data element
+Line number: 0008	LC: 6	Label: CD
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:111		Binary Equivalent: 00000000000000000000000001101111
+
+RES  num FC:0; define data element
+Line number: 0009	LC: 7	Label: RES
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: 00000000000000000000000000000000
+
+     END LR:ALT3; end of program
+Line number: 0010	LC: 8	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:ALT3		Binary Equivalent: ------
+

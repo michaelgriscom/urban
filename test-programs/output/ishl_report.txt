@@ -1,0 +1,14 @@
+LOC	OBJ CODE	A/R/E/C	STMT	SOURCE STATEMENT
+0000	--------	A	1	ISHLTEST KICKO FC:0;
+0000	--------	A	2	ONE EQU FC:1;
+0000	F4000000	A	3	    ISHL FC:0;
+0001	F4000000	A	4	    ISHL FC:ONE;
+0002	F4000000	A	5	    ISHL FC:10;
+0003	F4000000	A	6	    ISHL FC:31;
+0004	F4000000	A	7	    ISHL; ** Missing operand **
+0005	F4000000	A	8	    ISHL FT:0; ** Missing FC **
+0006	F4000000	A	9	    ISHL FC:-1; ** FC out of range **
+0007	F4000000	A	10	    ISHL FC:32; ** FC out of range **
+0008	F4000000	A	11	    ISHL FC:@; ** Illegal character '@' in operand value **
+0009	F4000000	A	12	    ISHL F^:10; ** Illegal character '^' in operand keyword **
+000A	--------	R	13	    END LR:ISHLTEST;

@@ -1,0 +1,47 @@
+IMULTEST KICKO FC:0;
+ONE EQU FC:1;
+TWO EQU FC:2;
+    IMUL FR:0,DM:0;
+    IMUL FM:100,DR:1;
+    IMUL FR:4,DM:1000,DX:1;
+    IMUL FM:2222,FX:1,DR:6;
+    IMUL DR:7,FT:0;
+    IMUL DM:4095,FT:-4096;
+    IMUL DM:0,DX:1,FT:4095;
+    IMUL DM:LBL,FR:0;
+    IMUL FM:LBL,DR:1;
+    IMUL FM:ONE,DR:TWO;
+    IMUL FM:0,DR:ONE;
+    IMUL DM:LBL,DX:ONE,FR:TWO;
+    IMUL DR:0,FM:*;
+    IMUL DR:0,FM:*+10;
+    IMUL FR:0; ** Missing DM **
+    IMUL DM:0; ** Missing FR **
+    IMUL FM:0; ** Missing DR **
+    IMUL DR:0; ** Missing FM **
+    IMUL FR:0,DM:0,FX:1; ** Index with register, not memory **
+    IMUL FM:0,DR:0,DX:1; ** Index with register, not memory ** 
+    IMUL FR:0,FT:0; ** Illegal use of literal **
+    IMUL FR:0,DT:0; ** Illegal operand DT **
+    IMUL DR:0,FC:1; ** Illegal operand FC **
+    IMUL DR:0,LR:LBL; ** Illegal operand LR **
+    IMUL DR:0,FM:1,NW:6; ** Illegal operand NW **
+    IMUL EX:*+6; ** Illegal expression **
+    IMUL DR:0,FM:0,EX:*-10; ** Illegal expression **
+    IMUL FR:-1,DM:0; ** Negative register address **
+    IMUL FR:0,DM:-1; ** Negative memory address **
+    IMUL FR:8,DM:0; ** Register address out of range **
+    IMUL FR:0,DM:4096; ** Memory address out of range **
+    IMUL FM:4096,DR:0; ** Memory address out of range **
+    IMUL FM:0,DR:8; ** Register address out of range **
+    IMUL FR:0,DM:0,DX:0; ** Index address out of range **
+    IMUL FR:0,DM:0,DX:8; ** Index address out of range **
+    IMUL FM:0,DR:0,DX:0; ** Index address out of range **
+    IMUL FM:0,DR:0,DX:8; ** Index address out of range **
+    IMUL DR:0,FT:-4097; ** Literal value out of range **
+    IMUL DR:0,FT:4096; ** Literal value out of range **
+    IMUL DR:&,FM:0; ** Illegal character '&' in operand value **
+    IMUL DR:0,FM:1#3; ** Illegal character '#' in operand value **
+    IMUL %:9,DR:4,FM:4; ** Illegal operand name '%' ** 
+LBL NUM FC:0;
+    END LR:IMULTEST;

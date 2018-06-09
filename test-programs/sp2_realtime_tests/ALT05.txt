@@ -1,0 +1,11 @@
+ALT05   KICKO fc:0        ;0,0
+ALT05b	newlc  fc:100    ;0,64
+X1	EQU  fC:500       ;n/a
+        ENT	LR:Dirt   ;n/a
+        EXT	LR:ELM    ;n/a
+        AEXS	FC:100    ;n/a
+        SKS	FC:10     ;0,64  A
+        Char	st:'abcd' ;0,E   A
+        Adrc	LR:ALT05b ;0,F   R
+	NOP            ;0,10  A
+	End lr:ALT05;

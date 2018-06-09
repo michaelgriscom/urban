@@ -1,0 +1,6 @@
+ALT07   kicko  fc:2000;    : Error on END Directive
+        iADD	dm:1,fm:Mud;
+END	HLT	fc:9;
+Mud     num     fc:00100 ;
+Dirt    num     fc:200*000;   invalid num fc keyword
+	Endx	LR:ALT07;    invalid end

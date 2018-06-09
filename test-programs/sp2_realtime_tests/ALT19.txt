@@ -1,0 +1,38 @@
+ALT19   kicko    fc:15        ;00F	n/a
+ADD     num      fc:12        ;00F	00000C	A
+Test19a char     st:'16'      ;010	F1F620	A
+        EXT     lr:ZX           ;011  n/a
+Test19b newlc   fc:127;    
+x1a     ADRC    ex:*+ADD     ;07F 00008D	M  
+x2a     ADRC    ex:*+ZX      ;080 000080	M
+x2b     ADRC    ex:ZX+*      ;081 000081	M   Should be an error chk 
+x3a     ADRC    ex:ADD+ZX    ;082 00000F	M
+x3b     ADRC    ex:ZX+ADD    ;083 00000F	M
+x4a     ADRC    ex:100+ADD   ;084 000073	M
+x4b     ADRC    ex:ADD+100   ;085 000073	M
+x5a     ADRC    ex:100+ZX    ;086 000064	M
+x5b     ADRC    ex:ZX+100    ;087 000064	M
+x6a     ADRC    ex:*+100     ;088 0000EC	M
+x6b     ADRC    ex:100+*     ;089 0000ED	M Should be an error chk 
+RESET   newlc   fc:200       ;0C8
+y1a     EQU     ex:*+ADD     ;0C8  200+15=0215	in hex=	D7	
+y1b     EQU     ex:ADD+*     ;0C8  15+200=0215	in hex=	D7	
+y2a     EQU     ex:100+ADD   ;0C8  100+15=0115	in hex=	73	
+y2b     EQU     ex:ADD+100   ;0C8  15+100=0115	in hex=	73	
+y3a     EQU     ex:*+100     ;0C8  200+15=0215	in hex=	D7	
+y3b     EQU     ex:100+*     ;0C8  15+200=0215	in hex=	D7
+x1a2    ADRC    ex:*-ADD     ;0C8 00B9  A
+x1b2    ADRC    ex:ADD-*     ;0C9 00BA  A Should be an error chk docs 
+x2a2    ADRC    ex:*-ZX      ;0CA 00CA  M
+x2b2    ADRC    ex:ZX-*      ;0CB 00CB  M Should be an error chk docs 
+x3a2    ADRC    ex:ADD-ZX    ;0CC 000F  M
+x3b2    ADRC    ex:ZX-ADD    ;0CD 0000  M Should be an error NEG ADDR
+x4a2    ADRC    ex:100-ADD   ;0CE 0055  A
+x4b2    ADRC    ex:ADD-10    ;0CF 0005  A
+x5a2    ADRC    ex:10-ZX     ;0D0 000A  M
+x5b2    ADRC    ex:ZX-10     ;0D1 0000  M Should be an error NEG ADDR 
+x6a2    ADRC    ex:*-10      ;0D2 00C8  A
+x6b2    ADRC    ex:300-*     ;0D3 0059  A
+SQR     equ      fc:15;     
+zero    equ      fc:0;     
+        END      lr:ALT19;

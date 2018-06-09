@@ -1,0 +1,59 @@
+BNDCHK KICKO FC:-1;
+Line number: 0001	LC: 0	Label: BNDCHK
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:-1		Binary Equivalent: ------
+Errors:
+**ERROR 304** Fatal: Invalid address for KICKO: Out of range
+
+	newlc FC:4096;
+Line number: 0002	LC: FFFFFFFF	Label: ------
+Instruction/Directive: NEWLC	Binary Equivalent: ------
+Operand 1: FC:4096		Binary Equivalent: ------
+Errors:
+**ERROR 223** Serious: Directive requires a valid label
+**ERROR 303** Fatal: Program out of bounds: Location counter exceeded upper limit (4095)
+
+	newlc FC:100000000;
+Line number: 0003	LC: 1000	Label: ------
+Instruction/Directive: NEWLC	Binary Equivalent: ------
+Operand 1: FC:100000000		Binary Equivalent: ------
+Errors:
+**ERROR 223** Serious: Directive requires a valid label
+**ERROR 303** Fatal: Program out of bounds: Location counter exceeded upper limit (4095)
+
+BAD NUM FC:2500000000;
+Line number: 0004	LC: 5F5E100	Label: BAD
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:2500000000		Binary Equivalent: ------
+Errors:
+**ERROR 207** Serious: Invalid numeric value: Not a number (or number too big)
+**ERROR 303** Fatal: Program out of bounds: Location counter exceeded upper limit (4095)
+
+GOOD NUM FC:4097;
+Line number: 0005	LC: 5F5E101	Label: GOOD
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:4097		Binary Equivalent: ------
+Errors:
+**ERROR 303** Fatal: Program out of bounds: Location counter exceeded upper limit (4095)
+
+NEG NUM FC:-1;
+Line number: 0006	LC: 5F5E102	Label: NEG
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:-1		Binary Equivalent: ------
+Errors:
+**ERROR 303** Fatal: Program out of bounds: Location counter exceeded upper limit (4095)
+
+	SKIPS FC:-1;
+Line number: 0007	LC: 5F5E103	Label: ------
+Instruction/Directive: SKIPS	Binary Equivalent: ------
+Operand 1: FC:-1		Binary Equivalent: ------
+Errors:
+**ERROR 303** Fatal: Program out of bounds: Location counter exceeded upper limit (4095)
+
+	END LR:BNDCHK;
+Line number: 0008	LC: 5F5E102	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:BNDCHK		Binary Equivalent: ------
+Errors:
+**ERROR 303** Fatal: Program out of bounds: Location counter exceeded upper limit (4095)
+

@@ -1,0 +1,263 @@
+ALT1 KICKO FC:4;
+Line number: 0001	LC: 4	Label: ALT1
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:4		Binary Equivalent: ------
+
+     EXT LR:ZX;
+Line number: 0002	LC: 4	Label: ------
+Instruction/Directive: EXT	Binary Equivalent: ------
+Operand 1: LR:ZX		Binary Equivalent: ------
+
+P1   MOVD DR:0,FL:0 ;CLEAR SUM TO ZERO
+Line number: 0003	LC: 4	Label: P1
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:0		Binary Equivalent: 000
+Operand 2: FL:0		Binary Equivalent: 0000000000000
+
+     MOVD DR:2,FL:0 ;CLEAR SUM TO ZERO
+Line number: 0004	LC: 5	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:2		Binary Equivalent: 010
+Operand 2: FL:0		Binary Equivalent: 0000000000000
+
+     MOVD DX:1,FL:4 ;SET INDEX TO ZERO
+Line number: 0005	LC: 6	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DX:1		Binary Equivalent: 001
+Operand 2: FL:4		Binary Equivalent: 0000000000100
+
+P2   IRKB DM:XX,DX:1,NW:1 ;READ NEXT XX
+Line number: 0006	LC: 7	Label: P2
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: DM:XX		Binary Equivalent: ------
+Operand 2: DX:1		Binary Equivalent: 001
+Operand 3: NW:1		Binary Equivalent: 0001
+
+     IWSR FM:XX,FX:1,NW:1 ;ECHO XX
+Line number: 0007	LC: 8	Label: ------
+Instruction/Directive: IWSR	Binary Equivalent: 101000
+Operand 1: FM:XX		Binary Equivalent: ------
+Operand 2: FX:1		Binary Equivalent: 001
+Operand 3: NW:1		Binary Equivalent: 0001
+
+     IRKB DM:YY,DX:1,NW:1 ;READ IN NEXT YY
+Line number: 0008	LC: 9	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: DM:YY		Binary Equivalent: ------
+Operand 2: DX:1		Binary Equivalent: 001
+Operand 3: NW:1		Binary Equivalent: 0001
+
+     IWSR FM:YY,FX:1,NW:1 ;ECHO YY
+Line number: 0009	LC: A	Label: ------
+Instruction/Directive: IWSR	Binary Equivalent: 101000
+Operand 1: FM:YY		Binary Equivalent: ------
+Operand 2: FX:1		Binary Equivalent: 001
+Operand 3: NW:1		Binary Equivalent: 0001
+
+     MOVD DR:2,FM:XX,FX:1 ;FORM XX/YY
+Line number: 0010	LC: B	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:2		Binary Equivalent: 010
+Operand 2: FM:XX		Binary Equivalent: ------
+Operand 3: FX:1		Binary Equivalent: 001
+
+     MOVD DR:3,FM:YY,FX:1;
+Line number: 0011	LC: C	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:3		Binary Equivalent: 011
+Operand 2: FM:YY		Binary Equivalent: ------
+Operand 3: FX:1		Binary Equivalent: 001
+
+     TREQ FR:3,DM:ER ;IF DIVIDE BY 0, GO PRT MSG AND HALT
+Line number: 0012	LC: D	Label: ------
+Instruction/Directive: TREQ	Binary Equivalent: 100000
+Operand 1: FR:3		Binary Equivalent: 011
+Operand 2: DM:ER		Binary Equivalent: ------
+
+     IDIV DR:2,FM:YY,FX:1 ;OTHERWISE  DIVIDE
+Line number: 0013	LC: E	Label: ------
+Instruction/Directive: IDIV	Binary Equivalent: 001110
+Operand 1: DR:2		Binary Equivalent: 010
+Operand 2: FM:YY		Binary Equivalent: ------
+Operand 3: FX:1		Binary Equivalent: 001
+
+     MOVD FR:2,DM:QQ,DX:1 ;STORE RESULT
+Line number: 0014	LC: F	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: FR:2		Binary Equivalent: 010
+Operand 2: DM:QQ		Binary Equivalent: ------
+Operand 3: DX:1		Binary Equivalent: 001
+
+     IADD DR:0,FM:QQ,FX:1 ;Add to total in reg 0
+Line number: 0015	LC: 10	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DR:0		Binary Equivalent: 000
+Operand 2: FM:QQ		Binary Equivalent: ------
+Operand 3: FX:1		Binary Equivalent: 001
+
+     Isub DX:1,LT:-1 ;DECREMENT INDEX REGISTER
+Line number: 0016	LC: 11	Label: ------
+Instruction/Directive: ISUB	Binary Equivalent: 001100
+Operand 1: DX:1		Binary Equivalent: 001
+Operand 2: LT:-1		Binary Equivalent: ------
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+     TRDR FX:1,DM:DONE ;Test if Done
+Line number: 0017	LC: 12	Label: ------
+Instruction/Directive: TRDR	Binary Equivalent: 100100
+Operand 1: FX:1		Binary Equivalent: 001
+Operand 2: DM:DONE		Binary Equivalent: ------
+
+     TR DM:P2 ;IF NOT DONE, LOOP BACK
+Line number: 0018	LC: 13	Label: ------
+Instruction/Directive: TR	Binary Equivalent: 100011
+Operand 1: DM:P2		Binary Equivalent: ------
+
+DONE MOVD  FR:0,DM:Q1;
+Line number: 0019	LC: 14	Label: DONE
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: FR:0		Binary Equivalent: 000
+Operand 2: DM:Q1		Binary Equivalent: ------
+
+     CWSR FM:M1,NW:3;
+Line number: 0020	LC: 15	Label: ------
+Instruction/Directive: CWSR	Binary Equivalent: 101010
+Operand 1: FM:M1		Binary Equivalent: ------
+Operand 2: NW:3		Binary Equivalent: 0011
+
+     IWSR FM:Q1,NW:1;
+Line number: 0021	LC: 16	Label: ------
+Instruction/Directive: IWSR	Binary Equivalent: 101000
+Operand 1: FM:Q1		Binary Equivalent: ------
+Operand 2: NW:1		Binary Equivalent: 0001
+
+     TR DM:E1 ;THEN GO TO THE EXIT ROUTINE
+Line number: 0022	LC: 17	Label: ------
+Instruction/Directive: TR	Binary Equivalent: 100011
+Operand 1: DM:E1		Binary Equivalent: ------
+
+ER   CWSR FM:ME,NW:2 ;ZERO DIVISOR, PRINT 'Y IS 0  '
+Line number: 0023	LC: 18	Label: ER
+Instruction/Directive: CWSR	Binary Equivalent: 101010
+Operand 1: FM:ME		Binary Equivalent: ------
+Operand 2: NW:2		Binary Equivalent: 0010
+
+     DMP FC:3 ;DUMP registers and active memory
+Line number: 0024	LC: 19	Label: ------
+Instruction/Directive: DMP	Binary Equivalent: 111110
+Operand 1: FC:3		Binary Equivalent: 0000000000011
+
+     HLT FC:100; ;HALT
+Line number: 0025	LC: 1A	Label: ------
+Instruction/Directive: HLT	Binary Equivalent: 111111
+Operand 1: FC:100		Binary Equivalent: 0000001100100
+
+E1   CWSR FM:M2,NW:3;
+Line number: 0026	LC: 1B	Label: E1
+Instruction/Directive: CWSR	Binary Equivalent: 101010
+Operand 1: FM:M2		Binary Equivalent: ------
+Operand 2: NW:3		Binary Equivalent: 0011
+
+     MOVD DM:1,FM:ZX;
+Line number: 0027	LC: 1C	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DM:1		Binary Equivalent: ------
+Operand 2: FM:ZX		Binary Equivalent: ------
+
+     HLT FC:200;
+Line number: 0028	LC: 1D	Label: ------
+Instruction/Directive: HLT	Binary Equivalent: 111111
+Operand 1: FC:200		Binary Equivalent: 0000011001000
+
+; CONSTANTS AND TEMPORARIES
+Line number: 0029	LC: 1E	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+A1   ADRC FM:ZX; ;ADDRESS OF External Reference
+Line number: 0030	LC: 1E	Label: A1
+Instruction/Directive: ADRC	Binary Equivalent: ------
+Operand 1: FM:ZX		Binary Equivalent: ------
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+C1   NUM FC:1;
+Line number: 0031	LC: 1F	Label: C1
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:1		Binary Equivalent: 00000000000000000000000000000001
+
+C4   NUM FC:4;
+Line number: 0032	LC: 20	Label: C4
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:4		Binary Equivalent: 00000000000000000000000000000100
+
+ME   CHAR ST:'Y IS'; ;MESSAGE IS 'Y IS 0  '
+Line number: 0033	LC: 21	Label: ME
+Instruction/Directive: CHAR	Binary Equivalent: ------
+Operand 1: ST:'Y IS'		Binary Equivalent: 01011001001000000100100101010011
+
+     CHAR ST:' 0';
+Line number: 0034	LC: 22	Label: ------
+Instruction/Directive: CHAR	Binary Equivalent: ------
+Operand 1: ST:' 0'		Binary Equivalent: 00100000001100000010000000100000
+
+M1   CHAR ST:''; MESSAGE IS '      Q='
+Line number: 0035	LC: 23	Label: M1
+Instruction/Directive: CHAR	Binary Equivalent: ------
+Operand 1: ST:''		Binary Equivalent: 00100000001000000010000000100000
+
+     CHAR ST:'';
+Line number: 0036	LC: 24	Label: ------
+Instruction/Directive: CHAR	Binary Equivalent: ------
+Operand 1: ST:''		Binary Equivalent: 00100000001000000010000000100000
+
+     CHAR ST:' Q=';
+Line number: 0037	LC: 25	Label: ------
+Instruction/Directive: CHAR	Binary Equivalent: ------
+Operand 1: ST:' Q='		Binary Equivalent: 00100000010100010011110100100000
+
+M2   CHAR ST:'END ';
+Line number: 0038	LC: 26	Label: M2
+Instruction/Directive: CHAR	Binary Equivalent: ------
+Operand 1: ST:'END '		Binary Equivalent: 01000101010011100100010000100000
+
+     CHAR ST:'PROG';
+Line number: 0039	LC: 27	Label: ------
+Instruction/Directive: CHAR	Binary Equivalent: ------
+Operand 1: ST:'PROG'		Binary Equivalent: 01010000010100100100111101000111
+
+     CHAR ST:'';
+Line number: 0040	LC: 28	Label: ------
+Instruction/Directive: CHAR	Binary Equivalent: ------
+Operand 1: ST:''		Binary Equivalent: 00100000001000000010000000100000
+
+QQ   SKIPS FC:4;
+Line number: 0041	LC: 29	Label: QQ
+Instruction/Directive: SKIPS	Binary Equivalent: ------
+Operand 1: FC:4		Binary Equivalent: ------
+
+Q1   SKIPS FC:1;
+Line number: 0042	LC: 2D	Label: Q1
+Instruction/Directive: SKIPS	Binary Equivalent: ------
+Operand 1: FC:1		Binary Equivalent: ------
+
+TP   NUM FC:0;
+Line number: 0043	LC: 2E	Label: TP
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: 00000000000000000000000000000000
+
+XX   SKIPS FC:4;
+Line number: 0044	LC: 2F	Label: XX
+Instruction/Directive: SKIPS	Binary Equivalent: ------
+Operand 1: FC:4		Binary Equivalent: ------
+
+YY   SKIPS FC:4;
+Line number: 0045	LC: 33	Label: YY
+Instruction/Directive: SKIPS	Binary Equivalent: ------
+Operand 1: FC:4		Binary Equivalent: ------
+
+     END LR:ALT1;
+Line number: 0046	LC: 37	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:ALT1		Binary Equivalent: ------
+

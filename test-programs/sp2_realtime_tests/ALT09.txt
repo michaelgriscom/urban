@@ -1,0 +1,23 @@
+ALT09 kicko  fc:0                 ;0,0
+one   equ  FC:1                   ;N/A
+two   equ  FC:2                   ;N/A
+three equ  FC:3                   ;N/A
+four  equ  FC:4                   ;N/A
+big   equ  4095                ;N/A
+      iADD dr:one,fM:two             ;0,0  A
+      LDR  dr:three,fl:-2147483648  ;0,1  R
+      ldr  dr:four,fl:10H           ;0,2  A should be an error with a nop
+      movd  dr:one,lt:1010b  ;0,3  A should be an error with a nop
+      NOP                    ;0,4  A
+      DMP  fc:three          ;0,5  a
+      HLT  fc:one            ;0,6  A
+      num  fc:1000	     ;0,7  A
+      num  fc:2000	     ;0,8  A
+      num  fc:3000	     ;0,9  A
+      num  fc:4000	     ;0,a  A
+      CHar  st:'Max '        ;0,B  A
+ab65%42 NUM fc:-2147483648     ;0,C  A
+q#4D    num   fc:=10H        ;0,D should be an error with a nop
+bits    num   fc:1010B       ;0,E should be an error with a nop
+XX      NuM   fc:10          ;0,F  
+        end  lr:ALT09;

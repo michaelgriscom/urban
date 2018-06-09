@@ -1,0 +1,85 @@
+ISHLTEST KICKO FC:0;
+Line number: 0001	LC: 0	Label: ISHLTEST
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: ------
+
+ONE EQU FC:1;
+Line number: 0002	LC: 0	Label: ONE
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: FC:1		Binary Equivalent: ------
+
+    ISHL FC:0;
+Line number: 0003	LC: 0	Label: ------
+Instruction/Directive: ISHL	Binary Equivalent: 011001
+Operand 1: FC:0		Binary Equivalent: 011001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    ISHL FC:ONE;
+Line number: 0004	LC: 1	Label: ------
+Instruction/Directive: ISHL	Binary Equivalent: 011001
+Operand 1: FC:ONE		Binary Equivalent: 011001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    ISHL FC:10;
+Line number: 0005	LC: 2	Label: ------
+Instruction/Directive: ISHL	Binary Equivalent: 011001
+Operand 1: FC:10		Binary Equivalent: 011001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    ISHL FC:31;
+Line number: 0006	LC: 3	Label: ------
+Instruction/Directive: ISHL	Binary Equivalent: 011001
+Operand 1: FC:31		Binary Equivalent: 011001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    ISHL; ** Missing operand **
+Line number: 0007	LC: 4	Label: ------
+Instruction/Directive: ISHL	Binary Equivalent: 011001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    ISHL FT:0; ** Missing FC **
+Line number: 0008	LC: 5	Label: ------
+Instruction/Directive: ISHL	Binary Equivalent: 011001
+Operand 1: FT:0		Binary Equivalent: 011001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    ISHL FC:-1; ** FC out of range **
+Line number: 0009	LC: 6	Label: ------
+Instruction/Directive: ISHL	Binary Equivalent: 011001
+Operand 1: FC:-1		Binary Equivalent: 011001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    ISHL FC:32; ** FC out of range **
+Line number: 0010	LC: 7	Label: ------
+Instruction/Directive: ISHL	Binary Equivalent: 011001
+Operand 1: FC:32		Binary Equivalent: 011001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    ISHL FC:@; ** Illegal character '@' in operand value **
+Line number: 0011	LC: 8	Label: ------
+Instruction/Directive: ISHL	Binary Equivalent: 011001
+Operand 1: FC:@		Binary Equivalent: 011001
+Errors:
+**ERROR 227** Serious: Symbol in operand value not previously equated
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    ISHL F^:10; ** Illegal character '^' in operand keyword **
+Line number: 0012	LC: 9	Label: ------
+Instruction/Directive: ISHL	Binary Equivalent: 011001
+Operand 1: F^:10		Binary Equivalent: 011001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    END LR:ISHLTEST;
+Line number: 0013	LC: A	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:ISHLTEST		Binary Equivalent: ------
+

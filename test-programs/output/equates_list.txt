@@ -1,0 +1,275 @@
+BNDCHK KICKO FC:-1;
+Line number: 0001	LC: 0	Label: BNDCHK
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:-1		Binary Equivalent: ------
+Errors:
+**ERROR 304** Fatal: Invalid address for KICKO: Out of range
+
+	newlc FC:4096;
+Line number: 0002	LC: FFFFFFFF	Label: ------
+Instruction/Directive: NEWLC	Binary Equivalent: ------
+Operand 1: FC:4096		Binary Equivalent: ------
+Errors:
+**ERROR 223** Serious: Directive requires a valid label
+**ERROR 303** Fatal: Program out of bounds: Location counter exceeded upper limit (4095)
+
+	newlc FC:100000000;
+Line number: 0003	LC: 1000	Label: ------
+Instruction/Directive: NEWLC	Binary Equivalent: ------
+Operand 1: FC:100000000		Binary Equivalent: ------
+Errors:
+**ERROR 223** Serious: Directive requires a valid label
+**ERROR 303** Fatal: Program out of bounds: Location counter exceeded upper limit (4095)
+
+BAD NUM FC:2500000000;
+Line number: 0004	LC: 5F5E100	Label: BAD
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:2500000000		Binary Equivalent: ------
+Errors:
+**ERROR 207** Serious: Invalid numeric value: Not a number (or number too big)
+**ERROR 303** Fatal: Program out of bounds: Location counter exceeded upper limit (4095)
+
+GOOD NUM FC:4097;
+Line number: 0005	LC: 5F5E101	Label: GOOD
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:4097		Binary Equivalent: ------
+Errors:
+**ERROR 303** Fatal: Program out of bounds: Location counter exceeded upper limit (4095)
+
+NEG NUM FC:-1;
+Line number: 0006	LC: 5F5E102	Label: NEG
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:-1		Binary Equivalent: ------
+Errors:
+**ERROR 303** Fatal: Program out of bounds: Location counter exceeded upper limit (4095)
+
+	SKIPS FC:-1;
+Line number: 0007	LC: 5F5E103	Label: ------
+Instruction/Directive: SKIPS	Binary Equivalent: ------
+Operand 1: FC:-1		Binary Equivalent: ------
+Errors:
+**ERROR 303** Fatal: Program out of bounds: Location counter exceeded upper limit (4095)
+
+	END LR:BNDCHK;
+Line number: 0008	LC: 5F5E102	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:BNDCHK		Binary Equivalent: ------
+Errors:
+**ERROR 303** Fatal: Program out of bounds: Location counter exceeded upper limit (4095)
+
+SCBLNK KICKO FC:20;
+Line number: 0009	LC: 14	Label: SCBLNK
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:20		Binary Equivalent: ------
+
+
+Line number: 0010	LC: 14	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+Errors:
+**ERROR 101** Warning: Blank line or line containing only comments
+
+; the previous line is blank (specifically with no whitespace) 
+Line number: 0011	LC: 14	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+	
+Line number: 0012	LC: 14	Label: ------
+Instruction/Directive: NOP	Binary Equivalent: 111101
+Errors:
+**ERROR 201** Serious: Invalid operation (or missing space at beginning of line)
+**ERROR 108** Warning: Missing semicolon
+
+; on the contrary the previous line contains whitespace
+Line number: 0013	LC: 15	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+	; should complain that there is no operation
+Line number: 0014	LC: 15	Label: ------
+Instruction/Directive: NOP	Binary Equivalent: 111101
+Errors:
+**ERROR 201** Serious: Invalid operation (or missing space at beginning of line)
+
+	END SCBLNK
+Line number: 0015	LC: 16	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: SCBLNK:		Binary Equivalent: ------
+Errors:
+**ERROR 220** Serious: Missing operand value
+**ERROR 108** Warning: Missing semicolon
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+eq  kicko fc:256;
+Line number: 0016	LC: 100	Label: eq
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:256		Binary Equivalent: ------
+
+a   equ fc:1;
+Line number: 0017	LC: 100	Label: a
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: FC:1		Binary Equivalent: ------
+
+b   equ fc:2;
+Line number: 0018	LC: 100	Label: b
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: FC:2		Binary Equivalent: ------
+
+c   eque ex:a+b;
+Line number: 0019	LC: 100	Label: c
+Instruction/Directive: EQUE	Binary Equivalent: ------
+Operand 1: EX:a+b		Binary Equivalent: ------
+
+d   equ fm:*;
+Line number: 0020	LC: 100	Label: d
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: FM:*		Binary Equivalent: ------
+
+e   equ fm:*+512;
+Line number: 0021	LC: 100	Label: e
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: FM:*+512		Binary Equivalent: ------
+
+f   eque ex:*+d+e;
+Line number: 0022	LC: 100	Label: f
+Instruction/Directive: EQUE	Binary Equivalent: ------
+Operand 1: EX:*+d+e		Binary Equivalent: ------
+
+g   eque ex:a+b+c+d+e+f;
+Line number: 0023	LC: 100	Label: g
+Instruction/Directive: EQUE	Binary Equivalent: ------
+Operand 1: EX:a+b+c+d+e+f		Binary Equivalent: ------
+
+h   eque ex:f-e+d-c+b-a;
+Line number: 0024	LC: 100	Label: h
+Instruction/Directive: EQUE	Binary Equivalent: ------
+Operand 1: EX:f-e+d-c+b-a		Binary Equivalent: ------
+
+i   eque ex:1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1;
+Line number: 0025	LC: 100	Label: i
+Instruction/Directive: EQUE	Binary Equivalent: ------
+Operand 1: EX:1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1		Binary Equivalent: ------
+
+j   equ fc:-1;
+Line number: 0026	LC: 100	Label: j
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: FC:-1		Binary Equivalent: ------
+
+k   eque ex:-j;
+Line number: 0027	LC: 100	Label: k
+Instruction/Directive: EQUE	Binary Equivalent: ------
+Operand 1: EX:-j		Binary Equivalent: ------
+
+l   eque ex:-1+2-3+4-5+6-7+8-9+1-2+3-4+5-6+7-8+9-10;
+Line number: 0028	LC: 100	Label: l
+Instruction/Directive: EQUE	Binary Equivalent: ------
+Operand 1: EX:-1+2-3+4-5+6-7+8-9+1-2+3-4+5-6+7-8+9-10		Binary Equivalent: ------
+
+t0  eque ex:l+l+l+l;
+Line number: 0029	LC: 100	Label: t0
+Instruction/Directive: EQUE	Binary Equivalent: ------
+Operand 1: EX:l+l+l+l		Binary Equivalent: ------
+
+t1  eque ex:t0+t0+t0+t0;
+Line number: 0030	LC: 100	Label: t1
+Instruction/Directive: EQUE	Binary Equivalent: ------
+Operand 1: EX:t0+t0+t0+t0		Binary Equivalent: ------
+
+t2  eque ex:t1+t1+t1+t1;
+Line number: 0031	LC: 100	Label: t2
+Instruction/Directive: EQUE	Binary Equivalent: ------
+Operand 1: EX:t1+t1+t1+t1		Binary Equivalent: ------
+
+t3  eque ex:t2+t2+t2+t2;
+Line number: 0032	LC: 100	Label: t3
+Instruction/Directive: EQUE	Binary Equivalent: ------
+Operand 1: EX:t2+t2+t2+t2		Binary Equivalent: ------
+
+er1 equ ex:*+1;
+Line number: 0033	LC: 100	Label: er1
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: EX:*+1		Binary Equivalent: ------
+
+er2 eque ex:1+*;
+Line number: 0034	LC: 100	Label: er2
+Instruction/Directive: EQUE	Binary Equivalent: ------
+Operand 1: EX:1+*		Binary Equivalent: ------
+Errors:
+**ERROR 221** Serious: Syntax error in expression
+**ERROR 218** Serious: Asterisk in expression must occur at beginning of expression
+
+er3 eque ex:*+*;
+Line number: 0035	LC: 100	Label: er3
+Instruction/Directive: EQUE	Binary Equivalent: ------
+Operand 1: EX:*+*		Binary Equivalent: ------
+Errors:
+**ERROR 221** Serious: Syntax error in expression
+**ERROR 218** Serious: Asterisk in expression must occur at beginning of expression
+
+er4 equ fc:2147483648;
+Line number: 0036	LC: 100	Label: er4
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: FC:2147483648		Binary Equivalent: ------
+Errors:
+**ERROR 207** Serious: Invalid numeric value: Not a number (or number too big)
+
+er5 equ fc:-2147483649;
+Line number: 0037	LC: 100	Label: er5
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: FC:-2147483649		Binary Equivalent: ------
+Errors:
+**ERROR 207** Serious: Invalid numeric value: Not a number (or number too big)
+
+er6 eque ex:-2147483647-2;
+Line number: 0038	LC: 100	Label: er6
+Instruction/Directive: EQUE	Binary Equivalent: ------
+Operand 1: EX:-2147483647-2		Binary Equivalent: ------
+
+    num fc:i; Should be 32
+Line number: 0039	LC: 100	Label: ------
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:i		Binary Equivalent: ------
+
+    num fc:l; Should be -10
+Line number: 0040	LC: 101	Label: ------
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:l		Binary Equivalent: ------
+
+    num fc:d; Should be 256
+Line number: 0041	LC: 102	Label: ------
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:d		Binary Equivalent: ------
+
+    num fc:e; Should be 768
+Line number: 0042	LC: 103	Label: ------
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:e		Binary Equivalent: ------
+
+    num fc:f; Should be 1280
+Line number: 0043	LC: 104	Label: ------
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:f		Binary Equivalent: ------
+
+    num fc:t0; Should be 4
+Line number: 0044	LC: 105	Label: ------
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:t0		Binary Equivalent: ------
+
+    num fc:t1; Should be 16
+Line number: 0045	LC: 106	Label: ------
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:t1		Binary Equivalent: ------
+
+    num fc:t2; Should be 64
+Line number: 0046	LC: 107	Label: ------
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:t2		Binary Equivalent: ------
+
+    num fc:t3; Should be 256
+Line number: 0047	LC: 108	Label: ------
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:t3		Binary Equivalent: ------
+
+    end lr:eq;
+Line number: 0048	LC: 109	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:eq		Binary Equivalent: ------
+

@@ -1,0 +1,45 @@
+H:InvalidHeader:00000Q:0100:5010:2011300,06,06,07:1000:URBAN-ASM:InvalidHeader
+  Error 202: Invalid memory address format 
+  Error 213: Execution Address is out of range
+
+T:000000:00000080:A:0:InvalidHeader
+  Error 206: Record contains incorrect program name
+  Error 240: Header record was invalid: Could not parse following records
+
+T:000000:00000080:C:1:InvalidHeader
+  Error 240: Header record was invalid: Could not parse following records
+  Error 206: Record contains incorrect program name
+
+L:dontexist:000010:InvalidHeader
+  Error 240: Header record was invalid: Could not parse following records
+
+M:000000:1:+:dontexist:InvalidHeader
+  Error 206: Record contains incorrect program name
+  Error 230: Error in modification symbol: Undefined symbol
+
+H:InvalidHeader:000000:!100:5010:2011300,06,06,07:1000:URBAN-ASM:InvalidHeader
+  Error 225: Header Module Length is not valid hex
+  Error 213: Execution Address is out of range
+
+H:InvalidHeader:000000:0100:%010:2011300,06,06,07:1000:URBAN-ASM:InvalidHeader
+  Error 227: Execution Address is not valid hex
+
+H:ValidHeader:000000:0100:5010:justawarning!011300,06,06,07:1000:URBAN-ASM:ValidHeader
+  Error 213: Execution Address is out of range
+
+H:InvalidHeader:000000:0100:5010:2011300,06,06,07:1000:URBAN-ASM,,, but still Valid:InvalidHeader
+  Error 213: Execution Address is out of range
+
+H:InvalidHeader:000000:0100:5010:2011300,06,06,07:1000:URBAN-ASM:InvalidHeader
+  Error 213: Execution Address is out of range
+
+H:NOENDRECORD:000000:0100:5010:2011300,06,06,07:1000:URBAN-ASM:InvalidHeader
+  Error 101: Inconsistent program name within header record
+  Error 213: Execution Address is out of range
+
+E:0000:0000:0000:0000:ValidHeader
+  Error 215: End Record appears without header record
+
+H:ValidHeader:000000:0100:5010:2011300,06,06,07:1000:URBAN-ASM:ValidHeader
+  Error 213: Execution Address is out of range
+

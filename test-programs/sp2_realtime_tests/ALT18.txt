@@ -1,0 +1,5 @@
+ALT18  newlc  fc:0;   :0,0 should overflow memory fatal error
+E1     EQU  ex:*+10;  : E1 is equivalent to A
+A1     AEXS FC:E1;
+B1     skips  fc:4095;  :0,0
+       end  ALT18;

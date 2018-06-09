@@ -1,0 +1,20 @@
+ALT06   kicko    fc:400        ; Some simple syntax errors
+        iADD	dr:1,fm:Mudx       ; S-field not defined.. PASS2 error
+	iSUB	DR:1,,,fm:Mud      ; Operand field error
+	iMPY	DR:9,FM:Mud        ; Invalid register
+	iDIVx	dr:1,fm:Mud        ; invalid opciode
+	iADD	DR:1,fm:-9          ; Invalid memory reference
+	MOVD	DR:1,FM:Mud;
+	MOVDN	DR1,FM:Mud,FX:1;
+	MOVD	fM:1,DM:Dirt,DX:20   ; Invalid index register
+	ISHR	DR:1,fc:200        ; Invalid shift amount
+	ROr	DR:1,fc:200        ; Invalid shift amount
+	TRLT	FR:1,DM:ENDX;
+	TRGT	FR:1,DM:END;
+	IWSR	FM:Dirt,NW:1;
+	IWSR	fm:Dirt,nw:200  ;too many words???? perhaps
+	DMP	fc:6             ;Invalid dump operand
+END	HLT	fc:9;
+Mud     num fc:00100; 
+Dirt    num fc:24567896543219876 ; Invalid number too large
+	End	lr:ALT06;

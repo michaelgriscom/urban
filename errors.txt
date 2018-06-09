@@ -1,0 +1,39 @@
+101	Blank line or line containing only comments
+102	Invalid operand field for ENT/EXT
+104	Line after end of program
+105 Final LR reference label does not match program name
+106 Extra comma in operand field
+107 -Extra spaces in operand field
+108 Missing semicolon
+109	Program did not end with END directive
+110 SIMULATOR: Invalid program name
+111 SIMULATOR: Records encountered after end record
+112 SIMULATOR: Invalid assembler name in header
+201	Invalid operation (or missing space at beginning of line)
+202	Invalid label format
+203	Label already in use
+207	Invalid numeric value: Not a number (or number too big)
+211	Duplicate or incorrect operand keyword
+212	Operand value is an invalid label
+213	Symbol in operand value is not defined
+214	Operand value is out of range
+217	Invalid string literal: Expected no more than 4 ASCII characters (all displayable)
+218 Asterisk in expression must occur at beginning of expression
+219 Missing operand keyword
+220 Missing operand value
+221 Syntax error in expression
+222 Invalid Operand Syntax
+223 Directive requires a valid label
+224 Extra colon in operands
+225 Cannot have both asterisk and label in same operand expression
+226 Cannot have signed label 
+227 Symbol in operand value not previously equated
+228 SIMULATOR: Invalid instruction
+229 SIMULATOR: Invalid end record
+230 SIMULATOR: Invalid record count
+303	Program out of bounds: Location counter exceeded upper limit (4095)
+304 Invalid address for KICKO: Out of range
+305 Missing valid KICKO label
+306 SIMULATOR: Invalid address
+307 SIMULATOR: Missing header
+999 Internal runtime error.  Please kick a developer.

@@ -1,0 +1,3 @@
+Label	LC	Usage	String
+ISRATEST	0	PRGM_NAME	
+ONE	0	EQU	1

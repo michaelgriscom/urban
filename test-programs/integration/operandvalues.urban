@@ -1,0 +1,33 @@
+OPVAL KICKO FC:0; 			tests invalid values for certain keywords
+gd	CHAR 	ST:''; 
+bad	CHAR 	ST:'6chars'; 	too long
+	CHAR 	ST:5; 			no apostrophe
+	CHAR 	ST:good; 		cannot set to other character
+c	NUM 	FC:2;
+EQ 	EQU 	FC:2;
+;arithmetic register values
+	MOVD 	DR:*,FM:0; 		invalid use of * in DR
+	MOVD	DR:const,FM:0; 	invalid use of label in DR
+	MOVD	DR:EQ,FM:0; 	
+	MOVD 	DR:UNDFND,FM:0;	label not defined
+;index register values
+	MOVD 	DX:*,FM:0; 		invalid use of * in DR
+	MOVD	DX:const,FM:0; 	invalid use of label in DR
+	MOVD	DX:EQ,FM:0; 	
+	MOVD 	DX:UNDFND,FM:0; label not defined
+;memory value	
+	MOVD 	DR:0,FM:*+2+2; 	invalid expression
+	MOVD 	DR:0,FM:UNDFND; undefined label
+	MOVD 	DR:0,FM:*+UNDFND; undefined label in expression
+	MOVD	DR:0,FM:*+2; 	
+;num value
+	NUM 	FC:*;			can't use expression for num
+	NUM 	FC:UNDFND;		label not defined
+;ADRC value
+	ADRC 	EX:*+*;			multiple star in expression
+	ADRC 	EX:*+UNDFND;	label not defined in expression
+	ADRC 	EX:UNDFND;		label not defined
+;Number of words
+	IWSR 	FM:0,NW:*;		cannot use expression
+	IWSR 	FM:0,NW:c;		cannot use label for NW
+	IWSR 	FM:0,NW:EQ;

@@ -1,0 +1,24 @@
+$TEST KICKO FC:0;
+ONE EQU FC:1;
+THREE EQU FC:2;
+    $ !M:0,NW:1;
+    $ !M:0,!X:1,NW:15;
+    $ !M:4095,!X:7,NW:1;
+    $ !M:ONE,NW:5;
+    $ !M:1000,NW:THREE;
+    $; ** Missing operands **
+    $ !M:0; ** Missing NW **
+    $ NW:1; ** Missing !M **
+    $ !X:0,NW:1; ** Missing !M **
+    $ !M:-1,NW:1; ** !M out of range **
+    $ !M:4096,NW:1; ** !M out of range **
+    $ !M:0,!X:0,NW:1; ** !X out of range **
+    $ !M:0,!X:8,NW:1; ** !X out of range **
+    $ !M:0,NW:0; ** NW out of range **
+    $ !M:0,NW:16; ** NW out of range **
+    $ !R:0,NW:1; ** Illegal operand **
+    $ LR:0,NW:9; ** Illegal operand **
+    $ FC:0,NW:4; ** Illegal operand **
+    $ !M:1=,NW:5; ** Illegal character '=' in operand value **
+    $ !M:0,%%:8; ** Illegal character '%' in operand keyword **
+    END LR:$TEST;

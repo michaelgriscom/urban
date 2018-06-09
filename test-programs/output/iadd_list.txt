@@ -1,0 +1,353 @@
+IADDTEST KICKO FC:0;
+Line number: 0001	LC: 0	Label: IADDTEST
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: ------
+
+ONE EQU FC:1;
+Line number: 0002	LC: 0	Label: ONE
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: FC:1		Binary Equivalent: ------
+
+TWO EQU FC:2;
+Line number: 0003	LC: 0	Label: TWO
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: FC:2		Binary Equivalent: ------
+
+    IADD FR:0,DM:0;
+Line number: 0004	LC: 0	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FR:0		Binary Equivalent: 001000
+Operand 2: DM:0		Binary Equivalent: 001000
+
+    IADD FM:100,DR:1;
+Line number: 0005	LC: 1	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FM:100		Binary Equivalent: 001000
+Operand 2: DR:1		Binary Equivalent: 001000
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    IADD FR:4,DM:1000,DX:1;
+Line number: 0006	LC: 2	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FR:4		Binary Equivalent: 001000
+Operand 2: DM:1000		Binary Equivalent: 001000
+Operand 3: DX:1		Binary Equivalent: 001000
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    IADD FM:2222,FX:1,DR:6;
+Line number: 0007	LC: 3	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FM:2222		Binary Equivalent: 001000
+Operand 2: FX:1		Binary Equivalent: 001000
+Operand 3: DR:6		Binary Equivalent: 001000
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    IADD DR:7,FT:0;
+Line number: 0008	LC: 4	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DR:7		Binary Equivalent: 001000
+Operand 2: FT:0		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IADD DM:4095,FT:-4096;
+Line number: 0009	LC: 5	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DM:4095		Binary Equivalent: 001000
+Operand 2: FT:-4096		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IADD DM:0,DX:1,FT:4095;
+Line number: 0010	LC: 6	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DM:0		Binary Equivalent: 001000
+Operand 2: DX:1		Binary Equivalent: 001000
+Operand 3: FT:4095		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IADD DM:LBL,FR:0;
+Line number: 0011	LC: 7	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DM:LBL		Binary Equivalent: 001000
+Operand 2: FR:0		Binary Equivalent: 001000
+
+    IADD FM:LBL,DR:1;
+Line number: 0012	LC: 8	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FM:LBL		Binary Equivalent: 001000
+Operand 2: DR:1		Binary Equivalent: 001000
+
+    IADD FM:ONE,DR:TWO;
+Line number: 0013	LC: 9	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FM:ONE		Binary Equivalent: 001000
+Operand 2: DR:TWO		Binary Equivalent: 001000
+
+    IADD FM:0,DR:ONE;
+Line number: 0014	LC: A	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FM:0		Binary Equivalent: 001000
+Operand 2: DR:ONE		Binary Equivalent: 001000
+
+    IADD DM:LBL,DX:ONE,FR:TWO;
+Line number: 0015	LC: B	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DM:LBL		Binary Equivalent: 001000
+Operand 2: DX:ONE		Binary Equivalent: 001000
+Operand 3: FR:TWO		Binary Equivalent: 001000
+
+    IADD DR:0,FM:*;
+Line number: 0016	LC: C	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DR:0		Binary Equivalent: 001000
+Operand 2: FM:*		Binary Equivalent: 001000
+
+    IADD DR:0,FM:*+10;
+Line number: 0017	LC: D	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DR:0		Binary Equivalent: 001000
+Operand 2: FM:*+10		Binary Equivalent: 001000
+
+    IADD FR:0; ** Missing DM **
+Line number: 0018	LC: E	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FR:0		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IADD DM:0; ** Missing FR **
+Line number: 0019	LC: F	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DM:0		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IADD FM:0; ** Missing DR **
+Line number: 0020	LC: 10	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FM:0		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IADD DR:0; ** Missing FM **
+Line number: 0021	LC: 11	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DR:0		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IADD FR:0,DM:0,FX:1; ** Index with register, not memory **
+Line number: 0022	LC: 12	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FR:0		Binary Equivalent: 001000
+Operand 2: DM:0		Binary Equivalent: 001000
+Operand 3: FX:1		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IADD FM:0,DR:0,DX:1; ** Index with register, not memory ** 
+Line number: 0023	LC: 13	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FM:0		Binary Equivalent: 001000
+Operand 2: DR:0		Binary Equivalent: 001000
+Operand 3: DX:1		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IADD FR:0,FT:0; ** Illegal use of literal **
+Line number: 0024	LC: 14	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FR:0		Binary Equivalent: 001000
+Operand 2: FT:0		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IADD FR:0,DT:0; ** Illegal operand DT **
+Line number: 0025	LC: 15	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FR:0		Binary Equivalent: 001000
+Operand 2: DT:0		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IADD DR:0,FC:1; ** Illegal operand FC **
+Line number: 0026	LC: 16	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DR:0		Binary Equivalent: 001000
+Operand 2: FC:1		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IADD DR:0,LR:LBL; ** Illegal operand LR **
+Line number: 0027	LC: 17	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DR:0		Binary Equivalent: 001000
+Operand 2: LR:LBL		Binary Equivalent: 001000
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    IADD DR:0,FM:1,NW:6; ** Illegal operand NW **
+Line number: 0028	LC: 18	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DR:0		Binary Equivalent: 001000
+Operand 2: FM:1		Binary Equivalent: 001000
+Operand 3: NW:6		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IADD EX:*+6; ** Illegal expression **
+Line number: 0029	LC: 19	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: EX:*+6		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IADD DR:0,FM:0,EX:*-10; ** Illegal expression **
+Line number: 0030	LC: 1A	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DR:0		Binary Equivalent: 001000
+Operand 2: FM:0		Binary Equivalent: 001000
+Operand 3: EX:*-10		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IADD FR:-1,DM:0; ** Negative register address **
+Line number: 0031	LC: 1B	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FR:-1		Binary Equivalent: 001000
+Operand 2: DM:0		Binary Equivalent: 001000
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    IADD FR:0,DM:-1; ** Negative memory address **
+Line number: 0032	LC: 1C	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FR:0		Binary Equivalent: 001000
+Operand 2: DM:-1		Binary Equivalent: 001000
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    IADD FR:8,DM:0; ** Register address out of range **
+Line number: 0033	LC: 1D	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FR:8		Binary Equivalent: 001000
+Operand 2: DM:0		Binary Equivalent: 001000
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    IADD FR:0,DM:4096; ** Memory address out of range **
+Line number: 0034	LC: 1E	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FR:0		Binary Equivalent: 001000
+Operand 2: DM:4096		Binary Equivalent: 001000
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    IADD FM:4096,DR:0; ** Memory address out of range **
+Line number: 0035	LC: 1F	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FM:4096		Binary Equivalent: 001000
+Operand 2: DR:0		Binary Equivalent: 001000
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    IADD FM:0,DR:8; ** Register address out of range **
+Line number: 0036	LC: 20	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FM:0		Binary Equivalent: 001000
+Operand 2: DR:8		Binary Equivalent: 001000
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    IADD FR:0,DM:0,DX:0; ** Index address out of range **
+Line number: 0037	LC: 21	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FR:0		Binary Equivalent: 001000
+Operand 2: DM:0		Binary Equivalent: 001000
+Operand 3: DX:0		Binary Equivalent: 001000
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    IADD FR:0,DM:0,DX:8; ** Index address out of range **
+Line number: 0038	LC: 22	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FR:0		Binary Equivalent: 001000
+Operand 2: DM:0		Binary Equivalent: 001000
+Operand 3: DX:8		Binary Equivalent: 001000
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    IADD FM:0,DR:0,DX:0; ** Index address out of range **
+Line number: 0039	LC: 23	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FM:0		Binary Equivalent: 001000
+Operand 2: DR:0		Binary Equivalent: 001000
+Operand 3: DX:0		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IADD FM:0,DR:0,DX:8; ** Index address out of range **
+Line number: 0040	LC: 24	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: FM:0		Binary Equivalent: 001000
+Operand 2: DR:0		Binary Equivalent: 001000
+Operand 3: DX:8		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IADD DR:0,FT:-4097; ** Literal value out of range **
+Line number: 0041	LC: 25	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DR:0		Binary Equivalent: 001000
+Operand 2: FT:-4097		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IADD DR:0,FT:4096; ** Literal value out of range **
+Line number: 0042	LC: 26	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DR:0		Binary Equivalent: 001000
+Operand 2: FT:4096		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IADD DR:&,FM:0; ** Illegal character '&' in operand value **
+Line number: 0043	LC: 27	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DR:&		Binary Equivalent: 001000
+Operand 2: FM:0		Binary Equivalent: 001000
+Errors:
+**ERROR 227** Serious: Symbol in operand value not previously equated
+
+    IADD DR:0,FM:1#3; ** Illegal character '#' in operand value **
+Line number: 0044	LC: 28	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DR:0		Binary Equivalent: 001000
+Operand 2: FM:1#3		Binary Equivalent: 001000
+Errors:
+**ERROR 207** Serious: Invalid numeric value: Not a number (or number too big)
+
+    IADD %:9,DR:4,FM:4; ** Illegal operand name '%' ** 
+Line number: 0045	LC: 29	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: %:9		Binary Equivalent: 001000
+Operand 2: DR:4		Binary Equivalent: 001000
+Operand 3: FM:4		Binary Equivalent: 001000
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+LBL NUM FC:0;
+Line number: 0046	LC: 2A	Label: LBL
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: ------
+
+    END LR:IADDTEST;
+Line number: 0047	LC: 2B	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:IADDTEST		Binary Equivalent: ------
+

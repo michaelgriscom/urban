@@ -1,0 +1,34 @@
+LOC	OBJ CODE	A/R/E/C	STMT	SOURCE STATEMENT
+0000	--------	A	1	OPVAL KICKO FC:0; 			tests invalid values for certain keywords
+0000	20202020	A	2	gd	CHAR 	ST:''; 
+0001	F4000000	A	3	bad	CHAR 	ST:'6chars'; 	too long
+0002	F4000000	A	4		CHAR 	ST:5; 			no apostrophe
+0003	F4000000	A	5		CHAR 	ST:good; 		cannot set to other character
+0004	00000002	A	6	c	NUM 	FC:2;
+0005	--------	A	7	EQ 	EQU 	FC:2;
+0005	--------	A	8	;arithmetic register values
+0005	F4000000	A	9		MOVD 	DR:*,FM:0; 		invalid use of * in DR
+0006	F4000000	A	10		MOVD	DR:const,FM:0; 	invalid use of label in DR
+0007	00800000	R	11		MOVD	DR:EQ,FM:0; 	
+0008	F4000000	A	12		MOVD 	DR:UNDFND,FM:0;	label not defined
+0009	--------	A	13	;index register values
+0009	F4000000	A	14		MOVD 	DX:*,FM:0; 		invalid use of * in DR
+000A	F4000000	A	15		MOVD	DX:const,FM:0; 	invalid use of label in DR
+000B	F4000000	A	16		MOVD	DX:EQ,FM:0; 	
+000C	F4000000	A	17		MOVD 	DX:UNDFND,FM:0; label not defined
+000D	--------	A	18	;memory value	
+000D	F4000000	R	19		MOVD 	DR:0,FM:*+2+2; 	invalid expression
+000E	F4000000	R	20		MOVD 	DR:0,FM:UNDFND; undefined label
+000F	F4000000	R	21		MOVD 	DR:0,FM:*+UNDFND; undefined label in expression
+0010	00000012	R	22		MOVD	DR:0,FM:*+2; 	
+0011	--------	A	23	;num value
+0011	F4000000	A	24		NUM 	FC:*;			can't use expression for num
+0012	F4000000	A	25		NUM 	FC:UNDFND;		label not defined
+0013	--------	A	26	;ADRC value
+0013	F4000000	A	27		ADRC 	EX:*+*;			multiple star in expression
+0014	F4000000	A	28		ADRC 	EX:*+UNDFND;	label not defined in expression
+0015	F4000000	A	29		ADRC 	EX:UNDFND;		label not defined
+0016	--------	A	30	;Number of words
+0016	F4000000	R	31		IWSR 	FM:0,NW:*;		cannot use expression
+0017	F4000000	R	32		IWSR 	FM:0,NW:c;		cannot use label for NW
+0018	A0010000	R	33		IWSR 	FM:0,NW:EQ;
