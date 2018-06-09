@@ -1,0 +1,13 @@
+ISRATEST KICKO FC:0;
+ONE EQU FC:1;
+    ISRA FC:0;
+    ISRA FC:ONE;
+    ISRA FC:10;
+    ISRA FC:31;
+    ISRA; ** Missing operand **
+    ISRA FT:0; ** Missing FC **
+    ISRA FC:-1; ** FC out of range **
+    ISRA FC:32; ** FC out of range **
+    ISRA FC:@; ** Illegal character '@' in operand value **
+    ISRA F^:10; ** Illegal character '^' in operand keyword **
+    END LR:ISRATEST;

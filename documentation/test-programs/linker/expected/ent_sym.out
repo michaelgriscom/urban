@@ -1,0 +1,11 @@
+Label          	Local Addr	Adjustment	Reloc. Addr	Module Len
+ENTTEST        	         0	         0	          0	        10
+MUD1           	         0	         0	          0	       ---
+MUD2           	         1	         0	          1	       ---
+MUD3           	         2	         0	          2	       ---
+MUD4           	         3	         0	          3	       ---
+MUD5           	         4	         0	          4	       ---
+MUD6           	         5	         0	          5	       ---
+MUD7           	         6	         0	          6	       ---
+MUD8           	         7	         0	          7	       ---
+MUD9           	         8	         0	          8	       ---

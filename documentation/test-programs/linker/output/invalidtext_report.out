@@ -1,0 +1,44 @@
+H:InvalidText:000000:0100:0010:2011300,06,06,07:1000:URBAN-ASM:InvalidText
+L:var:000010:InvalidText
+T:000000:Q0000080:C:1:InvalidText
+  Error 208: Error in text field: Bad format (expected hex string)
+
+M:000000:1:+:var:InvalidText
+  Error 109: Modification Records exceeds expected amount
+
+T:000001:FF0000080:C:1:InvalidText
+  Error 209: Error in text field: Out of range (expected eight hex digits)
+
+M:000001:1:+:var:InvalidText
+  Error 109: Modification Records exceeds expected amount
+
+T:Q00002:00000080:C:1:InvalidText
+  Error 233: Error in address field: Bad format (expected hex string)
+
+M:000002:1:+:var:InvalidText
+  Error 239: Error in modification record: No text record at the memory location
+
+T:000003:00000080:Q:1:InvalidText
+  Error 210: Error in relocation field: Illegal flag (expected A, R, E, or C)
+
+M:000003:1:+:var:InvalidText
+  Error 109: Modification Records exceeds expected amount
+
+T:000004:00000100:C:qq:InvalidText
+  Error 212: Error in modification count field: Bad format (expected (one digit) hex string)
+
+M:000004:1:+:var:InvalidText
+  Error 109: Modification Records exceeds expected amount
+
+T:000004:00002000:A:0:InvalidText
+  Error 214: Memory Address already in use
+
+T:InvalidText
+  Error 233: Error in address field: Bad format (expected hex string)
+  Error 212: Error in modification count field: Bad format (expected (one digit) hex string)
+  Error 208: Error in text field: Bad format (expected hex string)
+  Error 235: Error in text record: Wrong number of fields (expected 6)
+  Error 206: Record contains incorrect program name
+  Error 210: Error in relocation field: Illegal flag (expected A, R, E, or C)
+
+E:000F:0001:0007:0005:InvalidText

@@ -1,0 +1,24 @@
+CRKBTEST KICKO FC:0;
+ONE EQU FC:1;
+THREE EQU FC:2;
+    CRKB FM:0,NW:1;
+    CRKB FM:0,FX:1,NW:15;
+    CRKB FM:4095,FX:7,NW:1;
+    CRKB FM:ONE,NW:5;
+    CRKB FM:1000,NW:THREE;
+    CRKB; ** Missing operands **
+    CRKB FM:0; ** Missing NW **
+    CRKB NW:1; ** Missing FM **
+    CRKB FX:0,NW:1; ** Missing FM **
+    CRKB FM:-1,NW:1; ** FM out of range **
+    CRKB FM:4096,NW:1; ** FM out of range **
+    CRKB FM:0,FX:0,NW:1; ** FX out of range **
+    CRKB FM:0,FX:8,NW:1; ** FX out of range **
+    CRKB FM:0,NW:0; ** NW out of range **
+    CRKB FM:0,NW:16; ** NW out of range **
+    CRKB FR:0,NW:1; ** Illegal operand **
+    CRKB LR:0,NW:9; ** Illegal operand **
+    CRKB FC:0,NW:4; ** Illegal operand **
+    CRKB FM:1=,NW:5; ** Illegal character '=' in operand value **
+    CRKB FM:0,%%:8; ** Illegal character '%' in operand keyword **
+    END LR:CRKBTEST;

@@ -1,0 +1,13 @@
+CLRTEST KICKO FC:0;
+    CLR DR:1;
+    CLR DR:7;
+    CLR DX:1;
+    CLR; ** Missing operand **
+    CLR DR:0; ** Specs say this isn't allowed - should it be? **
+    CLR DR:-1; ** Illegal register address **
+    CLR DR:8; ** Illegal register address **
+    CLR DX:0; ** Illegal index address **
+    CLR DX:8; ** Illegal index address **
+    CLR DM:0; ** Illegal destination **
+    CLR FR:0; ** Illegal operand **
+    END LR:CLRTEST;

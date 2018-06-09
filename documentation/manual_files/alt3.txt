@@ -1,0 +1,10 @@
+ALT3	KICKO	FC:0;				
+	MOVD	DR:1,FM:AB	;place AB in register 1	0	00400005 	R
+	IADD	DR:1,FM:CD	;add (AB+CD)	1	20400006 	R
+	MOVD	FR:1,DM:RES	;store AB+CD into RES	2	00400007 	R
+	IWSR	FM:RES,NW:1	;output RES		3	A0008007 	R
+	HLT	FC:0	;halt program display code 0	4	FC000000 	A
+AB	num	FC:10	;define data element	5	0000000A 	A
+CD	num	FC:111	;define data element	6	0000006F 	A
+RES	num	FC:0	;define data element	7	00000000 	A
+	END	LR:ALT3	;end of program		E

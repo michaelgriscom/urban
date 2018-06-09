@@ -1,0 +1,42 @@
+NOPTEST KICKO FC:0;
+Line number: 0001	LC: 0	Label: NOPTEST
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: ------
+
+FOO NOP;
+Line number: 0002	LC: 0	Label: FOO
+Instruction/Directive: NOP	Binary Equivalent: 111101
+
+    NOP FC:0; ** Illegal operand **
+Line number: 0003	LC: 1	Label: ------
+Instruction/Directive: NOP	Binary Equivalent: 111101
+Operand 1: FC:0		Binary Equivalent: 111101
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    NOP DR:0; ** Illegal operand **
+Line number: 0004	LC: 2	Label: ------
+Instruction/Directive: NOP	Binary Equivalent: 111101
+Operand 1: DR:0		Binary Equivalent: 111101
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    NOP LR:FOO; ** Illegal operand **
+Line number: 0005	LC: 3	Label: ------
+Instruction/Directive: NOP	Binary Equivalent: 111101
+Operand 1: LR:FOO		Binary Equivalent: 111101
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    NOP FM:FOO; ** Illegal operand **
+Line number: 0006	LC: 4	Label: ------
+Instruction/Directive: NOP	Binary Equivalent: 111101
+Operand 1: FM:FOO		Binary Equivalent: 111101
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    END LR:NOPTEST;
+Line number: 0007	LC: 5	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:NOPTEST		Binary Equivalent: ------
+

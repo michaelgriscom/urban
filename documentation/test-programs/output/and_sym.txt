@@ -1,0 +1,5 @@
+Label	LC	Usage	String
+ANDTEST	0	PRGM_NAME	
+LBL	2A	LABEL	
+ONE	0	EQU	1
+TWO	0	EQU	2

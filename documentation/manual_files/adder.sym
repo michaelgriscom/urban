@@ -1,0 +1,7 @@
+Label	LC	Usage	String
+adder	0	PRGM_NAME	
+end	7	LABEL	
+in	B	LABEL	
+loop	1	LABEL	
+pr	C	LABEL	
+pr2	13	LABEL	

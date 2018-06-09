@@ -1,0 +1,42 @@
+CLRXTEST KICKO FC:0;
+Line number: 0001	LC: 0	Label: CLRXTEST
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: ------
+
+FOO CLRX;
+Line number: 0002	LC: 0	Label: FOO
+Instruction/Directive: CLRX	Binary Equivalent: 010010
+
+    CLRX FC:0; ** Illegal operand **
+Line number: 0003	LC: 1	Label: ------
+Instruction/Directive: CLRX	Binary Equivalent: 010010
+Operand 1: FC:0		Binary Equivalent: 010010
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    CLRX DR:0; ** Illegal operand **
+Line number: 0004	LC: 2	Label: ------
+Instruction/Directive: CLRX	Binary Equivalent: 010010
+Operand 1: DR:0		Binary Equivalent: 010010
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    CLRX LR:FOO; ** Illegal operand **
+Line number: 0005	LC: 3	Label: ------
+Instruction/Directive: CLRX	Binary Equivalent: 010010
+Operand 1: LR:FOO		Binary Equivalent: 010010
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    CLRX FM:FOO; ** Illegal operand **
+Line number: 0006	LC: 4	Label: ------
+Instruction/Directive: CLRX	Binary Equivalent: 010010
+Operand 1: FM:FOO		Binary Equivalent: 010010
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    END LR:CLRXTEST;
+Line number: 0007	LC: 5	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:CLRXTEST		Binary Equivalent: ------
+

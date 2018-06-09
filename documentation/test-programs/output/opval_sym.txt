@@ -1,0 +1,6 @@
+Label	LC	Usage	String
+EQ	5	EQU	2
+OPVAL	0	PRGM_NAME	
+bad	1	LABEL	
+c	4	LABEL	
+gd	0	LABEL	

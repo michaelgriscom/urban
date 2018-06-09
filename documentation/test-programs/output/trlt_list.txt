@@ -1,0 +1,169 @@
+TRLTTEST KICKO FC:0;
+Line number: 0001	LC: 0	Label: TRLTTEST
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: ------
+
+FIVE EQU FC:5;
+Line number: 0002	LC: 0	Label: FIVE
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: FC:5		Binary Equivalent: ------
+
+    TRLT FR:0,DM:0;
+Line number: 0003	LC: 0	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Operand 1: FR:0		Binary Equivalent: 100001
+Operand 2: DM:0		Binary Equivalent: 100001
+
+    TRLT FR:7,DM:4095;
+Line number: 0004	LC: 1	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Operand 1: FR:7		Binary Equivalent: 100001
+Operand 2: DM:4095		Binary Equivalent: 100001
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    TRLT FX:1,DM:0;
+Line number: 0005	LC: 2	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Operand 1: FX:1		Binary Equivalent: 100001
+Operand 2: DM:0		Binary Equivalent: 100001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    TRLT FX:7,DM:4095;
+Line number: 0006	LC: 3	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Operand 1: FX:7		Binary Equivalent: 100001
+Operand 2: DM:4095		Binary Equivalent: 100001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    TRLT FR:FIVE,DM:2000;
+Line number: 0007	LC: 4	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Operand 1: FR:FIVE		Binary Equivalent: 100001
+Operand 2: DM:2000		Binary Equivalent: 100001
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    TRLT FX:3,DM:FIVE;
+Line number: 0008	LC: 5	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Operand 1: FX:3		Binary Equivalent: 100001
+Operand 2: DM:FIVE		Binary Equivalent: 100001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    TRLT; ** Missing operands **
+Line number: 0009	LC: 6	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    TRLT DM:0; ** Missing FR **
+Line number: 0010	LC: 7	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Operand 1: DM:0		Binary Equivalent: 100001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    TRLT FR:0; ** Missing DM **
+Line number: 0011	LC: 8	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Operand 1: FR:0		Binary Equivalent: 100001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    TRLT FX:1; ** Missing DM **
+Line number: 0012	LC: 9	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Operand 1: FX:1		Binary Equivalent: 100001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    TRLT FR:-1,DM:0; ** Illegal register address **
+Line number: 0013	LC: A	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Operand 1: FR:-1		Binary Equivalent: 100001
+Operand 2: DM:0		Binary Equivalent: 100001
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    TRLT FR:8,DM:0; ** Illegal register address **
+Line number: 0014	LC: B	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Operand 1: FR:8		Binary Equivalent: 100001
+Operand 2: DM:0		Binary Equivalent: 100001
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    TRLT FX:0,DM:0; ** Illegal index address **
+Line number: 0015	LC: C	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Operand 1: FX:0		Binary Equivalent: 100001
+Operand 2: DM:0		Binary Equivalent: 100001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    TRLT FX:8,DM:0; ** Illegal index address **
+Line number: 0016	LC: D	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Operand 1: FX:8		Binary Equivalent: 100001
+Operand 2: DM:0		Binary Equivalent: 100001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    TRLT FR:0,DM:-1; ** Illegal memory address **
+Line number: 0017	LC: E	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Operand 1: FR:0		Binary Equivalent: 100001
+Operand 2: DM:-1		Binary Equivalent: 100001
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    TRLT FR:0,DM:4096; ** Illegal memory address **
+Line number: 0018	LC: F	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Operand 1: FR:0		Binary Equivalent: 100001
+Operand 2: DM:4096		Binary Equivalent: 100001
+Errors:
+**ERROR 214** Serious: Operand value is out of range
+
+    TRLT FR:0,DM:0,LR:TRLTTEST; ** Extra operand **
+Line number: 0019	LC: 10	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Operand 1: FR:0		Binary Equivalent: 100001
+Operand 2: DM:0		Binary Equivalent: 100001
+Operand 3: LR:TRLTTEST		Binary Equivalent: 100001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    TRLT FR:&,DM:7; ** Illegal character '&' in operand value **
+Line number: 0020	LC: 11	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Operand 1: FR:&		Binary Equivalent: 100001
+Operand 2: DM:7		Binary Equivalent: 100001
+Errors:
+**ERROR 227** Serious: Symbol in operand value not previously equated
+
+    TRLT FR:2,DM:); ** Illegal character ')' in operand value **
+Line number: 0021	LC: 12	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Operand 1: FR:2		Binary Equivalent: 100001
+Operand 2: DM:)		Binary Equivalent: 100001
+Errors:
+**ERROR 227** Serious: Symbol in operand value not previously equated
+
+    TRLT /T:0,DM:0; ** Illegal character '/' in operand keyword **
+Line number: 0022	LC: 13	Label: ------
+Instruction/Directive: TRLT	Binary Equivalent: 100001
+Operand 1: /T:0		Binary Equivalent: 100001
+Operand 2: DM:0		Binary Equivalent: 100001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    END LR:TRLTTEST;
+Line number: 0023	LC: 14	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:TRLTTEST		Binary Equivalent: ------
+

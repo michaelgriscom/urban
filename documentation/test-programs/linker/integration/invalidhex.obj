@@ -1,0 +1,11 @@
+H:InvalidHex:000000:0100:0010:2011300,06,06,07:1000:URBAN-ASM:InvalidHex
+L:VAR1:notHex:InvalidHex
+T:notHex:00000000:C:1:InvalidHex
+M:000000:1:+:VAR1:InvalidHex
+T:notHex:00000000:C:1:InvalidHex
+M:notHex:1:+:VAR1:InvalidHex
+T:000002:notHex8d:C:1:InvalidHex
+M:000002:1:+:VAR1:InvalidHex
+T:000003:notHex8d:C:1:InvalidHex
+M:notHex:1:+:VAR1:InvalidHex
+E:0000:0000:0000:0000:InvalidHex

@@ -1,0 +1,14 @@
+H:InvalidMod:000000:0100:0010:2011300,06,06,07:1000:URBAN-ASM:InvalidMod
+L:var:000010:InvalidMod
+T:000000:00000080:C:8:InvalidMod
+M:000000:1:+:nonexistent:InvalidMod
+M:000000:Q:+:var:InvalidMod
+M:000000:1:Q:var:InvalidMod
+M:000000:1:+:var:+:var:InvalidMod
+M:000000:0:InvalidMod
+M:ABCDEFGH:1:+:var:InvalidMod
+M:000001:1:+:var:InvalidMod
+M:InvalidMod
+T:000001:0000080:A:0:InvalidMod
+M:000001:1:+:var:InvalidMod
+E:000E:0001:0002:0009:InvalidMod

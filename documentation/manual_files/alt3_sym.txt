@@ -1,0 +1,5 @@
+Label	LC	Usage	String
+AB	5	LABEL	
+ALT3	0	PRGM_NAME	
+CD	6	LABEL	
+RES	7	LABEL	

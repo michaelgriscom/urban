@@ -1,0 +1,43 @@
+H:InvalidHeader:00000Q:0100:0010:2011300,06,06,07:1000:URBAN-ASM:InvalidHeader
+  Error 202: Invalid memory address format 
+
+T:000000:00000080:A:0:InvalidHeader
+  Error 240: Header record was invalid: Could not parse following records
+
+T:000000:00000080:C:1:InvalidHeader
+  Error 240: Header record was invalid: Could not parse following records
+
+L:dontexist:000010:InvalidHeader
+  Error 240: Header record was invalid: Could not parse following records
+
+M:000000:1:+:dontexist:InvalidHeader
+  Error 239: Error in modification record: No text record at the memory location
+  Error 230: Error in modification symbol: Undefined symbol
+  Error 206: Record contains incorrect program name
+
+H:InvalidHeader:000000:!100:0010:2011300,06,06,07:1000:URBAN-ASM:InvalidHeader
+  Error 225: Header Module Length is not valid hex
+
+H:InvalidHeader:000000:0100:%010:2011300,06,06,07:1000:URBAN-ASM:InvalidHeader
+  Error 227: Execution Address is not valid hex
+
+H:InvalidHeader:000000:0100:0010:2011300,06,06,07:1000:URBAN-ASM:InvalidHeader
+H:ValidHeader:000000:0100:0010:justawarning!011300,06,06,07:1000:URBAN-ASM:ValidHeader
+  Error 222: Previous Header was not ended with an End Record
+
+H:InvalidHeader:000000:0100:0010:2011300,06,06,07:1000:URBAN-ASM,,, but still Valid:InvalidHeader
+  Error 222: Previous Header was not ended with an End Record
+
+H:InvalidHeader:000000:0100:0010:2011300,06,06,07:1000:URBAN-ASM:InvalidHeader
+  Error 222: Previous Header was not ended with an End Record
+
+H:NOENDRECORD:000000:0100:0010:2011300,06,06,07:1000:URBAN-ASM:InvalidHeader
+  Error 222: Previous Header was not ended with an End Record
+
+E:0000:0000:0000:0000:ValidHeader
+  Error 103: End record has incorrect number of total records
+  Error 106: End record has incorrect number of modification records
+
+H:ValidHeader:000000:0100:0010:2011300,06,06,07:1000:URBAN-ASM:ValidHeader
+  Error 108: Module did not have an End Record
+

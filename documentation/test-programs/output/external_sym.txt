@@ -1,0 +1,13 @@
+Label	LC	Usage	String
+A	----	EXT	
+B	----	EXT	
+C	----	EXT	
+D	----	EXT	
+E	----	EXT	
+EXT	A	PRGM_NAME	
+F	----	EXT	
+G	----	EXT	
+H	----	EXT	
+X	A	EQU	1
+Y	A	EQU	32
+Z	A	EQU	512

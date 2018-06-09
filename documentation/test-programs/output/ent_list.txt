@@ -1,0 +1,196 @@
+ENTTEST KICKO FC:0;
+Line number: 0001	LC: 0	Label: ENTTEST
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: ------
+
+; Currently only tests keywords
+Line number: 0002	LC: 0	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+
+Line number: 0003	LC: 0	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+Errors:
+**ERROR 101** Warning: Blank line or line containing only comments
+
+        ENT LR:MUD1;
+Line number: 0004	LC: 0	Label: ------
+Instruction/Directive: ENT	Binary Equivalent: ------
+Operand 1: LR:MUD1		Binary Equivalent: ------
+Errors:
+**ERROR 227** Serious: Symbol in operand value not previously equated
+
+        ENT LR:MUD2,LR:MUD3,LR:MUD4,LR:MUD5;
+Line number: 0005	LC: 0	Label: ------
+Instruction/Directive: ENT	Binary Equivalent: ------
+Operand 1: LR:MUD2		Binary Equivalent: ------
+Operand 2: LR:MUD3		Binary Equivalent: ------
+Operand 3: LR:MUD4		Binary Equivalent: ------
+Operand 4: LR:MUD5		Binary Equivalent: ------
+Errors:
+**ERROR 227** Serious: Symbol in operand value not previously equated
+
+        ENT LR:MUD6,LR:MUD7,LR:MUD8,LR:MUD9,LR:MUD10;   ** Only allowed to have up to 5 LR's **
+Line number: 0006	LC: 0	Label: ------
+Instruction/Directive: ENT	Binary Equivalent: ------
+Operand 1: LR:MUD6		Binary Equivalent: ------
+Operand 2: LR:MUD7		Binary Equivalent: ------
+Operand 3: LR:MUD8		Binary Equivalent: ------
+Operand 4: LR:MUD9		Binary Equivalent: ------
+Errors:
+**ERROR 102** Warning: Invalid operand field for ENT/EXT
+**ERROR 227** Serious: Symbol in operand value not previously equated
+
+        ENT DM:1;   ** DM invalid keyword argument **
+Line number: 0007	LC: 0	Label: ------
+Instruction/Directive: ENT	Binary Equivalent: ------
+Errors:
+**ERROR 102** Warning: Invalid operand field for ENT/EXT
+
+        ENT DR:1;   ** DR invalid keyword argument **
+Line number: 0008	LC: 0	Label: ------
+Instruction/Directive: ENT	Binary Equivalent: ------
+Errors:
+**ERROR 102** Warning: Invalid operand field for ENT/EXT
+
+        ENT DX:1;   ** DX invalid keyword argument **
+Line number: 0009	LC: 0	Label: ------
+Instruction/Directive: ENT	Binary Equivalent: ------
+Errors:
+**ERROR 102** Warning: Invalid operand field for ENT/EXT
+
+        ENT EX:1;   ** EX invalid keyword argument **
+Line number: 0010	LC: 0	Label: ------
+Instruction/Directive: ENT	Binary Equivalent: ------
+Errors:
+**ERROR 102** Warning: Invalid operand field for ENT/EXT
+
+        ENT FC:1;   ** FC invalid keyword argument **
+Line number: 0011	LC: 0	Label: ------
+Instruction/Directive: ENT	Binary Equivalent: ------
+Errors:
+**ERROR 102** Warning: Invalid operand field for ENT/EXT
+
+        ENT FL:1;   ** FL invalid keyword argument **
+Line number: 0012	LC: 0	Label: ------
+Instruction/Directive: ENT	Binary Equivalent: ------
+Errors:
+**ERROR 102** Warning: Invalid operand field for ENT/EXT
+
+        ENT FM:1;   ** FM invalid keyword argument **
+Line number: 0013	LC: 0	Label: ------
+Instruction/Directive: ENT	Binary Equivalent: ------
+Errors:
+**ERROR 102** Warning: Invalid operand field for ENT/EXT
+
+        ENT FR:1;   ** FR invalid keyword argument **
+Line number: 0014	LC: 0	Label: ------
+Instruction/Directive: ENT	Binary Equivalent: ------
+Errors:
+**ERROR 102** Warning: Invalid operand field for ENT/EXT
+
+        ENT FS:1;   ** FS invalid keyword argument **
+Line number: 0015	LC: 0	Label: ------
+Instruction/Directive: ENT	Binary Equivalent: ------
+Errors:
+**ERROR 102** Warning: Invalid operand field for ENT/EXT
+
+        ENT FX:1;   ** FX invalid keyword argument **
+Line number: 0016	LC: 0	Label: ------
+Instruction/Directive: ENT	Binary Equivalent: ------
+Errors:
+**ERROR 102** Warning: Invalid operand field for ENT/EXT
+
+        ENT NW:1;   ** NW invalid keyword argument **
+Line number: 0017	LC: 0	Label: ------
+Instruction/Directive: ENT	Binary Equivalent: ------
+Errors:
+**ERROR 102** Warning: Invalid operand field for ENT/EXT
+
+        ENT ST:'1'; ** ST invalid keyword argument **
+Line number: 0018	LC: 0	Label: ------
+Instruction/Directive: ENT	Binary Equivalent: ------
+Errors:
+**ERROR 102** Warning: Invalid operand field for ENT/EXT
+
+
+Line number: 0019	LC: 0	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+Errors:
+**ERROR 101** Warning: Blank line or line containing only comments
+
+; Define all the entry variables
+Line number: 0020	LC: 0	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+MUD1    AND FR:0,DM:0;
+Line number: 0021	LC: 0	Label: MUD1
+Instruction/Directive: AND	Binary Equivalent: 011110
+Operand 1: FR:0		Binary Equivalent: 011110
+Operand 2: DM:0		Binary Equivalent: 011110
+
+MUD2    AND FR:0,DM:0;
+Line number: 0022	LC: 1	Label: MUD2
+Instruction/Directive: AND	Binary Equivalent: 011110
+Operand 1: FR:0		Binary Equivalent: 011110
+Operand 2: DM:0		Binary Equivalent: 011110
+
+MUD3    AND FR:0,DM:0;
+Line number: 0023	LC: 2	Label: MUD3
+Instruction/Directive: AND	Binary Equivalent: 011110
+Operand 1: FR:0		Binary Equivalent: 011110
+Operand 2: DM:0		Binary Equivalent: 011110
+
+MUD4    AND FR:0,DM:0;
+Line number: 0024	LC: 3	Label: MUD4
+Instruction/Directive: AND	Binary Equivalent: 011110
+Operand 1: FR:0		Binary Equivalent: 011110
+Operand 2: DM:0		Binary Equivalent: 011110
+
+MUD5    AND FR:0,DM:0;
+Line number: 0025	LC: 4	Label: MUD5
+Instruction/Directive: AND	Binary Equivalent: 011110
+Operand 1: FR:0		Binary Equivalent: 011110
+Operand 2: DM:0		Binary Equivalent: 011110
+
+MUD6    AND FR:0,DM:0;
+Line number: 0026	LC: 5	Label: MUD6
+Instruction/Directive: AND	Binary Equivalent: 011110
+Operand 1: FR:0		Binary Equivalent: 011110
+Operand 2: DM:0		Binary Equivalent: 011110
+
+MUD7    AND FR:0,DM:0;
+Line number: 0027	LC: 6	Label: MUD7
+Instruction/Directive: AND	Binary Equivalent: 011110
+Operand 1: FR:0		Binary Equivalent: 011110
+Operand 2: DM:0		Binary Equivalent: 011110
+
+MUD8    AND FR:0,DM:0;
+Line number: 0028	LC: 7	Label: MUD8
+Instruction/Directive: AND	Binary Equivalent: 011110
+Operand 1: FR:0		Binary Equivalent: 011110
+Operand 2: DM:0		Binary Equivalent: 011110
+
+MUD9    AND FR:0,DM:0;
+Line number: 0029	LC: 8	Label: MUD9
+Instruction/Directive: AND	Binary Equivalent: 011110
+Operand 1: FR:0		Binary Equivalent: 011110
+Operand 2: DM:0		Binary Equivalent: 011110
+
+MUD10   AND FR:0,DM:0;
+Line number: 0030	LC: 9	Label: MUD10
+Instruction/Directive: AND	Binary Equivalent: 011110
+Operand 1: FR:0		Binary Equivalent: 011110
+Operand 2: DM:0		Binary Equivalent: 011110
+
+
+Line number: 0031	LC: A	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+Errors:
+**ERROR 101** Warning: Blank line or line containing only comments
+
+        END LR:ENTTEST;
+Line number: 0032	LC: A	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:ENTTEST		Binary Equivalent: ------
+

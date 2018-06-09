@@ -1,0 +1,19 @@
+test kicko fc:0;
+Line number: 0001	LC: 0	Label: test
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: ------
+
+err  kicko fc:1000;  ** Extra KICKO directive **
+Line number: 0002	LC: 3E8	Label: err
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:1000		Binary Equivalent: ------
+Errors:
+**ERROR 306** No error message associated with this number
+
+    end lr:err; ** Wrong label referenced **
+Line number: 0003	LC: 3E8	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:err		Binary Equivalent: ------
+Errors:
+**ERROR 105** Warning: Final LR reference label does not match program name
+

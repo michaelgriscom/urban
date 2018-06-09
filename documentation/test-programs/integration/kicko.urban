@@ -1,0 +1,3 @@
+test kicko fc:0;
+err  kicko fc:1000;  ** Extra KICKO directive **
+    end lr:err; ** Wrong label referenced **

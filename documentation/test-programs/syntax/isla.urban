@@ -1,0 +1,13 @@
+ISLATEST KICKO FC:0;
+ONE EQU FC:1;
+    ISLA FC:0;
+    ISLA FC:ONE;
+    ISLA FC:10;
+    ISLA FC:31;
+    ISLA; ** Missing operand **
+    ISLA FT:0; ** Missing FC **
+    ISLA FC:-1; ** FC out of range **
+    ISLA FC:32; ** FC out of range **
+    ISLA FC:@; ** Illegal character '@' in operand value **
+    ISLA F^:10; ** Illegal character '^' in operand keyword **
+    END LR:ISLATEST;

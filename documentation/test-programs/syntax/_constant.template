@@ -1,0 +1,13 @@
+$TEST KICKO FC:0;
+ONE EQU FC:1;
+    $ FC:0;
+    $ FC:ONE;
+    $ FC:10;
+    $ FC:31;
+    $; ** Missing operand **
+    $ FT:0; ** Missing FC **
+    $ FC:-1; ** FC out of range **
+    $ FC:32; ** FC out of range **
+    $ FC:@; ** Illegal character '@' in operand value **
+    $ F^:10; ** Illegal character '^' in operand keyword **
+    END LR:$TEST;

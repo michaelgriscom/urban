@@ -1,0 +1,33 @@
+LOC	OBJ CODE	A/R/E/C	STMT	SOURCE STATEMENT
+0000	--------	A	1	ENTTEST KICKO FC:0;
+0000	--------	A	2	; Currently only tests keywords
+0000	--------	A	3	
+0000	--------	A	4	        ENT LR:MUD1;
+0000	--------	A	5	        ENT LR:MUD2,LR:MUD3,LR:MUD4,LR:MUD5;
+0000	--------	A	6	        ENT LR:MUD6,LR:MUD7,LR:MUD8,LR:MUD9,LR:MUD10;   ** Only allowed to have up to 5 LR's **
+0000	--------	A	7	        ENT DM:1;   ** DM invalid keyword argument **
+0000	--------	A	8	        ENT DR:1;   ** DR invalid keyword argument **
+0000	--------	A	9	        ENT DX:1;   ** DX invalid keyword argument **
+0000	--------	A	10	        ENT EX:1;   ** EX invalid keyword argument **
+0000	--------	A	11	        ENT FC:1;   ** FC invalid keyword argument **
+0000	--------	A	12	        ENT FL:1;   ** FL invalid keyword argument **
+0000	--------	A	13	        ENT FM:1;   ** FM invalid keyword argument **
+0000	--------	A	14	        ENT FR:1;   ** FR invalid keyword argument **
+0000	--------	A	15	        ENT FS:1;   ** FS invalid keyword argument **
+0000	--------	A	16	        ENT FX:1;   ** FX invalid keyword argument **
+0000	--------	A	17	        ENT NW:1;   ** NW invalid keyword argument **
+0000	--------	A	18	        ENT ST:'1'; ** ST invalid keyword argument **
+0000	--------	A	19	
+0000	--------	A	20	; Define all the entry variables
+0000	F4000000	R	21	MUD1    AND FR:0,DM:0;
+0001	F4000000	R	22	MUD2    AND FR:0,DM:0;
+0002	F4000000	R	23	MUD3    AND FR:0,DM:0;
+0003	F4000000	R	24	MUD4    AND FR:0,DM:0;
+0004	F4000000	R	25	MUD5    AND FR:0,DM:0;
+0005	F4000000	R	26	MUD6    AND FR:0,DM:0;
+0006	F4000000	R	27	MUD7    AND FR:0,DM:0;
+0007	F4000000	R	28	MUD8    AND FR:0,DM:0;
+0008	F4000000	R	29	MUD9    AND FR:0,DM:0;
+0009	F4000000	R	30	MUD10   AND FR:0,DM:0;
+000A	--------	A	31	
+000A	--------	R	32	        END LR:ENTTEST;

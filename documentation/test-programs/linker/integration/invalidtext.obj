@@ -1,0 +1,15 @@
+H:InvalidText:000000:0100:0010:2011300,06,06,07:1000:URBAN-ASM:InvalidText
+L:var:000010:InvalidText
+T:000000:Q0000080:C:1:InvalidText
+M:000000:1:+:var:InvalidText
+T:000001:FF0000080:C:1:InvalidText
+M:000001:1:+:var:InvalidText
+T:Q00002:00000080:C:1:InvalidText
+M:000002:1:+:var:InvalidText
+T:000003:00000080:Q:1:InvalidText
+M:000003:1:+:var:InvalidText
+T:000004:00000100:C:qq:InvalidText
+M:000004:1:+:var:InvalidText
+T:000004:00002000:A:0:InvalidText
+T:InvalidText
+E:000F:0001:0007:0005:InvalidText

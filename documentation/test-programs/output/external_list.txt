@@ -1,0 +1,93 @@
+EXT KICKO FC:10;
+Line number: 0001	LC: A	Label: EXT
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:10		Binary Equivalent: ------
+
+	EXT LR:A,LR:B,LR:C,LR:D;
+Line number: 0002	LC: A	Label: ------
+Instruction/Directive: EXT	Binary Equivalent: ------
+Operand 1: LR:A		Binary Equivalent: ------
+Operand 2: LR:B		Binary Equivalent: ------
+Operand 3: LR:C		Binary Equivalent: ------
+Operand 4: LR:D		Binary Equivalent: ------
+
+	EXT LR:E,LR:F,LR:G,LR:H;
+Line number: 0003	LC: A	Label: ------
+Instruction/Directive: EXT	Binary Equivalent: ------
+Operand 1: LR:E		Binary Equivalent: ------
+Operand 2: LR:F		Binary Equivalent: ------
+Operand 3: LR:G		Binary Equivalent: ------
+Operand 4: LR:H		Binary Equivalent: ------
+
+X	EQU EX:1;
+Line number: 0004	LC: A	Label: X
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: EX:1		Binary Equivalent: ------
+
+Y	EQU EX:32;
+Line number: 0005	LC: A	Label: Y
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: EX:32		Binary Equivalent: ------
+
+Z	EQU EX:512;
+Line number: 0006	LC: A	Label: Z
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: EX:512		Binary Equivalent: ------
+
+
+Line number: 0007	LC: A	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+Errors:
+**ERROR 101** Warning: Blank line or line containing only comments
+
+	MOVD DR:0, FM:A;
+Line number: 0008	LC: A	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:0		Binary Equivalent: 000000
+Operand 2: FM:A		Binary Equivalent: 000000
+
+	IMUL DR:1, FM:B, FX:1;
+Line number: 0009	LC: B	Label: ------
+Instruction/Directive: IMUL	Binary Equivalent: 001101
+Operand 1: DR:1		Binary Equivalent: 001101
+Operand 2: FM:B		Binary Equivalent: 001101
+Operand 3: FX:1		Binary Equivalent: 001101
+
+	CWSR FM:C, FX:2, NW:10;
+Line number: 0010	LC: C	Label: ------
+Instruction/Directive: CWSR	Binary Equivalent: 101010
+Operand 1: FM:C		Binary Equivalent: 101010
+Operand 2: FX:2		Binary Equivalent: 101010
+Operand 3: NW:10		Binary Equivalent: 101010
+
+
+Line number: 0011	LC: D	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+Errors:
+**ERROR 101** Warning: Blank line or line containing only comments
+
+	ADRC LR:D;
+Line number: 0012	LC: D	Label: ------
+Instruction/Directive: ADRC	Binary Equivalent: ------
+Operand 1: LR:D		Binary Equivalent: ------
+
+	ADRC EX:E+F;
+Line number: 0013	LC: E	Label: ------
+Instruction/Directive: ADRC	Binary Equivalent: ------
+Operand 1: EX:E+F		Binary Equivalent: ------
+
+	ADRC EX:A+B+C+D+E+F+G+H-X-Y-Z;
+Line number: 0014	LC: F	Label: ------
+Instruction/Directive: ADRC	Binary Equivalent: ------
+Operand 1: EX:A+B+C+D+E+F+G+H-X-Y-Z		Binary Equivalent: ------
+
+	ADRC EX:*+B-A;
+Line number: 0015	LC: 10	Label: ------
+Instruction/Directive: ADRC	Binary Equivalent: ------
+Operand 1: EX:*+B-A		Binary Equivalent: ------
+
+	END LR:EXT;
+Line number: 0016	LC: 11	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:EXT		Binary Equivalent: ------
+

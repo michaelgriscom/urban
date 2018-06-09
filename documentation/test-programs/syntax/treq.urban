@@ -1,0 +1,23 @@
+TREQTEST KICKO FC:0;
+FIVE EQU FC:5;
+    TREQ FR:0,DM:0;
+    TREQ FR:7,DM:4095;
+    TREQ FX:1,DM:0;
+    TREQ FX:7,DM:4095;
+    TREQ FR:FIVE,DM:2000;
+    TREQ FX:3,DM:FIVE;
+    TREQ; ** Missing operands **
+    TREQ DM:0; ** Missing FR **
+    TREQ FR:0; ** Missing DM **
+    TREQ FX:1; ** Missing DM **
+    TREQ FR:-1,DM:0; ** Illegal register address **
+    TREQ FR:8,DM:0; ** Illegal register address **
+    TREQ FX:0,DM:0; ** Illegal index address **
+    TREQ FX:8,DM:0; ** Illegal index address **
+    TREQ FR:0,DM:-1; ** Illegal memory address **
+    TREQ FR:0,DM:4096; ** Illegal memory address **
+    TREQ FR:0,DM:0,LR:TREQTEST; ** Extra operand **
+    TREQ FR:&,DM:7; ** Illegal character '&' in operand value **
+    TREQ FR:2,DM:); ** Illegal character ')' in operand value **
+    TREQ /T:0,DM:0; ** Illegal character '/' in operand keyword **
+    END LR:TREQTEST;

@@ -1,0 +1,16 @@
+LOC	OBJ CODE	A/R/E/C	STMT	SOURCE STATEMENT
+000C	--------	A	1	mid      kicko fc:12; 
+000C	00000080	A	2	Earth    num   fc:128;           C  00000080  A
+000D	00000064	A	3	Saturn   num   fc:100;           D  00000064  A
+000E	444F4720	A	4	Pluto    char  st:‘DOG’;         E  444F4720  A
+000F	--------	E	5	         EXT   lr:mars;          F  n/a  n/a
+000F	--------	A	6	Venus    AEXS  FM:*;             F  n/a  n/a
+000F	--------	A	7	FIVE     EQU   fc:5;             F  n/a  n/a
+000F	F4000000	A	8	         MOVD  DR:4,Earth;       F  0300000C  R
+0010	21000005	R	9	         IADD  DR:4,FM:FIVE;    10  21000005  R
+0011	F4000000	A	10	         imul  DR:4,LT:10;      11  3500200A  A
+0012	38800000	E	11	         iDIV  DR:2,FM:mars;    12  38800000  E
+0013	0040000D	R	12	         MOVD  DR:1,FM:Saturn;  13  0040000D  R
+0014	A000800D	R	13	         IWSR  FM:Saturn,NW:1;  14  A000800D  R
+0015	FC000000	A	14	         Hlt   FC:0;            15  FC000000  A
+0016	--------	R	15	         END   LR:mid;

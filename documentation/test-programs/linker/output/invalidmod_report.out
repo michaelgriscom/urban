@@ -1,0 +1,34 @@
+H:InvalidMod:000000:0100:0010:2011300,06,06,07:1000:URBAN-ASM:InvalidMod
+L:var:000010:InvalidMod
+T:000000:00000080:C:8:InvalidMod
+  Error 107: More than 4 modifications for one text record (nonstandard functionality)
+
+M:000000:1:+:nonexistent:InvalidMod
+  Error 230: Error in modification symbol: Undefined symbol
+
+M:000000:Q:+:var:InvalidMod
+  Error 232: Error in number of modifications: Out of range (expected 1..4)
+
+M:000000:1:Q:var:InvalidMod
+  Error 228: Error in modification sign: Expected "+" or "-"
+
+M:000000:1:+:var:+:var:InvalidMod
+  Error 236: Error in modification record: Wrong number of fields (expected 4+2*m, m=1,2,3, or 4)
+
+M:000000:0:InvalidMod
+  Error 236: Error in modification record: Wrong number of fields (expected 4+2*m, m=1,2,3, or 4)
+
+M:ABCDEFGH:1:+:var:InvalidMod
+  Error 233: Error in address field: Bad format (expected hex string)
+
+M:000001:1:+:var:InvalidMod
+  Error 239: Error in modification record: No text record at the memory location
+
+M:InvalidMod
+  Error 236: Error in modification record: Wrong number of fields (expected 4+2*m, m=1,2,3, or 4)
+
+T:000001:0000080:A:0:InvalidMod
+M:000001:1:+:var:InvalidMod
+  Error 109: Modification Records exceeds expected amount
+
+E:000E:0001:0002:0009:InvalidMod

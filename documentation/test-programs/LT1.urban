@@ -1,0 +1,5 @@
+ALT1A   KICKO FC:20;
+        ENT LR:ZX;
+ZX      NUM FC:100;
+        ADRC EX:ZX;
+        END LR:ALT1A;

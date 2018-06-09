@@ -1,0 +1,13 @@
+RORTEST KICKO FC:0;
+ONE EQU FC:1;
+    ROR FC:0;
+    ROR FC:ONE;
+    ROR FC:10;
+    ROR FC:31;
+    ROR; ** Missing operand **
+    ROR FT:0; ** Missing FC **
+    ROR FC:-1; ** FC out of range **
+    ROR FC:32; ** FC out of range **
+    ROR FC:@; ** Illegal character '@' in operand value **
+    ROR F^:10; ** Illegal character '^' in operand keyword **
+    END LR:RORTEST;

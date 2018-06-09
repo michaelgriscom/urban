@@ -1,0 +1,5 @@
+Label	LC	Usage	String
+LBL	2A	LABEL	
+ONE	0	EQU	1
+ORTEST	0	PRGM_NAME	
+TWO	0	EQU	2

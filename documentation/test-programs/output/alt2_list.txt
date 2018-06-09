@@ -1,0 +1,181 @@
+ALT2 KICKO FC:4;
+Line number: 0001	LC: 4	Label: ALT2
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:4		Binary Equivalent: ------
+
+     NUM   FC:17;
+Line number: 0002	LC: 4	Label: ------
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:17		Binary Equivalent: 00000000000000000000000000010001
+
+     NUM   FC:9;
+Line number: 0003	LC: 5	Label: ------
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:9		Binary Equivalent: 00000000000000000000000000001001
+
+     newlc FC:20;
+Line number: 0004	LC: 14	Label: ------
+Instruction/Directive: NEWLC	Binary Equivalent: ------
+Operand 1: FC:20		Binary Equivalent: ------
+Errors:
+**ERROR 223** Serious: Directive requires a valid label
+
+     MOVD  DR:0,FM:5;
+Line number: 0005	LC: 14	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:0		Binary Equivalent: 000
+Operand 2: FM:5		Binary Equivalent: ------
+
+     IMUL  DR:0,FM:9;
+Line number: 0006	LC: 15	Label: ------
+Instruction/Directive: IMUL	Binary Equivalent: 001101
+Operand 1: DR:0		Binary Equivalent: 000
+Operand 2: FM:9		Binary Equivalent: ------
+
+     MOVD  FR:0,DM:13;
+Line number: 0007	LC: 16	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: FR:0		Binary Equivalent: 000
+Operand 2: DM:13		Binary Equivalent: ------
+
+     MOVDN DR:1,FM:5;
+Line number: 0008	LC: 17	Label: ------
+Instruction/Directive: MOVDN	Binary Equivalent: 000001
+Operand 1: DR:1		Binary Equivalent: 001
+Operand 2: FM:5		Binary Equivalent: ------
+
+     IDIV  DR:1,FM:9;
+Line number: 0009	LC: 18	Label: ------
+Instruction/Directive: IDIV	Binary Equivalent: 001110
+Operand 1: DR:1		Binary Equivalent: 001
+Operand 2: FM:9		Binary Equivalent: ------
+
+     MOVD  FR:1,DM:17;
+Line number: 0010	LC: 19	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: FR:1		Binary Equivalent: 001
+Operand 2: DM:17		Binary Equivalent: ------
+
+     MOVD  DR:2,FM:5;
+Line number: 0011	LC: 1A	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:2		Binary Equivalent: 010
+Operand 2: FM:5		Binary Equivalent: ------
+
+     iADD  DR:2,FM:9;
+Line number: 0012	LC: 1B	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DR:2		Binary Equivalent: 010
+Operand 2: FM:9		Binary Equivalent: ------
+
+     MOVD  FR:2,DM:18;
+Line number: 0013	LC: 1C	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: FR:2		Binary Equivalent: 010
+Operand 2: DM:18		Binary Equivalent: ------
+
+     MOVD  DR:3,FM:5;
+Line number: 0014	LC: 1D	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:3		Binary Equivalent: 011
+Operand 2: FM:5		Binary Equivalent: ------
+
+     OR    DM:3,FM:9;
+Line number: 0015	LC: 1E	Label: ------
+Instruction/Directive: OR	Binary Equivalent: 011111
+Operand 1: DM:3		Binary Equivalent: ------
+Operand 2: FM:9		Binary Equivalent: ------
+
+     MOVD  FR:3,DM:19;
+Line number: 0016	LC: 1F	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: FR:3		Binary Equivalent: 011
+Operand 2: DM:19		Binary Equivalent: ------
+
+     MOVD  DR:4,FM:5;
+Line number: 0017	LC: 20	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:4		Binary Equivalent: 100
+Operand 2: FM:5		Binary Equivalent: ------
+
+     ISUB  DR:4,FM:9;
+Line number: 0018	LC: 21	Label: ------
+Instruction/Directive: ISUB	Binary Equivalent: 001100
+Operand 1: DR:4		Binary Equivalent: 100
+Operand 2: FM:9		Binary Equivalent: ------
+
+     MOVD  FR:4,DM:20;
+Line number: 0019	LC: 22	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: FR:4		Binary Equivalent: 100
+Operand 2: DM:20		Binary Equivalent: ------
+
+     MOVD  DR:5,FM:5;
+Line number: 0020	LC: 23	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:5		Binary Equivalent: 101
+Operand 2: FM:5		Binary Equivalent: ------
+
+     ISLA  DR:5,FC:100;
+Line number: 0021	LC: 24	Label: ------
+Instruction/Directive: ISLA	Binary Equivalent: 011011
+Operand 1: DR:5		Binary Equivalent: 101
+Operand 2: FC:100		Binary Equivalent: 0000001100100
+
+     MOVD  FR:5,DM:21;
+Line number: 0022	LC: 25	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: FR:5		Binary Equivalent: 101
+Operand 2: DM:21		Binary Equivalent: ------
+
+     MOVD  DR:6,FM:5;
+Line number: 0023	LC: 26	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:6		Binary Equivalent: 110
+Operand 2: FM:5		Binary Equivalent: ------
+
+     PWR   DR:6,FC:2;
+Line number: 0024	LC: 27	Label: ------
+Instruction/Directive: PWR	Binary Equivalent: 001111
+Operand 1: DR:6		Binary Equivalent: 110
+Operand 2: FC:2		Binary Equivalent: 0000000000010
+
+     MOVD  FR:6,DM:22;
+Line number: 0025	LC: 28	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: FR:6		Binary Equivalent: 110
+Operand 2: DM:22		Binary Equivalent: ------
+
+     MOVD  DR:7,FM:5;
+Line number: 0026	LC: 29	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:7		Binary Equivalent: 111
+Operand 2: FM:5		Binary Equivalent: ------
+
+     AND   DR:7,FM:9;
+Line number: 0027	LC: 2A	Label: ------
+Instruction/Directive: AND	Binary Equivalent: 011110
+Operand 1: DR:7		Binary Equivalent: 111
+Operand 2: FM:9		Binary Equivalent: ------
+
+     MOVD  FR:7,DM:23;
+Line number: 0028	LC: 2B	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: FR:7		Binary Equivalent: 111
+Operand 2: DM:23		Binary Equivalent: ------
+
+     DMP   FC:3;
+Line number: 0029	LC: 2C	Label: ------
+Instruction/Directive: DMP	Binary Equivalent: 111110
+Operand 1: FC:3		Binary Equivalent: 0000000000011
+
+     HLT   FC:0;
+Line number: 0030	LC: 2D	Label: ------
+Instruction/Directive: HLT	Binary Equivalent: 111111
+Operand 1: FC:0		Binary Equivalent: 0000000000000
+
+     END   LR:ALT2;
+Line number: 0031	LC: 2E	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:ALT2		Binary Equivalent: ------
+

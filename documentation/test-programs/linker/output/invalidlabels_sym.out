@@ -1,0 +1,4 @@
+Label          	Local Addr	Adjustment	Reloc. Addr	Module Len
+GOODLABEL      	        16	         0	         16	       ---
+Goodboy        	         0	       256	        256	       256
+InvalidLabels  	         0	         0	          0	       256

@@ -1,0 +1,233 @@
+adder kicko fc:0;
+Line number: 0001	LC: 0	Label: adder
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: ------
+
+;Read in an arbitrary number of numbers, then print their sum.
+Line number: 0002	LC: 0	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+
+Line number: 0003	LC: 0	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+Errors:
+**ERROR 101** Warning: Blank line or line containing only comments
+
+;Keep the partial sum in r0
+Line number: 0004	LC: 0	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+     movd dr:0,lt:0;
+Line number: 0005	LC: 0	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:0		Binary Equivalent: 000
+Operand 2: LT:0		Binary Equivalent: ------
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+
+Line number: 0006	LC: 1	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+Errors:
+**ERROR 101** Warning: Blank line or line containing only comments
+
+;Print a prompt
+Line number: 0007	LC: 1	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+loop cwsr fm:pr,nw:7;
+Line number: 0008	LC: 1	Label: loop
+Instruction/Directive: CWSR	Binary Equivalent: 101010
+Operand 1: FM:pr		Binary Equivalent: ------
+Operand 2: NW:7		Binary Equivalent: 0111
+
+
+Line number: 0009	LC: 2	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+Errors:
+**ERROR 101** Warning: Blank line or line containing only comments
+
+;Input a number
+Line number: 0010	LC: 2	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+     irkb dm:in,nw:1;
+Line number: 0011	LC: 2	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: DM:in		Binary Equivalent: ------
+Operand 2: NW:1		Binary Equivalent: 0001
+
+
+Line number: 0012	LC: 3	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+Errors:
+**ERROR 101** Warning: Blank line or line containing only comments
+
+;Stop if it's zero
+Line number: 0013	LC: 3	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+     movd dr:1,fm:in;
+Line number: 0014	LC: 3	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:1		Binary Equivalent: 001
+Operand 2: FM:in		Binary Equivalent: ------
+
+     treq fr:1,dm:end;
+Line number: 0015	LC: 4	Label: ------
+Instruction/Directive: TREQ	Binary Equivalent: 100000
+Operand 1: FR:1		Binary Equivalent: 001
+Operand 2: DM:end		Binary Equivalent: ------
+
+
+Line number: 0016	LC: 5	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+Errors:
+**ERROR 101** Warning: Blank line or line containing only comments
+
+;Not zero - add in the input to the running sum
+Line number: 0017	LC: 5	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+     iadd dr:0,fm:in;
+Line number: 0018	LC: 5	Label: ------
+Instruction/Directive: IADD	Binary Equivalent: 001000
+Operand 1: DR:0		Binary Equivalent: 000
+Operand 2: FM:in		Binary Equivalent: ------
+
+
+Line number: 0019	LC: 6	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+Errors:
+**ERROR 101** Warning: Blank line or line containing only comments
+
+     tr dm:loop;
+Line number: 0020	LC: 6	Label: ------
+Instruction/Directive: TR	Binary Equivalent: 100011
+Operand 1: DM:loop		Binary Equivalent: ------
+
+
+Line number: 0021	LC: 7	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+Errors:
+**ERROR 101** Warning: Blank line or line containing only comments
+
+;End of program - print the output, then quit
+Line number: 0022	LC: 7	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+end  cwsr fm:pr2,nw:3;
+Line number: 0023	LC: 7	Label: end
+Instruction/Directive: CWSR	Binary Equivalent: 101010
+Operand 1: FM:pr2		Binary Equivalent: ------
+Operand 2: NW:3		Binary Equivalent: 0011
+
+     movd dm:in,fr:0;
+Line number: 0024	LC: 8	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DM:in		Binary Equivalent: ------
+Operand 2: FR:0		Binary Equivalent: 000
+
+     iwsr fm:in,nw:1;
+Line number: 0025	LC: 9	Label: ------
+Instruction/Directive: IWSR	Binary Equivalent: 101000
+Operand 1: FM:in		Binary Equivalent: ------
+Operand 2: NW:1		Binary Equivalent: 0001
+
+     hlt fc:0;
+Line number: 0026	LC: A	Label: ------
+Instruction/Directive: HLT	Binary Equivalent: 111111
+Operand 1: FC:0		Binary Equivalent: 0000000000000
+
+
+Line number: 0027	LC: B	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+Errors:
+**ERROR 101** Warning: Blank line or line containing only comments
+
+in   num fc:0;
+Line number: 0028	LC: B	Label: in
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: 00000000000000000000000000000000
+
+
+Line number: 0029	LC: C	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+Errors:
+**ERROR 101** Warning: Blank line or line containing only comments
+
+; 'Enter a number (0 to quit)'
+Line number: 0030	LC: C	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+pr   char st:'Ente';
+Line number: 0031	LC: C	Label: pr
+Instruction/Directive: CHAR	Binary Equivalent: ------
+Operand 1: ST:'Ente'		Binary Equivalent: 01000101011011100111010001100101
+
+     char st:'r a ';
+Line number: 0032	LC: D	Label: ------
+Instruction/Directive: CHAR	Binary Equivalent: ------
+Operand 1: ST:'r a '		Binary Equivalent: 01110010001000000110000100100000
+
+     char st:'numb';
+Line number: 0033	LC: E	Label: ------
+Instruction/Directive: CHAR	Binary Equivalent: ------
+Operand 1: ST:'numb'		Binary Equivalent: 01101110011101010110110101100010
+
+     char st:'er (';
+Line number: 0034	LC: F	Label: ------
+Instruction/Directive: CHAR	Binary Equivalent: ------
+Operand 1: ST:'er ('		Binary Equivalent: 01100101011100100010000000101000
+
+     char st:'0 to';
+Line number: 0035	LC: 10	Label: ------
+Instruction/Directive: CHAR	Binary Equivalent: ------
+Operand 1: ST:'0 to'		Binary Equivalent: 00110000001000000111010001101111
+
+     char st:' qui';
+Line number: 0036	LC: 11	Label: ------
+Instruction/Directive: CHAR	Binary Equivalent: ------
+Operand 1: ST:' qui'		Binary Equivalent: 00100000011100010111010101101001
+
+     char st:'t)  ';
+Line number: 0037	LC: 12	Label: ------
+Instruction/Directive: CHAR	Binary Equivalent: ------
+Operand 1: ST:'t)  '		Binary Equivalent: 01110100001010010010000000100000
+
+
+Line number: 0038	LC: 13	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+Errors:
+**ERROR 101** Warning: Blank line or line containing only comments
+
+; 'the sum is:'     
+Line number: 0039	LC: 13	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+pr2  char st:'The ';
+Line number: 0040	LC: 13	Label: pr2
+Instruction/Directive: CHAR	Binary Equivalent: ------
+Operand 1: ST:'The '		Binary Equivalent: 01010100011010000110010100100000
+
+     char st:'sum ';
+Line number: 0041	LC: 14	Label: ------
+Instruction/Directive: CHAR	Binary Equivalent: ------
+Operand 1: ST:'sum '		Binary Equivalent: 01110011011101010110110100100000
+
+     char st:'is  ';
+Line number: 0042	LC: 15	Label: ------
+Instruction/Directive: CHAR	Binary Equivalent: ------
+Operand 1: ST:'is  '		Binary Equivalent: 01101001011100110010000000100000
+
+
+Line number: 0043	LC: 16	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+Errors:
+**ERROR 101** Warning: Blank line or line containing only comments
+
+     end lr:adder;
+Line number: 0044	LC: 16	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:adder		Binary Equivalent: ------
+

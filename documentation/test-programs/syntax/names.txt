@@ -1,0 +1,22 @@
+ Volume in drive C is OS
+ Volume Serial Number is C43F-51D2
+
+ Directory of C:\Users\Zak\Documents\Eclipse\560-project\test-programs\syntax
+
+[.]                      [..]                     and.urban
+clr.urban                clra.urban               clrx.urban
+crkb.urban               [CVS]                    cwsr.urban
+hlt.urban                iaa.urban                iadd.urban
+idiv.urban               imad.urban               imul.urban
+irkb.urban               ishl.urban               ishr.urban
+isla.urban               isra.urban               isub.urban
+iwsr.urban               movd.urban               movdn.urban
+names.txt                nop.urban                or.urban
+pwr.urban                README.txt               rol.urban
+ror.urban                trdr.urban               treq.urban
+trgt.urban               trlt.urban               _arithmetic.template
+_constant.template       _GenerateArithmetic.sh   _GenerateConstant.sh
+_GenerateIO.sh           _GenerateNoArg.sh        _GenerateTransfer.sh
+_io.template             _noarg.template          _transfer.template
+              42 File(s)         29,477 bytes
+               3 Dir(s)  173,590,671,360 bytes free

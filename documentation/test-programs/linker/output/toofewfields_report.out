@@ -1,0 +1,40 @@
+H:TooFewFields:000000:0100:0010:2011300,06,06,07:1000:URBAN-ASM:TooFewFields
+L:0
+  Error 223: Record does not contain enough fields
+
+L:TooFewFields
+  Error 223: Record does not contain enough fields
+
+T:0
+  Error 212: Error in modification count field: Bad format (expected (one digit) hex string)
+  Error 208: Error in text field: Bad format (expected hex string)
+  Error 235: Error in text record: Wrong number of fields (expected 6)
+  Error 206: Record contains incorrect program name
+  Error 210: Error in relocation field: Illegal flag (expected A, R, E, or C)
+
+T:TooFiewFields
+  Error 233: Error in address field: Bad format (expected hex string)
+  Error 212: Error in modification count field: Bad format (expected (one digit) hex string)
+  Error 208: Error in text field: Bad format (expected hex string)
+  Error 235: Error in text record: Wrong number of fields (expected 6)
+  Error 206: Record contains incorrect program name
+  Error 210: Error in relocation field: Illegal flag (expected A, R, E, or C)
+
+M:0
+  Error 236: Error in modification record: Wrong number of fields (expected 4+2*m, m=1,2,3, or 4)
+
+M:TooFewFields
+  Error 236: Error in modification record: Wrong number of fields (expected 4+2*m, m=1,2,3, or 4)
+
+H:0
+  Error 222: Previous Header was not ended with an End Record
+
+H:TooFewFields
+  Error 222: Previous Header was not ended with an End Record
+
+E:0
+  Error 223: Record does not contain enough fields
+
+E:TooFewFields:shouldwarnofnoendrecord
+  Error 215: End Record appears without header record
+

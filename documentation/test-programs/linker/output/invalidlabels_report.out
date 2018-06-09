@@ -1,0 +1,33 @@
+H:InvalidLabels:000000:0100:0010:2011300,06,06,07:1000:URBAN-ASM:InvalidLabels
+L:GOODLABEL:000010:InvalidLabels
+L:0BADLABEL:000000:InvalidLabels
+  Error 201: Invalid label 
+
+L:-BADLABEL:000000:InvalidLabels
+  Error 201: Invalid label 
+
+L:THISLABELMIGHTBETOOLONGFORTHEPARSERTOKNOWHOWTOHANDLE:000000:InvalidLabels
+  Error 201: Invalid label 
+
+L:NOTOK+TOHAVESUM:000000:InvalidLabels
+  Error 201: Invalid label 
+
+E:0004:0004:0000:0000:InvalidLabels
+  Error 104: End record has incorrect number of linking records
+  Error 103: End record has incorrect number of total records
+
+H:0BADLABEL:000000:0100:0010:2011300,06,06,07:1000:URBAN-ASM:0BADLABEL
+  Error 201: Invalid label 
+
+H:%BADLABEL:000000:0100:0010:2011300,06,06,07:1000:URBAN-ASM:%BADLABEL
+  Error 201: Invalid label 
+
+H:NOTOK+TOHAVESUM:000000:0100:0010:2011300,06,06,07:1000:URBAN-ASM:NOTOK+TOHAVESUM
+  Error 201: Invalid label 
+
+H:Goodboy:000000:0100:0010:2011300,06,06,07:1000:URBAN-ASM:THECATCH!;it's_inconsistent
+  Error 101: Inconsistent program name within header record
+
+E:0000:0000:0000:0000:Goodboy
+  Error 103: End record has incorrect number of total records
+

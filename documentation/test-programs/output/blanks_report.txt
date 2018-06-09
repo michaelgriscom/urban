@@ -1,0 +1,8 @@
+LOC	OBJ CODE	A/R/E/C	STMT	SOURCE STATEMENT
+0014	--------	A	1	SCBLNK KICKO FC:20;
+0014	--------	A	2	
+0014	--------	A	3	; the previous line is blank (specifically with no whitespace) 
+0014	F4000000	A	4		
+0015	--------	A	5	; on the contrary the previous line contains whitespace
+0015	F4000000	A	6		; should complain that there is no operation
+0016	--------	A	7		END SCBLNK

@@ -1,0 +1,6 @@
+Label          	Local Addr	Adjustment	Reloc. Addr	Module Len
+Client         	        16	         4	         20	         8
+External       	         0	        16	         16	         4
+Filler         	         0	         0	          0	        16
+Label1         	         1	        16	         17	       ---
+Label2         	         3	        16	         19	       ---

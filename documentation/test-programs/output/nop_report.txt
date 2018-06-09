@@ -1,0 +1,8 @@
+LOC	OBJ CODE	A/R/E/C	STMT	SOURCE STATEMENT
+0000	--------	A	1	NOPTEST KICKO FC:0;
+0000	F6000000	A	2	FOO NOP;
+0001	F4000000	A	3	    NOP FC:0; ** Illegal operand **
+0002	F4000000	A	4	    NOP DR:0; ** Illegal operand **
+0003	F4000000	R	5	    NOP LR:FOO; ** Illegal operand **
+0004	F4000000	R	6	    NOP FM:FOO; ** Illegal operand **
+0005	--------	R	7	    END LR:NOPTEST;

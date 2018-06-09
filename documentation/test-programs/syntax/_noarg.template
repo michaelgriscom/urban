@@ -1,0 +1,7 @@
+$TEST KICKO FC:0;
+FOO $;
+    $ FC:0; ** Illegal operand **
+    $ DR:0; ** Illegal operand **
+    $ LR:FOO; ** Illegal operand **
+    $ FM:FOO; ** Illegal operand **
+    END LR:$TEST;

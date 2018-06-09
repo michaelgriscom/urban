@@ -1,0 +1,3 @@
+Label	LC	Usage	String
+FIVE	0	EQU	5
+TRGTTEST	0	PRGM_NAME	

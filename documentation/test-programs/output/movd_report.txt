@@ -1,0 +1,48 @@
+LOC	OBJ CODE	A/R/E/C	STMT	SOURCE STATEMENT
+0000	--------	A	1	MOVDTEST KICKO FC:0;
+0000	--------	A	2	ONE EQU FC:1;
+0000	--------	A	3	TWO EQU FC:2;
+0000	F4000000	R	4	    MOVD FR:0,DM:0;
+0001	F4000000	R	5	    MOVD FM:100,DR:1;
+0002	F4000000	R	6	    MOVD FR:4,DM:1000,DX:1;
+0003	F4000000	R	7	    MOVD FM:2222,FX:1,DR:6;
+0004	F4000000	A	8	    MOVD DR:7,FT:0;
+0005	F4000000	R	9	    MOVD DM:4095,FT:-4096;
+0006	F4000000	R	10	    MOVD DM:0,DX:1,FT:4095;
+0007	F4000000	R	11	    MOVD DM:LBL,FR:0;
+0008	F4000000	R	12	    MOVD FM:LBL,DR:1;
+0009	F4000000	R	13	    MOVD FM:ONE,DR:TWO;
+000A	F4000000	R	14	    MOVD FM:0,DR:ONE;
+000B	F4000000	R	15	    MOVD DM:LBL,DX:ONE,FR:TWO;
+000C	F4000000	R	16	    MOVD DR:0,FM:*;
+000D	F4000000	R	17	    MOVD DR:0,FM:*+10;
+000E	F4000000	A	18	    MOVD FR:0; ** Missing DM **
+000F	F4000000	R	19	    MOVD DM:0; ** Missing FR **
+0010	F4000000	R	20	    MOVD FM:0; ** Missing DR **
+0011	F4000000	A	21	    MOVD DR:0; ** Missing FM **
+0012	F4000000	R	22	    MOVD FR:0,DM:0,FX:1; ** Index with register, not memory **
+0013	F4000000	R	23	    MOVD FM:0,DR:0,DX:1; ** Index with register, not memory ** 
+0014	F4000000	A	24	    MOVD FR:0,FT:0; ** Illegal use of literal **
+0015	F4000000	A	25	    MOVD FR:0,DT:0; ** Illegal operand DT **
+0016	F4000000	A	26	    MOVD DR:0,FC:1; ** Illegal operand FC **
+0017	F4000000	R	27	    MOVD DR:0,LR:LBL; ** Illegal operand LR **
+0018	F4000000	R	28	    MOVD DR:0,FM:1,NW:6; ** Illegal operand NW **
+0019	F4000000	A	29	    MOVD EX:*+6; ** Illegal expression **
+001A	F4000000	R	30	    MOVD DR:0,FM:0,EX:*-10; ** Illegal expression **
+001B	F4000000	R	31	    MOVD FR:-1,DM:0; ** Negative register address **
+001C	F4000000	R	32	    MOVD FR:0,DM:-1; ** Negative memory address **
+001D	F4000000	R	33	    MOVD FR:8,DM:0; ** Register address out of range **
+001E	F4000000	R	34	    MOVD FR:0,DM:4096; ** Memory address out of range **
+001F	F4000000	R	35	    MOVD FM:4096,DR:0; ** Memory address out of range **
+0020	F4000000	R	36	    MOVD FM:0,DR:8; ** Register address out of range **
+0021	F4000000	R	37	    MOVD FR:0,DM:0,DX:0; ** Index address out of range **
+0022	F4000000	R	38	    MOVD FR:0,DM:0,DX:8; ** Index address out of range **
+0023	F4000000	R	39	    MOVD FM:0,DR:0,DX:0; ** Index address out of range **
+0024	F4000000	R	40	    MOVD FM:0,DR:0,DX:8; ** Index address out of range **
+0025	F4000000	A	41	    MOVD DR:0,FT:-4097; ** Literal value out of range **
+0026	F4000000	A	42	    MOVD DR:0,FT:4096; ** Literal value out of range **
+0027	F4000000	A	43	    MOVD DR:&,FM:0; ** Illegal character '&' in operand value **
+0028	F4000000	R	44	    MOVD DR:0,FM:1#3; ** Illegal character '#' in operand value **
+0029	F4000000	R	45	    MOVD %:9,DR:4,FM:4; ** Illegal operand name '%' ** 
+002A	00000000	A	46	LBL NUM FC:0;
+002B	--------	R	47	    END LR:MOVDTEST;

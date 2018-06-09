@@ -1,0 +1,25 @@
+LOC	OBJ CODE	A/R/E/C	STMT	SOURCE STATEMENT
+0000	--------	A	1	CWSRTEST KICKO FC:0;
+0000	--------	A	2	ONE EQU FC:1;
+0000	--------	A	3	THREE EQU FC:2;
+0000	F4000000	R	4	    CWSR DM:0,NW:1;
+0001	F4000000	R	5	    CWSR DM:0,DX:1,NW:15;
+0002	F4000000	R	6	    CWSR DM:4095,DX:7,NW:1;
+0003	F4000000	R	7	    CWSR DM:ONE,NW:5;
+0004	F4000000	R	8	    CWSR DM:1000,NW:THREE;
+0005	F4000000	A	9	    CWSR; ** Missing operands **
+0006	F4000000	R	10	    CWSR DM:0; ** Missing NW **
+0007	F4000000	A	11	    CWSR NW:1; ** Missing DM **
+0008	F4000000	A	12	    CWSR DX:0,NW:1; ** Missing DM **
+0009	F4000000	R	13	    CWSR DM:-1,NW:1; ** DM out of range **
+000A	F4000000	R	14	    CWSR DM:4096,NW:1; ** DM out of range **
+000B	F4000000	R	15	    CWSR DM:0,DX:0,NW:1; ** DX out of range **
+000C	F4000000	R	16	    CWSR DM:0,DX:8,NW:1; ** DX out of range **
+000D	F4000000	R	17	    CWSR DM:0,NW:0; ** NW out of range **
+000E	F4000000	R	18	    CWSR DM:0,NW:16; ** NW out of range **
+000F	F4000000	A	19	    CWSR DR:0,NW:1; ** Illegal operand **
+0010	F4000000	A	20	    CWSR LR:0,NW:9; ** Illegal operand **
+0011	F4000000	A	21	    CWSR FC:0,NW:4; ** Illegal operand **
+0012	F4000000	R	22	    CWSR DM:1=,NW:5; ** Illegal character '=' in operand value **
+0013	F4000000	R	23	    CWSR DM:0,%%:8; ** Illegal character '%' in operand keyword **
+0014	--------	R	24	    END LR:CWSRTEST;

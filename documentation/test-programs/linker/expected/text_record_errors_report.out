@@ -1,0 +1,50 @@
+H:TestRecords:0000:0010:0000:2012001,22,00,00:0001:URBAN-ASM:TestRecords
+T:0000:00000000:A:0:TestRecords
+T:0001:00000001:A:0:TestRecords:extra
+  Error 235: Error in text record: Wrong number of fields (expected 6)
+
+T:0002:00000020:A:0
+  Error 206: Record contains incorrect program name
+  Error 235: Error in text record: Wrong number of fields (expected 6)
+
+T:000$:00000030:A:0:TestRecords
+  Error 233: Error in address field: Bad format (expected hex string)
+
+T:1000:00000400:A:0:TestRecords
+  Error 234: Error in address field: Out of range (expected 0..4095)
+
+T:0011:00000400:A:0:TestRecords
+  Error 237: Error in address field: Out of module range
+
+T::00000400:A:0:TestRecords
+  Error 233: Error in address field: Bad format (expected hex string)
+
+T:0005:00#00500:A:0:TestRecords
+  Error 208: Error in text field: Bad format (expected hex string)
+
+T:0006:1FFFFFFFF:A:0:TestRecords
+  Error 209: Error in text field: Out of range (expected eight hex digits)
+
+T:0007:00007000:B:0:TestRecords
+  Error 210: Error in relocation field: Illegal flag (expected A, R, E, or C)
+
+T:0008:00080000::0:TestRecords
+  Error 210: Error in relocation field: Illegal flag (expected A, R, E, or C)
+
+T:0009:00090000:A:5:TestRecords
+  Error 107: More than 4 modifications for one text record (nonstandard functionality)
+
+T:000A:00A00000:A:U:TestRecords
+  Error 212: Error in modification count field: Bad format (expected (one digit) hex string)
+
+T:000B:00B00000:A::TestRecords
+  Error 212: Error in modification count field: Bad format (expected (one digit) hex string)
+
+T:000C:0C000000:A:0:T3$tR3kordz
+  Error 206: Record contains incorrect program name
+
+T:000D:0D000000:A:0:
+  Error 206: Record contains incorrect program name
+  Error 235: Error in text record: Wrong number of fields (expected 6)
+
+E:0012:0000:0010:0000:TestRecords

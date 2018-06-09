@@ -1,0 +1,182 @@
+IRKBTEST KICKO FC:0;
+Line number: 0001	LC: 0	Label: IRKBTEST
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: ------
+
+ONE EQU FC:1;
+Line number: 0002	LC: 0	Label: ONE
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: FC:1		Binary Equivalent: ------
+
+THREE EQU FC:2;
+Line number: 0003	LC: 0	Label: THREE
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: FC:2		Binary Equivalent: ------
+
+    IRKB FM:0,NW:1;
+Line number: 0004	LC: 0	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: FM:0		Binary Equivalent: 101001
+Operand 2: NW:1		Binary Equivalent: 101001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IRKB FM:0,FX:1,NW:15;
+Line number: 0005	LC: 1	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: FM:0		Binary Equivalent: 101001
+Operand 2: FX:1		Binary Equivalent: 101001
+Operand 3: NW:15		Binary Equivalent: 101001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IRKB FM:4095,FX:7,NW:1;
+Line number: 0006	LC: 2	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: FM:4095		Binary Equivalent: 101001
+Operand 2: FX:7		Binary Equivalent: 101001
+Operand 3: NW:1		Binary Equivalent: 101001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IRKB FM:ONE,NW:5;
+Line number: 0007	LC: 3	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: FM:ONE		Binary Equivalent: 101001
+Operand 2: NW:5		Binary Equivalent: 101001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IRKB FM:1000,NW:THREE;
+Line number: 0008	LC: 4	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: FM:1000		Binary Equivalent: 101001
+Operand 2: NW:THREE		Binary Equivalent: 101001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IRKB; ** Missing operands **
+Line number: 0009	LC: 5	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IRKB FM:0; ** Missing NW **
+Line number: 0010	LC: 6	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: FM:0		Binary Equivalent: 101001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IRKB NW:1; ** Missing FM **
+Line number: 0011	LC: 7	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: NW:1		Binary Equivalent: 101001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IRKB FX:0,NW:1; ** Missing FM **
+Line number: 0012	LC: 8	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: FX:0		Binary Equivalent: 101001
+Operand 2: NW:1		Binary Equivalent: 101001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IRKB FM:-1,NW:1; ** FM out of range **
+Line number: 0013	LC: 9	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: FM:-1		Binary Equivalent: 101001
+Operand 2: NW:1		Binary Equivalent: 101001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IRKB FM:4096,NW:1; ** FM out of range **
+Line number: 0014	LC: A	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: FM:4096		Binary Equivalent: 101001
+Operand 2: NW:1		Binary Equivalent: 101001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IRKB FM:0,FX:0,NW:1; ** FX out of range **
+Line number: 0015	LC: B	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: FM:0		Binary Equivalent: 101001
+Operand 2: FX:0		Binary Equivalent: 101001
+Operand 3: NW:1		Binary Equivalent: 101001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IRKB FM:0,FX:8,NW:1; ** FX out of range **
+Line number: 0016	LC: C	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: FM:0		Binary Equivalent: 101001
+Operand 2: FX:8		Binary Equivalent: 101001
+Operand 3: NW:1		Binary Equivalent: 101001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IRKB FM:0,NW:0; ** NW out of range **
+Line number: 0017	LC: D	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: FM:0		Binary Equivalent: 101001
+Operand 2: NW:0		Binary Equivalent: 101001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IRKB FM:0,NW:16; ** NW out of range **
+Line number: 0018	LC: E	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: FM:0		Binary Equivalent: 101001
+Operand 2: NW:16		Binary Equivalent: 101001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IRKB FR:0,NW:1; ** Illegal operand **
+Line number: 0019	LC: F	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: FR:0		Binary Equivalent: 101001
+Operand 2: NW:1		Binary Equivalent: 101001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IRKB LR:0,NW:9; ** Illegal operand **
+Line number: 0020	LC: 10	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: LR:0		Binary Equivalent: 101001
+Operand 2: NW:9		Binary Equivalent: 101001
+Errors:
+**ERROR 212** Serious: Operand value is an invalid label
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IRKB FC:0,NW:4; ** Illegal operand **
+Line number: 0021	LC: 11	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: FC:0		Binary Equivalent: 101001
+Operand 2: NW:4		Binary Equivalent: 101001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IRKB FM:1=,NW:5; ** Illegal character '=' in operand value **
+Line number: 0022	LC: 12	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: FM:1=		Binary Equivalent: 101001
+Operand 2: NW:5		Binary Equivalent: 101001
+Errors:
+**ERROR 207** Serious: Invalid numeric value: Not a number (or number too big)
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    IRKB FM:0,%%:8; ** Illegal character '%' in operand keyword **
+Line number: 0023	LC: 13	Label: ------
+Instruction/Directive: IRKB	Binary Equivalent: 101001
+Operand 1: FM:0		Binary Equivalent: 101001
+Operand 2: %%:8		Binary Equivalent: 101001
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+    END LR:IRKBTEST;
+Line number: 0024	LC: 14	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:IRKBTEST		Binary Equivalent: ------
+

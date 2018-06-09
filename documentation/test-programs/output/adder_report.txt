@@ -1,0 +1,45 @@
+LOC	OBJ CODE	A/R/E/C	STMT	SOURCE STATEMENT
+0000	--------	A	1	adder kicko fc:0;
+0000	--------	A	2	;Read in an arbitrary number of numbers, then print their sum.
+0000	--------	A	3	
+0000	--------	A	4	;Keep the partial sum in r0
+0000	F4000000	A	5	     movd dr:0,lt:0;
+0001	--------	A	6	
+0001	--------	A	7	;Print a prompt
+0001	A803800C	R	8	loop cwsr fm:pr,nw:7;
+0002	--------	A	9	
+0002	--------	A	10	;Input a number
+0002	A400800B	R	11	     irkb dm:in,nw:1;
+0003	--------	A	12	
+0003	--------	A	13	;Stop if it's zero
+0003	0040000B	R	14	     movd dr:1,fm:in;
+0004	80400007	R	15	     treq fr:1,dm:end;
+0005	--------	A	16	
+0005	--------	A	17	;Not zero - add in the input to the running sum
+0005	2000000B	R	18	     iadd dr:0,fm:in;
+0006	--------	A	19	
+0006	8C000001	R	20	     tr dm:loop;
+0007	--------	A	21	
+0007	--------	A	22	;End of program - print the output, then quit
+0007	A8018013	R	23	end  cwsr fm:pr2,nw:3;
+0008	0000000B	R	24	     movd dm:in,fr:0;
+0009	A000800B	R	25	     iwsr fm:in,nw:1;
+000A	FC000000	A	26	     hlt fc:0;
+000B	--------	A	27	
+000B	00000000	A	28	in   num fc:0;
+000C	--------	A	29	
+000C	--------	A	30	; 'Enter a number (0 to quit)'
+000C	456E7465	A	31	pr   char st:'Ente';
+000D	72206120	A	32	     char st:'r a ';
+000E	6E756D62	A	33	     char st:'numb';
+000F	65722028	A	34	     char st:'er (';
+0010	3020746F	A	35	     char st:'0 to';
+0011	20717569	A	36	     char st:' qui';
+0012	74292020	A	37	     char st:'t)  ';
+0013	--------	A	38	
+0013	--------	A	39	; 'the sum is:'     
+0013	54686520	A	40	pr2  char st:'The ';
+0014	73756D20	A	41	     char st:'sum ';
+0015	69732020	A	42	     char st:'is  ';
+0016	--------	A	43	
+0016	--------	R	44	     end lr:adder;

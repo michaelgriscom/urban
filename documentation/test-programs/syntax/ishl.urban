@@ -1,0 +1,13 @@
+ISHLTEST KICKO FC:0;
+ONE EQU FC:1;
+    ISHL FC:0;
+    ISHL FC:ONE;
+    ISHL FC:10;
+    ISHL FC:31;
+    ISHL; ** Missing operand **
+    ISHL FT:0; ** Missing FC **
+    ISHL FC:-1; ** FC out of range **
+    ISHL FC:32; ** FC out of range **
+    ISHL FC:@; ** Illegal character '@' in operand value **
+    ISHL F^:10; ** Illegal character '^' in operand keyword **
+    END LR:ISHLTEST;

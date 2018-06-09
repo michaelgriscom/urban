@@ -1,0 +1,205 @@
+OPVAL KICKO FC:0; 			tests invalid values for certain keywords
+Line number: 0001	LC: 0	Label: OPVAL
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: ------
+
+gd	CHAR 	ST:''; 
+Line number: 0002	LC: 0	Label: gd
+Instruction/Directive: CHAR	Binary Equivalent: ------
+Operand 1: ST:''		Binary Equivalent: ------
+
+bad	CHAR 	ST:'6chars'; 	too long
+Line number: 0003	LC: 1	Label: bad
+Instruction/Directive: NOP	Binary Equivalent: 111101
+Errors:
+**ERROR 217** Serious: Invalid string literal: Expected no more than 4 ASCII characters (all displayable)
+
+	CHAR 	ST:5; 			no apostrophe
+Line number: 0004	LC: 2	Label: ------
+Instruction/Directive: NOP	Binary Equivalent: 111101
+Errors:
+**ERROR 217** Serious: Invalid string literal: Expected no more than 4 ASCII characters (all displayable)
+
+	CHAR 	ST:good; 		cannot set to other character
+Line number: 0005	LC: 3	Label: ------
+Instruction/Directive: NOP	Binary Equivalent: 111101
+Errors:
+**ERROR 217** Serious: Invalid string literal: Expected no more than 4 ASCII characters (all displayable)
+
+c	NUM 	FC:2;
+Line number: 0006	LC: 4	Label: c
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:2		Binary Equivalent: ------
+
+EQ 	EQU 	FC:2;
+Line number: 0007	LC: 5	Label: EQ
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: FC:2		Binary Equivalent: ------
+
+;arithmetic register values
+Line number: 0008	LC: 5	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+	MOVD 	DR:*,FM:0; 		invalid use of * in DR
+Line number: 0009	LC: 5	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:*		Binary Equivalent: 000000
+Operand 2: FM:0		Binary Equivalent: 000000
+Errors:
+**ERROR 227** Serious: Symbol in operand value not previously equated
+
+	MOVD	DR:const,FM:0; 	invalid use of label in DR
+Line number: 0010	LC: 6	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:const		Binary Equivalent: 000000
+Operand 2: FM:0		Binary Equivalent: 000000
+Errors:
+**ERROR 227** Serious: Symbol in operand value not previously equated
+
+	MOVD	DR:EQ,FM:0; 	
+Line number: 0011	LC: 7	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:EQ		Binary Equivalent: 000000
+Operand 2: FM:0		Binary Equivalent: 000000
+
+	MOVD 	DR:UNDFND,FM:0;	label not defined
+Line number: 0012	LC: 8	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:UNDFND		Binary Equivalent: 000000
+Operand 2: FM:0		Binary Equivalent: 000000
+Errors:
+**ERROR 227** Serious: Symbol in operand value not previously equated
+
+;index register values
+Line number: 0013	LC: 9	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+	MOVD 	DX:*,FM:0; 		invalid use of * in DR
+Line number: 0014	LC: 9	Label: ------
+Instruction/Directive: NOP	Binary Equivalent: 111101
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+	MOVD	DX:const,FM:0; 	invalid use of label in DR
+Line number: 0015	LC: A	Label: ------
+Instruction/Directive: NOP	Binary Equivalent: 111101
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+	MOVD	DX:EQ,FM:0; 	
+Line number: 0016	LC: B	Label: ------
+Instruction/Directive: NOP	Binary Equivalent: 111101
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+	MOVD 	DX:UNDFND,FM:0; label not defined
+Line number: 0017	LC: C	Label: ------
+Instruction/Directive: NOP	Binary Equivalent: 111101
+Errors:
+**ERROR 211** Serious: Duplicate or incorrect operand keyword
+
+;memory value	
+Line number: 0018	LC: D	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+	MOVD 	DR:0,FM:*+2+2; 	invalid expression
+Line number: 0019	LC: D	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:0		Binary Equivalent: 000000
+Operand 2: FM:*+2+2		Binary Equivalent: 000000
+Errors:
+**ERROR 207** Serious: Invalid numeric value: Not a number (or number too big)
+
+	MOVD 	DR:0,FM:UNDFND; undefined label
+Line number: 0020	LC: E	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:0		Binary Equivalent: 000000
+Operand 2: FM:UNDFND		Binary Equivalent: 000000
+Errors:
+**ERROR 227** Serious: Symbol in operand value not previously equated
+
+	MOVD 	DR:0,FM:*+UNDFND; undefined label in expression
+Line number: 0021	LC: F	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:0		Binary Equivalent: 000000
+Operand 2: FM:*+UNDFND		Binary Equivalent: 000000
+Errors:
+**ERROR 227** Serious: Symbol in operand value not previously equated
+
+	MOVD	DR:0,FM:*+2; 	
+Line number: 0022	LC: 10	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:0		Binary Equivalent: 000000
+Operand 2: FM:*+2		Binary Equivalent: 000000
+
+;num value
+Line number: 0023	LC: 11	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+	NUM 	FC:*;			can't use expression for num
+Line number: 0024	LC: 11	Label: ------
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:*		Binary Equivalent: ------
+Errors:
+**ERROR 227** Serious: Symbol in operand value not previously equated
+
+	NUM 	FC:UNDFND;		label not defined
+Line number: 0025	LC: 12	Label: ------
+Instruction/Directive: NUM	Binary Equivalent: ------
+Operand 1: FC:UNDFND		Binary Equivalent: ------
+Errors:
+**ERROR 227** Serious: Symbol in operand value not previously equated
+
+;ADRC value
+Line number: 0026	LC: 13	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+	ADRC 	EX:*+*;			multiple star in expression
+Line number: 0027	LC: 13	Label: ------
+Instruction/Directive: ADRC	Binary Equivalent: ------
+Operand 1: EX:*+*		Binary Equivalent: ------
+Errors:
+**ERROR 218** Serious: Asterisk in expression must occur at beginning of expression
+
+	ADRC 	EX:*+UNDFND;	label not defined in expression
+Line number: 0028	LC: 14	Label: ------
+Instruction/Directive: ADRC	Binary Equivalent: ------
+Operand 1: EX:*+UNDFND		Binary Equivalent: ------
+Errors:
+**ERROR 227** Serious: Symbol in operand value not previously equated
+
+	ADRC 	EX:UNDFND;		label not defined
+Line number: 0029	LC: 15	Label: ------
+Instruction/Directive: ADRC	Binary Equivalent: ------
+Operand 1: EX:UNDFND		Binary Equivalent: ------
+Errors:
+**ERROR 227** Serious: Symbol in operand value not previously equated
+
+;Number of words
+Line number: 0030	LC: 16	Label: ------
+Instruction/Directive: ------	Binary Equivalent: ------
+
+	IWSR 	FM:0,NW:*;		cannot use expression
+Line number: 0031	LC: 16	Label: ------
+Instruction/Directive: IWSR	Binary Equivalent: 101000
+Operand 1: FM:0		Binary Equivalent: 101000
+Operand 2: NW:*		Binary Equivalent: 101000
+Errors:
+**ERROR 227** Serious: Symbol in operand value not previously equated
+
+	IWSR 	FM:0,NW:c;		cannot use label for NW
+Line number: 0032	LC: 17	Label: ------
+Instruction/Directive: IWSR	Binary Equivalent: 101000
+Operand 1: FM:0		Binary Equivalent: 101000
+Operand 2: NW:c		Binary Equivalent: 101000
+Errors:
+**ERROR 227** Serious: Symbol in operand value not previously equated
+
+	IWSR 	FM:0,NW:EQ;
+Line number: 0033	LC: 18	Label: ------
+Instruction/Directive: IWSR	Binary Equivalent: 101000
+Operand 1: FM:0		Binary Equivalent: 101000
+Operand 2: NW:EQ		Binary Equivalent: 101000
+Errors:
+**ERROR 109** Warning: Program did not end with END directive
+

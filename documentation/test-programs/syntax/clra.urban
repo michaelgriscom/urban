@@ -1,0 +1,7 @@
+CLRATEST KICKO FC:0;
+FOO CLRA;
+    CLRA FC:0; ** Illegal operand **
+    CLRA DR:0; ** Illegal operand **
+    CLRA LR:FOO; ** Illegal operand **
+    CLRA FM:FOO; ** Illegal operand **
+    END LR:CLRATEST;

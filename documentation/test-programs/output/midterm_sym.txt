@@ -1,0 +1,8 @@
+Label	LC	Usage	String
+Earth	C	LABEL	
+FIVE	F	EQU	5
+Pluto	E	LABEL	
+Saturn	D	LABEL	
+Venus	F	LABEL	
+mars	----	EXT	
+mid	C	PRGM_NAME	

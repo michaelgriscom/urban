@@ -1,0 +1,41 @@
+LOC	OBJ CODE	A/R/E/C	STMT	SOURCE STATEMENT
+0014	--------	A	1	SCBLNK KICKO FC:20;
+0014	--------	A	2	
+0014	--------	A	3	; the previous line is blank (specifically with no whitespace) 
+0014	F4000000	A	4		
+0015	--------	A	5	; on the contrary the previous line contains whitespace
+0015	F4000000	A	6		; should complain that there is no operation
+0016	--------	A	7		END SCBLNK
+0100	--------	A	8	eq  kicko fc:256;
+0100	--------	A	9	a   equ fc:1;
+0100	--------	A	10	b   equ fc:2;
+0100	--------	A	11	c   eque ex:a+b;
+0100	--------	R	12	d   equ fm:*;
+0100	--------	R	13	e   equ fm:*+512;
+0100	--------	A	14	f   eque ex:*+d+e;
+0100	--------	A	15	g   eque ex:a+b+c+d+e+f;
+0100	--------	A	16	h   eque ex:f-e+d-c+b-a;
+0100	--------	A	17	i   eque ex:1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1;
+0100	--------	A	18	j   equ fc:-1;
+0100	--------	A	19	k   eque ex:-j;
+0100	--------	A	20	l   eque ex:-1+2-3+4-5+6-7+8-9+1-2+3-4+5-6+7-8+9-10;
+0100	--------	A	21	t0  eque ex:l+l+l+l;
+0100	--------	A	22	t1  eque ex:t0+t0+t0+t0;
+0100	--------	A	23	t2  eque ex:t1+t1+t1+t1;
+0100	--------	A	24	t3  eque ex:t2+t2+t2+t2;
+0100	--------	A	25	er1 equ ex:*+1;
+0100	--------	A	26	er2 eque ex:1+*;
+0100	--------	A	27	er3 eque ex:*+*;
+0100	--------	A	28	er4 equ fc:2147483648;
+0100	--------	A	29	er5 equ fc:-2147483649;
+0100	--------	A	30	er6 eque ex:-2147483647-2;
+0100	00000021	A	31	    num fc:i; Should be 32
+0101	FFFFFFF6	A	32	    num fc:l; Should be -10
+0102	00000100	A	33	    num fc:d; Should be 256
+0103	00000300	A	34	    num fc:e; Should be 768
+0104	00000500	A	35	    num fc:f; Should be 1280
+0105	FFFFFFD8	A	36	    num fc:t0; Should be 4
+0106	FFFFFF60	A	37	    num fc:t1; Should be 16
+0107	FFFFFD80	A	38	    num fc:t2; Should be 64
+0108	FFFFF600	A	39	    num fc:t3; Should be 256
+0109	--------	R	40	    end lr:eq;

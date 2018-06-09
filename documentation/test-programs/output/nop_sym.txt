@@ -1,0 +1,3 @@
+Label	LC	Usage	String
+FOO	0	LABEL	
+NOPTEST	0	PRGM_NAME	

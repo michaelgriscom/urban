@@ -1,0 +1,24 @@
+IRKBTEST KICKO FC:0;
+ONE EQU FC:1;
+THREE EQU FC:2;
+    IRKB FM:0,NW:1;
+    IRKB FM:0,FX:1,NW:15;
+    IRKB FM:4095,FX:7,NW:1;
+    IRKB FM:ONE,NW:5;
+    IRKB FM:1000,NW:THREE;
+    IRKB; ** Missing operands **
+    IRKB FM:0; ** Missing NW **
+    IRKB NW:1; ** Missing FM **
+    IRKB FX:0,NW:1; ** Missing FM **
+    IRKB FM:-1,NW:1; ** FM out of range **
+    IRKB FM:4096,NW:1; ** FM out of range **
+    IRKB FM:0,FX:0,NW:1; ** FX out of range **
+    IRKB FM:0,FX:8,NW:1; ** FX out of range **
+    IRKB FM:0,NW:0; ** NW out of range **
+    IRKB FM:0,NW:16; ** NW out of range **
+    IRKB FR:0,NW:1; ** Illegal operand **
+    IRKB LR:0,NW:9; ** Illegal operand **
+    IRKB FC:0,NW:4; ** Illegal operand **
+    IRKB FM:1=,NW:5; ** Illegal character '=' in operand value **
+    IRKB FM:0,%%:8; ** Illegal character '%' in operand keyword **
+    END LR:IRKBTEST;

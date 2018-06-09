@@ -1,0 +1,36 @@
+EXPBND KICKO FC:0;
+Line number: 0001	LC: 0	Label: EXPBND
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: ------
+
+ZERO EQU FC:0;
+Line number: 0002	LC: 0	Label: ZERO
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: ------
+
+BIG EQU FC:4097;
+Line number: 0003	LC: 0	Label: BIG
+Instruction/Directive: EQU	Binary Equivalent: ------
+Operand 1: FC:4097		Binary Equivalent: ------
+
+NEG ADRC EX:ZERO-1;
+Line number: 0004	LC: 0	Label: NEG
+Instruction/Directive: ADRC	Binary Equivalent: ------
+Operand 1: EX:ZERO-1		Binary Equivalent: ------
+
+NEG2 ADRC EX:-1;
+Line number: 0005	LC: 1	Label: NEG2
+Instruction/Directive: ADRC	Binary Equivalent: ------
+Operand 1: EX:-1		Binary Equivalent: ------
+
+	MOVD DR:0,FM:NEG2;
+Line number: 0006	LC: 2	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:0		Binary Equivalent: 000000
+Operand 2: FM:NEG2		Binary Equivalent: 000000
+
+	END LR:EXPBND;
+Line number: 0007	LC: 3	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:EXPBND		Binary Equivalent: ------
+

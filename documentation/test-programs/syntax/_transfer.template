@@ -1,0 +1,23 @@
+$TEST KICKO FC:0;
+FIVE EQU FC:5;
+    $ FR:0,DM:0;
+    $ FR:7,DM:4095;
+    $ FX:1,DM:0;
+    $ FX:7,DM:4095;
+    $ FR:FIVE,DM:2000;
+    $ FX:3,DM:FIVE;
+    $; ** Missing operands **
+    $ DM:0; ** Missing FR **
+    $ FR:0; ** Missing DM **
+    $ FX:1; ** Missing DM **
+    $ FR:-1,DM:0; ** Illegal register address **
+    $ FR:8,DM:0; ** Illegal register address **
+    $ FX:0,DM:0; ** Illegal index address **
+    $ FX:8,DM:0; ** Illegal index address **
+    $ FR:0,DM:-1; ** Illegal memory address **
+    $ FR:0,DM:4096; ** Illegal memory address **
+    $ FR:0,DM:0,LR:$TEST; ** Extra operand **
+    $ FR:&,DM:7; ** Illegal character '&' in operand value **
+    $ FR:2,DM:); ** Illegal character ')' in operand value **
+    $ /T:0,DM:0; ** Illegal character '/' in operand keyword **
+    END LR:$TEST;

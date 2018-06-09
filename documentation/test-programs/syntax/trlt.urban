@@ -1,0 +1,23 @@
+TRLTTEST KICKO FC:0;
+FIVE EQU FC:5;
+    TRLT FR:0,DM:0;
+    TRLT FR:7,DM:4095;
+    TRLT FX:1,DM:0;
+    TRLT FX:7,DM:4095;
+    TRLT FR:FIVE,DM:2000;
+    TRLT FX:3,DM:FIVE;
+    TRLT; ** Missing operands **
+    TRLT DM:0; ** Missing FR **
+    TRLT FR:0; ** Missing DM **
+    TRLT FX:1; ** Missing DM **
+    TRLT FR:-1,DM:0; ** Illegal register address **
+    TRLT FR:8,DM:0; ** Illegal register address **
+    TRLT FX:0,DM:0; ** Illegal index address **
+    TRLT FX:8,DM:0; ** Illegal index address **
+    TRLT FR:0,DM:-1; ** Illegal memory address **
+    TRLT FR:0,DM:4096; ** Illegal memory address **
+    TRLT FR:0,DM:0,LR:TRLTTEST; ** Extra operand **
+    TRLT FR:&,DM:7; ** Illegal character '&' in operand value **
+    TRLT FR:2,DM:); ** Illegal character ')' in operand value **
+    TRLT /T:0,DM:0; ** Illegal character '/' in operand keyword **
+    END LR:TRLTTEST;

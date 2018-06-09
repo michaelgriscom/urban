@@ -1,0 +1,14 @@
+LOC	OBJ CODE	A/R/E/C	STMT	SOURCE STATEMENT
+0000	--------	A	1	ISLATEST KICKO FC:0;
+0000	--------	A	2	ONE EQU FC:1;
+0000	F4000000	A	3	    ISLA FC:0;
+0001	F4000000	A	4	    ISLA FC:ONE;
+0002	F4000000	A	5	    ISLA FC:10;
+0003	F4000000	A	6	    ISLA FC:31;
+0004	F4000000	A	7	    ISLA; ** Missing operand **
+0005	F4000000	A	8	    ISLA FT:0; ** Missing FC **
+0006	F4000000	A	9	    ISLA FC:-1; ** FC out of range **
+0007	F4000000	A	10	    ISLA FC:32; ** FC out of range **
+0008	F4000000	A	11	    ISLA FC:@; ** Illegal character '@' in operand value **
+0009	F4000000	A	12	    ISLA F^:10; ** Illegal character '^' in operand keyword **
+000A	--------	R	13	    END LR:ISLATEST;

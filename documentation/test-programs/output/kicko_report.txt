@@ -1,0 +1,106 @@
+LOC	OBJ CODE	A/R/E/C	STMT	SOURCE STATEMENT
+0014	--------	A	1	SCBLNK KICKO FC:20;
+0014	--------	A	2	
+0014	--------	A	3	; the previous line is blank (specifically with no whitespace) 
+0014	F4000000	A	4		
+0015	--------	A	5	; on the contrary the previous line contains whitespace
+0015	F4000000	A	6		; should complain that there is no operation
+0016	--------	A	7		END SCBLNK
+0100	--------	A	8	eq  kicko fc:256;
+0100	--------	A	9	a   equ fc:1;
+0100	--------	A	10	b   equ fc:2;
+0100	--------	A	11	c   eque ex:a+b;
+0100	--------	R	12	d   equ fm:*;
+0100	--------	R	13	e   equ fm:*+512;
+0100	--------	A	14	f   eque ex:*+d+e;
+0100	--------	A	15	g   eque ex:a+b+c+d+e+f;
+0100	--------	A	16	h   eque ex:f-e+d-c+b-a;
+0100	--------	A	17	i   eque ex:1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1;
+0100	--------	A	18	j   equ fc:-1;
+0100	--------	A	19	k   eque ex:-j;
+0100	--------	A	20	l   eque ex:-1+2-3+4-5+6-7+8-9+1-2+3-4+5-6+7-8+9-10;
+0100	--------	A	21	t0  eque ex:l+l+l+l;
+0100	--------	A	22	t1  eque ex:t0+t0+t0+t0;
+0100	--------	A	23	t2  eque ex:t1+t1+t1+t1;
+0100	--------	A	24	t3  eque ex:t2+t2+t2+t2;
+0100	--------	A	25	er1 equ ex:*+1;
+0100	--------	A	26	er2 eque ex:1+*;
+0100	--------	A	27	er3 eque ex:*+*;
+0100	--------	A	28	er4 equ fc:2147483648;
+0100	--------	A	29	er5 equ fc:-2147483649;
+0100	--------	A	30	er6 eque ex:-2147483647-2;
+0100	00000021	A	31	    num fc:i; Should be 32
+0101	FFFFFFF6	A	32	    num fc:l; Should be -10
+0102	00000100	A	33	    num fc:d; Should be 256
+0103	00000300	A	34	    num fc:e; Should be 768
+0104	00000500	A	35	    num fc:f; Should be 1280
+0105	FFFFFFD8	A	36	    num fc:t0; Should be 4
+0106	FFFFFF60	A	37	    num fc:t1; Should be 16
+0107	FFFFFD80	A	38	    num fc:t2; Should be 64
+0108	FFFFF600	A	39	    num fc:t3; Should be 256
+0109	--------	R	40	    end lr:eq;
+0000	--------	A	41	EXPBND KICKO FC:0;
+0000	--------	A	42	ZERO EQU FC:0;
+0000	--------	A	43	BIG EQU FC:4097;
+0000	FFFFFFFF	A	44	NEG ADRC EX:ZERO-1;
+0001	FFFFFFFF	A	45	NEG2 ADRC EX:-1;
+0002	F4000000	R	46		MOVD DR:0,FM:NEG;
+0003	--------	R	47		END LR:EXPBND;
+0064	--------	A	48	EXTEST 	KICKO FC:100;
+0064	00002000	A	49	        MOVD DR:0,FL:0;     Should create an A text record with a value of 0.
+0065	--------	A	50	EQ0     EQUE EX:*;          EQ0 should be 101.  
+0065	00402000	A	51	        MOVD DR:1,FL:0;     Should create an A text record with a value of 0.
+0066	00802000	A	52	        MOVD DR:2,FL:0;     Should create an A text record with a value of 0.
+0067	--------	R	53	EQ1     EQU  FM:*+10;       EQ1 should be 113. 
+0067	00002065	A	54	        MOVD DR:0,FL:EQ0;   Should create an R text record with a value of 101.
+0068	F4000000	R	55	        MOVD DM:200,FL:EQ1; Should create an R text record with a value of 113.
+0069	F4000000	R	56	        IADD DR:0,FM:200;   Should create an R text record with a value of 200.
+006A	F4000000	R	57	        MOVD DM:201,FR:0;   Should create an R text record with a value of 201.
+006B	--------	R	58	EQ2     EQU  FM:201;        EQ2 should be 214.
+006B	--------	A	59	EQ3     EQU  FC:100;        EQ3 should be 100.
+006B	--------	A	60	PI      EQU  EX:EQ2+EQ3;    PI  should be 314.
+006B	--------	A	61	EQ4     EQUE EX:1-2+3-4+6;  EQ4 should be 4.
+006B	--------	E	62	        EXT  LR:EXT1;       Should create a linking record.
+006B	--------	E	63	        EXT  LR:EXT2        Should create a linking record.
+006B	0000012D	A	64	NUM0    NUM  FC:PI;         NUM0 should be 107, and the memory at 107 should contain 314.
+006C	F4000000	A	65	ADRC0   ADRC EX:EXT1+EXT2;  ADRC0 should be equal to the sum of EXT1 and EXT2's values.  Text record should be C with a value of 0 and one modification record containing two modifications.
+006D	00000064	C	66	ADRC1   ADRC EX:EXT1+EQ0-1; ADRC1 should be EXT1 + 100.  Text record should be a C with a value of -1 and two modification records each containing one modification.
+006E	00000064	E	67	ADRC2   ADRC EX:EXT1+100;   ADRC2 should be EXT1 + 100.  Text record should be an E with a value of 100 and one modification record containing one modification.
+006F	0000012D	A	68	ADRC3   ADRC EX:EQ2+100;    ADRC3 should be 314.  While not necessary, we're making this a C with a value of 100 and one modification record containing one modification.
+0070	0000012D	A	69	ADRC4   ADRC EX:EQ2+EQ3;    ADRC4 should be 314.  Text record should be a C with a value of 0 and one modification record containing two modifications.
+0071	--------	A	70	
+0071	--------	A	71	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+0071	--------	A	72	; Incorrect equates below:        
+0071	--------	A	73	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+0071	--------	A	74	
+0071	--------	R	75	EQ5     EQU  LR:EXTEST;     LR is no longer allowed
+0071	--------	A	76	EQ6     EQU  FC:2147483648; Constant out of bounds (must be -2^31 : 2^31 - 1)
+0071	--------	R	77	EQ7     EQU  FM:4097;       Memory reference out of bounds
+0071	--------	A	78	EQ8     EQUE EX:4095+2;     Expression out of bounds
+0071	--------	R	79	EQ9     EQU  FM:*+1+1;      FM cannot have multiple values added/subtracted
+0071	--------	A	80	EQ10    EQUE EX:1+*;        Star must appear first in the expression
+0071	--------	A	81	EQ11    EQUE EX:*+*;        Star cannot appear twice
+0071	--------	A	82	EQ12    EQUE EX:EXTEST;     Local labels cannot appear in expressions
+0071	--------	A	83	EQ13    EQUE EX:EXT1;       External labels cannot appear in EQUE expressions
+0071	--------	A	84	
+0071	--------	A	85	
+0071	--------	R	86		    END	LR:EXTEST;
+000A	--------	A	87	EXT KICKO FC:10;
+000A	--------	E	88		EXT LR:A,LR:B,LR:C,LR:D;
+000A	--------	E	89		EXT LR:E,LR:F,LR:G,LR:H;
+000A	--------	A	90	X	EQU EX:1;
+000A	--------	A	91	Y	EQU EX:32;
+000A	--------	A	92	Z	EQU EX:512;
+000A	--------	A	93	
+000A	00000000	E	94		MOVD DR:0, FM:A;
+000B	34480000	E	95		IMUL DR:1, FM:B, FX:1;
+000C	A8150000	E	96		CWSR FM:C, FX:2, NW:10;
+000D	--------	A	97	
+000D	00000000	E	98		ADRC LR:D;
+000E	00000000	C	99		ADRC EX:E+F;
+000F	FFFFFDDF	C	100		ADRC EX:A+B+C+D+E+F+G+H-X-Y-Z;
+0010	00000010	C	101		ADRC EX:*+B-A;
+0011	--------	R	102		END LR:EXT;
+0000	--------	A	103	test kicko fc:0;
+03E8	--------	A	104	err  kicko fc:1000;  ** Extra KICKO directive **
+03E8	--------	R	105	    end lr:err; ** Wrong label referenced **

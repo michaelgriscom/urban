@@ -1,0 +1,33 @@
+BNDCHK KICKO FC:0;
+Line number: 0001	LC: 0	Label: BNDCHK
+Instruction/Directive: KICKO	Binary Equivalent: ------
+Operand 1: FC:0		Binary Equivalent: ------
+
+	newlc FC:20; no errors
+Line number: 0002	LC: 14	Label: ------
+Instruction/Directive: NONE	Binary Equivalent: ------
+Errors:
+**ERROR 223** Serious: Directive requires a valid label
+
+	SKIPS FC:4090; although 4090 is within memory, check that 20 + 4090 is in memory
+Line number: 0003	LC: 14	Label: ------
+Instruction/Directive: SKIPS	Binary Equivalent: ------
+Operand 1: FC:4090		Binary Equivalent: ------
+Errors:
+**ERROR 303** Fatal: Program out of bounds: Location counter exceeded upper limit (4095)
+
+	MOVD DR:0,FM:-1;
+Line number: 0004	LC: 100E	Label: ------
+Instruction/Directive: MOVD	Binary Equivalent: 000000
+Operand 1: DR:0		Binary Equivalent: 000000
+Operand 2: FM:-1		Binary Equivalent: 000000
+Errors:
+**ERROR 303** Fatal: Program out of bounds: Location counter exceeded upper limit (4095)
+
+	END LR:BNDCHK;
+Line number: 0005	LC: 100F	Label: ------
+Instruction/Directive: END	Binary Equivalent: ------
+Operand 1: LR:BNDCHK		Binary Equivalent: ------
+Errors:
+**ERROR 303** Fatal: Program out of bounds: Location counter exceeded upper limit (4095)
+

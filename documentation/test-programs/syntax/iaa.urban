@@ -1,0 +1,47 @@
+IAATEST KICKO FC:0;
+ONE EQU FC:1;
+TWO EQU FC:2;
+    IAA FR:0,DM:0;
+    IAA FM:100,DR:1;
+    IAA FR:4,DM:1000,DX:1;
+    IAA FM:2222,FX:1,DR:6;
+    IAA DR:7,FT:0;
+    IAA DM:4095,FT:-4096;
+    IAA DM:0,DX:1,FT:4095;
+    IAA DM:LBL,FR:0;
+    IAA FM:LBL,DR:1;
+    IAA FM:ONE,DR:TWO;
+    IAA FM:0,DR:ONE;
+    IAA DM:LBL,DX:ONE,FR:TWO;
+    IAA DR:0,FM:*;
+    IAA DR:0,FM:*+10;
+    IAA FR:0; ** Missing DM **
+    IAA DM:0; ** Missing FR **
+    IAA FM:0; ** Missing DR **
+    IAA DR:0; ** Missing FM **
+    IAA FR:0,DM:0,FX:1; ** Index with register, not memory **
+    IAA FM:0,DR:0,DX:1; ** Index with register, not memory ** 
+    IAA FR:0,FT:0; ** Illegal use of literal **
+    IAA FR:0,DT:0; ** Illegal operand DT **
+    IAA DR:0,FC:1; ** Illegal operand FC **
+    IAA DR:0,LR:LBL; ** Illegal operand LR **
+    IAA DR:0,FM:1,NW:6; ** Illegal operand NW **
+    IAA EX:*+6; ** Illegal expression **
+    IAA DR:0,FM:0,EX:*-10; ** Illegal expression **
+    IAA FR:-1,DM:0; ** Negative register address **
+    IAA FR:0,DM:-1; ** Negative memory address **
+    IAA FR:8,DM:0; ** Register address out of range **
+    IAA FR:0,DM:4096; ** Memory address out of range **
+    IAA FM:4096,DR:0; ** Memory address out of range **
+    IAA FM:0,DR:8; ** Register address out of range **
+    IAA FR:0,DM:0,DX:0; ** Index address out of range **
+    IAA FR:0,DM:0,DX:8; ** Index address out of range **
+    IAA FM:0,DR:0,DX:0; ** Index address out of range **
+    IAA FM:0,DR:0,DX:8; ** Index address out of range **
+    IAA DR:0,FT:-4097; ** Literal value out of range **
+    IAA DR:0,FT:4096; ** Literal value out of range **
+    IAA DR:&,FM:0; ** Illegal character '&' in operand value **
+    IAA DR:0,FM:1#3; ** Illegal character '#' in operand value **
+    IAA %:9,DR:4,FM:4; ** Illegal operand name '%' ** 
+LBL NUM FC:0;
+    END LR:IAATEST;
